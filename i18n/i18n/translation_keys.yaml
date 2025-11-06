@@ -1,0 +1,160 @@
+about:
+  character_limit: null
+  context: null
+  description: 'UI element: about'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui
+backup:
+  character_limit: null
+  context: null
+  description: 'UI element: backup'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui
+balance_title:
+  character_limit: null
+  context: null
+  description: 'UI element: balance_title'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui
+contact:
+  character_limit: null
+  context: null
+  description: 'UI element: contact'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui
+currency_selector:
+  character_limit: null
+  context: null
+  description: 'UI element: currency_selector'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui
+dashboard_title:
+  character_limit: null
+  context: null
+  description: 'UI element: dashboard_title'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui
+help:
+  character_limit: null
+  context: null
+  description: 'UI element: help'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui
+language_selector:
+  character_limit: null
+  context: null
+  description: 'UI element: language_selector'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui
+login_button:
+  character_limit: null
+  context: null
+  description: 'UI element: login_button'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui
+logout_button:
+  character_limit: null
+  context: null
+  description: 'UI element: logout_button'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui
+notifications:
+  character_limit: null
+  context: null
+  description: 'UI element: notifications'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui
+portfolio_title:
+  character_limit: null
+  context: null
+  description: 'UI element: portfolio_title'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui
+privacy:
+  character_limit: null
+  context: null
+  description: 'UI element: privacy'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui
+profile:
+  character_limit: null
+  context: null
+  description: 'UI element: profile'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui
+restore:
+  character_limit: null
+  context: null
+  description: 'UI element: restore'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui
+security:
+  character_limit: null
+  context: null
+  description: 'UI element: security'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui
+settings_title:
+  character_limit: null
+  context: null
+  description: 'UI element: settings_title'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui
+terms:
+  character_limit: null
+  context: null
+  description: 'UI element: terms'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui
+theme_selector:
+  character_limit: null
+  context: null
+  description: 'UI element: theme_selector'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui
+welcome_message:
+  character_limit: null
+  context: null
+  description: 'UI element: welcome_message'
+  namespace: ui
+  requires_review: true
+  tags: []
+  type: ui

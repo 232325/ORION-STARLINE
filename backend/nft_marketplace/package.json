@@ -1,0 +1,61 @@
+{
+  "name": "metal-nft-marketplace",
+  "version": "1.0.0",
+  "description": "Qimmatbop metallarga asoslangan NFT bozor platformasi",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\"",
+    "dev:frontend": "cd frontend/metal-nft-marketplace && npm run dev",
+    "dev:backend": "cd backend && python metal_certification_system.py",
+    "build": "cd frontend/metal-nft-marketplace && npm run build",
+    "deploy": "hardhat run scripts/deploy.js --network sepolia",
+    "deploy:mainnet": "hardhat run scripts/deploy.js --network mainnet",
+    "test": "hardhat test",
+    "lint": "eslint frontend/metal-nft-marketplace/src/**/*.js",
+    "lint:fix": "eslint frontend/metal-nft-marketplace/src/**/*.js --fix",
+    "typecheck": "cd frontend/metal-nft-marketplace && npx tsc --noEmit",
+    "analyze": "cd frontend/metal-nft-marketplace && npx bundle-analyzer dist/static/js/*.js"
+  },
+  "keywords": [
+    "nft",
+    "metals",
+    "gold",
+    "silver",
+    "platinum",
+    "blockchain",
+    "ethereum",
+    "marketplace",
+    "web3",
+    "defi"
+  ],
+  "author": "MetalNFT Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@openzeppelin/contracts": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "concurrently": "^8.0.0",
+    "dotenv": "^16.0.0",
+    "eslint": "^8.0.0",
+    "hardhat": "^2.19.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/aiohttp": "^3.8.0",
+    "aiohttp": "^3.8.0",
+    "asyncio": "^0.1.0",
+    "dataclasses": "^0.8.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "python": ">=3.8.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/metal-nft-marketplace.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/metal-nft-marketplace/issues"
+  },
+  "homepage": "https://github.com/yourusername/metal-nft-marketplace#readme"
+}

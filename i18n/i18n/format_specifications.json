@@ -1,0 +1,76 @@
+{
+  "addresses": {
+    "uz-UZ": {
+      "format_string": "{street}, {house}\n{city}, {region}\n{postal_code}",
+      "field_order": [
+        "salutation",
+        "first_name",
+        "last_name",
+        "organization",
+        "street",
+        "house",
+        "apartment",
+        "city",
+        "region",
+        "postal_code",
+        "country"
+      ],
+      "required_fields": [
+        "street",
+        "city",
+        "country"
+      ],
+      "postal_code_required": true,
+      "country_specific": true,
+      "example": "Tashkent sh., Amir Temur ko'chasi, 1-uy\nTashkent, 100000\nO'zbekiston"
+    },
+    "en-US": {
+      "format_string": "{salutation} {first_name} {last_name}\n{organization}\n{street}\n{city}, {state} {zip}",
+      "field_order": [
+        "salutation",
+        "first_name",
+        "last_name",
+        "organization",
+        "street",
+        "apartment",
+        "city",
+        "state",
+        "zip",
+        "country"
+      ],
+      "required_fields": [
+        "street",
+        "city",
+        "state",
+        "zip"
+      ],
+      "postal_code_required": true,
+      "country_specific": true,
+      "example": "John Smith\n123 Main St\nAnytown, CA 90210\nUSA"
+    }
+  },
+  "names": {
+    "uz-UZ": {
+      "given_name_first": true,
+      "family_name_first": false,
+      "middle_name_position": "after_given",
+      "honorific_required": true,
+      "formality_level": "formal",
+      "cultural_notes": [
+        "Use patronymic as middle name",
+        "Respect titles and honorifics"
+      ]
+    },
+    "en-US": {
+      "given_name_first": true,
+      "family_name_first": false,
+      "middle_name_position": "after_given",
+      "honorific_required": false,
+      "formality_level": "casual",
+      "cultural_notes": [
+        "Middle names are common",
+        "Use nicknames informally"
+      ]
+    }
+  }
+}

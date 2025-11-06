@@ -1,0 +1,66 @@
+{
+  "project_name": "Orion Starline AI",
+  "test_timestamp": "2025-11-05T01:18:30.986868",
+  "total_execution_time": 0.10921812057495117,
+  "unit_tests": {
+    "total_tests": 2,
+    "passed": 2,
+    "failed": 0,
+    "errors": 0,
+    "success_rate": 100.0,
+    "total_execution_time": 0.02
+  },
+  "integration_tests": {
+    "total_tests": 1,
+    "results": [
+      {
+        "name": "Addition Test",
+        "status": "PASS",
+        "execution_time": 3.0994415283203125e-06,
+        "components": [
+          "component_a",
+          "component_b"
+        ]
+      }
+    ],
+    "success_rate": 100.0
+  },
+  "quality_score": {
+    "overall_score": 72.12744807121662,
+    "code_quality": 35.924826904055394,
+    "test_coverage": 85.0,
+    "performance_score": 90.0,
+    "security_score": 88.0,
+    "maintainability": 50.0,
+    "recommendations": [
+      "Kodga ko'proq izohlar qo'shing"
+    ],
+    "timestamp": "2025-11-05T01:18:30.962738"
+  },
+  "ux_tests": {
+    "status": "No UX tests configured"
+  },
+  "ci_pipeline": {
+    "status": "FAILED",
+    "timestamp": "2025-11-05T01:18:30.986848",
+    "tests": {
+      "total_tests": 0,
+      "passed": 0,
+      "failed": 0,
+      "errors": 0,
+      "success_rate": 0,
+      "total_execution_time": 0
+    },
+    "environment": {
+      "python_version": true,
+      "dependencies": true,
+      "database_connection": true,
+      "file_permissions": true
+    }
+  },
+  "error_summary": {
+    "total_errors": 0,
+    "error_types": {}
+  },
+  "overall_status": "PASS"
+}

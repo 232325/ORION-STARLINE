@@ -1,0 +1,133 @@
+{
+  "cycle_metrics": {
+    "overall_advantage": 0.0,
+    "advantage_level": "none",
+    "detailed_metrics": {
+      "computational_speedup": "PerformanceMetrics(metric_type=<MetricType.SPEEDUP: 'computational_speedup'>, quantum_value=0.046062993094595925, classical_value=0.4911413247140496, advantage_percentage=966.238409009661, confidence_interval=(np.float64(nan), np.float64(nan)), sample_size=1, statistical_significance=False, timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 445597))",
+      "memory_efficiency": "PerformanceMetrics(metric_type=<MetricType.MEMORY_EFFICIENCY: 'memory_efficiency'>, quantum_value=50.704511222194235, classical_value=325.1328925177311, advantage_percentage=84.4049887325906, confidence_interval=(np.float64(nan), np.float64(nan)), sample_size=1, statistical_significance=False, timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 446268))",
+      "parallel_processing": "PerformanceMetrics(metric_type=<MetricType.PARALLEL_PROCESSING: 'parallel_processing'>, quantum_value=0.9208285829428626, classical_value=0.615871823783951, advantage_percentage=49.51627065600115, confidence_interval=(np.float64(nan), np.float64(nan)), sample_size=1, statistical_significance=False, timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 446877))",
+      "optimization_improvement": "PerformanceMetrics(metric_type=<MetricType.OPTIMIZATION_IMPROVEMENT: 'optimization_improvement'>, quantum_value=0.8881126183920481, classical_value=0.7873831022275616, advantage_percentage=12.792948677653323, confidence_interval=(np.float64(nan), np.float64(nan)), sample_size=1, statistical_significance=False, timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 447453))",
+      "risk_reduction": "PerformanceMetrics(metric_type=<MetricType.RISK_REDUCTION: 'risk_reduction'>, quantum_value=0.08610173261290675, classical_value=0.19222406276977066, advantage_percentage=55.207620017878845, confidence_interval=(np.float64(nan), np.float64(nan)), sample_size=1, statistical_significance=False, timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 448012))"
+    },
+    "quantum_supremacy_achieved": false,
+    "recommendations": [
+      "No significant quantum advantage. Review implementation and parameters.",
+      "Excellent computational_speedup performance. Leverage this advantage further."
+    ],
+    "timestamp": "2025-11-03T08:40:30.448051"
+  },
+  "scalability": {
+    "scalability_data": {
+      "quantum_scaling": {
+        "100": {
+          "computation_time": 0.04605170185988092,
+          "memory_usage": 60.0
+        },
+        "500": {
+          "computation_time": 0.06214608098422192,
+          "memory_usage": 100.0
+        },
+        "1000": {
+          "computation_time": 0.06907755278982138,
+          "memory_usage": 150.0
+        },
+        "2000": {
+          "computation_time": 0.07600902459542082,
+          "memory_usage": 250.0
+        },
+        "5000": {
+          "computation_time": 0.08517193191416238,
+          "memory_usage": 550.0
+        }
+      },
+      "classical_scaling": {
+        "100": {
+          "computation_time": 1.0,
+          "memory_usage": 150.0
+        },
+        "500": {
+          "computation_time": 2.23606797749979,
+          "memory_usage": 350.0
+        },
+        "1000": {
+          "computation_time": 3.1622776601683795,
+          "memory_usage": 600.0
+        },
+        "2000": {
+          "computation_time": 4.47213595499958,
+          "memory_usage": 1100.0
+        },
+        "5000": {
+          "computation_time": 7.0710678118654755,
+          "memory_usage": 2600.0
+        }
+      }
+    },
+    "scaling_advantages": {
+      "100": {
+        "time_advantage": 95.3948298140119,
+        "memory_advantage": 60.0
+      },
+      "500": {
+        "time_advantage": 97.22074276768146,
+        "memory_advantage": 71.42857142857143
+      },
+      "1000": {
+        "time_advantage": 97.81557597993645,
+        "memory_advantage": 75.0
+      },
+      "2000": {
+        "time_advantage": 98.30038654101185,
+        "memory_advantage": 77.27272727272727
+      },
+      "5000": {
+        "time_advantage": 98.79548698753473,
+        "memory_advantage": 78.84615384615384
+      }
+    },
+    "quantum_efficiency_growth": "Super-polynomial advantage for large-scale problems",
+    "recommended_scaling_threshold": 1000,
+    "timestamp": "2025-11-03T08:40:30.448141"
+  },
+  "comprehensive_report": {
+    "latest_quantum_advantage": 0.0,
+    "advantage_level": "none",
+    "historical_trends": {
+      "message": "Insufficient historical data for trend analysis"
+    },
+    "performance_summary": {
+      "computational_speedup": {
+        "average_advantage": 966.238409009661,
+        "best_advantage": 966.238409009661,
+        "consistency": 1.0
+      },
+      "memory_efficiency": {
+        "average_advantage": 84.4049887325906,
+        "best_advantage": 84.4049887325906,
+        "consistency": 1.0
+      },
+      "parallel_processing": {
+        "average_advantage": 49.51627065600115,
+        "best_advantage": 49.51627065600115,
+        "consistency": 1.0
+      },
+      "optimization_improvement": {
+        "average_advantage": 12.792948677653323,
+        "best_advantage": 12.792948677653323,
+        "consistency": 1.0
+      },
+      "risk_reduction": {
+        "average_advantage": 55.207620017878845,
+        "best_advantage": 55.207620017878845,
+        "consistency": 1.0
+      }
+    },
+    "recommendations": [
+      "No significant quantum advantage. Review implementation and parameters.",
+      "Excellent computational_speedup performance. Leverage this advantage further."
+    ],
+    "total_measurements": 1,
+    "quantum_supremacy_achieved": false,
+    "timestamp": "2025-11-03T08:40:30.448313"
+  }
+}

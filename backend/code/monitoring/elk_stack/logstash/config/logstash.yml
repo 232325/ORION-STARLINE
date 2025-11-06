@@ -1,0 +1,43 @@
+# Logstash Main Configuration
+
+# Node configuration
+node.name: "logstash-node-1"
+
+# Data path
+path.data: /usr/share/logstash/data
+
+# Pipeline configuration
+pipeline.workers: 4
+pipeline.batch.size: 1000
+pipeline.batch.delay: 50
+
+# Queue configuration
+queue.type: memory
+queue.page_capacity: 64mb
+queue.max_events: 0
+
+# Dead letter queue
+dead_letter_queue.enable: true
+path.dead_letter_queue: /usr/share/logstash/data/dead_letter_queue
+
+# HTTP server configuration
+http.host: "0.0.0.0"
+http.port: 9600
+
+# Monitoring
+xpack.monitoring.enabled: true
+xpack.monitoring.elasticsearch.hosts: ["elasticsearch:9200"]
+xpack.monitoring.elasticsearch.username: ""
+xpack.monitoring.elasticsearch.password: ""
+
+# Pipeline configuration file
+path.config: /usr/share/logstash/pipeline
+
+# Logging configuration
+path.logs: /usr/share/logstash/logs
+
+# Security
+xpack.security.enabled: false
+
+# Java options
+ls_java_opts: "-Xms1g -Xmx1g -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -Djava.awt.headless=true -Dfile.encoding=UTF-8 -Djruby.compile.invokedynamic=true -Djruby.jit.threshold=0 -XX:+HeapDumpOnOutOfMemoryError -Djava.library.path=/usr/share/logstash/lib"

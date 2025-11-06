@@ -1,0 +1,388 @@
+# Prometheus Recording Rules
+# Performance metriclarni oldindan hisoblash va storage optimization
+
+groups:
+- name: application_performance_recording
+  interval: 30s
+  rules:
+
+  # Response Time Aggregations
+  - record: trading_app:response_time_p50:rate5m
+    expr: histogram_quantile(0.5, rate(http_request_duration_seconds_bucket{job="trading_app"}[5m]))
+    labels:
+      metric_group: performance
+
+  - record: trading_app:response_time_p95:rate5m
+    expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket{job="trading_app"}[5m]))
+    labels:
+      metric_group: performance
+
+  - record: trading_app:response_time_p99:rate5m
+    expr: histogram_quantile(0.99, rate(http_request_duration_seconds_bucket{job="trading_app"}[5m]))
+    labels:
+      metric_group: performance
+
+  # Error Rate Aggregations
+  - record: trading_app:error_rate:rate5m
+    expr: |
+      (
+        rate(http_requests_total{job="trading_app",status=~"5.."}[5m]) /
+        rate(http_requests_total{job="trading_app"}[5m])
+      ) * 100
+    labels:
+      metric_group: reliability
+
+  # Throughput Aggregations
+  - record: trading_app:request_rate:rate5m
+    expr: rate(http_requests_total{job="trading_app"}[5m])
+    labels:
+      metric_group: performance
+
+  - record: trading_app:request_rate_hourly
+    expr: rate(http_requests_total{job="trading_app"}[1h])
+    labels:
+      metric_group: performance
+
+  # Database Performance Recording Rules
+  - record: postgres:query_time_p95:rate5m
+    expr: histogram_quantile(0.95, rate(postgres_query_duration_seconds_bucket[5m]))
+    labels:
+      metric_group: database
+
+  - record: postgres:connections_usage:ratio
+    expr: postgres_stat_database_numbackends / postgres_settings_max_connections
+    labels:
+      metric_group: database
+
+  - record: postgres:connections_usage_percent
+    expr: postgres:connections_usage:ratio * 100
+    labels:
+      metric_group: database
+
+- name: system_resources_recording
+  interval: 30s
+  rules:
+
+  # CPU Usage Aggregations
+  - record: node:cpu_usage_percent:rate5m
+    expr: 100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100)
+    labels:
+      metric_group: system
+
+  - record: node:cpu_usage_by_mode:rate5m
+    expr: |
+      100 - (
+        avg by (instance, mode) (rate(node_cpu_seconds_total{mode!="idle"}[5m])) * 100
+      )
+    labels:
+      metric_group: system
+
+  # Memory Usage Aggregations
+  - record: node:memory_usage_percent
+    expr: |
+      (
+        (node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) /
+        node_memory_MemTotal_bytes
+      ) * 100
+    labels:
+      metric_group: system
+
+  - record: node:memory_free_percent
+    expr: (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes) * 100
+    labels:
+      metric_group: system
+
+  - record: node:memory_used_bytes
+    expr: node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes
+    labels:
+      metric_group: system
+
+  # Network I/O Aggregations
+  - record: node:network_receive_bytes_rate:5m
+    expr: rate(node_network_receive_bytes_total{device!="lo"}[5m])
+    labels:
+      metric_group: network
+
+  - record: node:network_transmit_bytes_rate:5m
+    expr: rate(node_network_transmit_bytes_total{device!="lo"}[5m])
+    labels:
+      metric_group: network
+
+  - record: node:network_receive_packets_rate:5m
+    expr: rate(node_network_receive_packets_total{device!="lo"}[5m])
+    labels:
+      metric_group: network
+
+  - record: node:network_transmit_packets_rate:5m
+    expr: rate(node_network_transmit_packets_total{device!="lo"}[5m])
+    labels:
+      metric_group: network
+
+  # Disk I/O Aggregations
+  - record: node:disk_read_bytes_rate:5m
+    expr: rate(node_disk_read_bytes_total{device!="loop0"}[5m])
+    labels:
+      metric_group: disk
+
+  - record: node:disk_write_bytes_rate:5m
+    expr: rate(node_disk_write_bytes_total{device!="loop0"}[5m])
+    labels:
+      metric_group: disk
+
+  - record: node:disk_read_ops_rate:5m
+    expr: rate(node_disk_reads_completed_total{device!="loop0"}[5m])
+    labels:
+      metric_group: disk
+
+  - record: node:disk_write_ops_rate:5m
+    expr: rate(node_disk_writes_completed_total{device!="loop0"}[5m])
+    labels:
+      metric_group: disk
+
+- name: business_metrics_recording
+  interval: 60s
+  rules:
+
+  # Trading Volume Aggregations
+  - record: trading:volume_rate_5m
+    expr: rate(business_trading_volume_total[5m])
+    labels:
+      metric_group: business
+
+  - record: trading:volume_rate_1h
+    expr: rate(business_trading_volume_total[1h])
+    labels:
+      metric_group: business
+
+  - record: trading:volume_rate_24h
+    expr: rate(business_trading_volume_total[1d])
+    labels:
+      metric_group: business
+
+  # User Activity Aggregations
+  - record: users:active_sessions_current
+    expr: business_user_active_sessions
+    labels:
+      metric_group: business
+
+  - record: users:active_sessions_5m_change
+    expr: |
+      business_user_active_sessions - business_user_active_sessions offset 5m
+    labels:
+      metric_group: business
+
+  # Financial Metrics Aggregations
+  - record: finance:pnl_rate_5m
+    expr: rate(business_pnl_total[5m])
+    labels:
+      metric_group: financial
+
+  - record: finance:pnl_total_cumulative
+    expr: business_pnl_total
+    labels:
+      metric_group: financial
+
+  - record: finance:pnl_hourly_change
+    expr: |
+      business_pnl_total - business_pnl_total offset 1h
+    labels:
+      metric_group: financial
+
+- name: risk_metrics_recording
+  interval: 30s
+  rules:
+
+  # Risk Score Aggregations
+  - record: risk:current_score
+    expr: business_risk_score
+    labels:
+      metric_group: risk
+
+  - record: risk:score_rate_5m
+    expr: rate(business_risk_score[5m])
+    labels:
+      metric_group: risk
+
+  # Risk Alerts Aggregation
+  - record: risk:alerts_rate_5m
+    expr: rate(business_risk_alerts_total[5m])
+    labels:
+      metric_group: risk
+
+  - record: risk:alerts_rate_1h
+    expr: rate(business_risk_alerts_total[1h])
+    labels:
+      metric_group: risk
+
+  - record: risk:alerts_hourly_count
+    expr: increase(business_risk_alerts_total[1h])
+    labels:
+      metric_group: risk
+
+- name: sla_sli_recording
+  interval: 60s
+  rules:
+
+  # SLA Calculations
+  - record: sla:availability_percent
+    expr: |
+      (
+        rate(http_requests_total{job="trading_app"}[5m]) /
+        (rate(http_requests_total{job="trading_app"}[5m]) + rate(http_requests_total{job="trading_app",status=~"5.."}[5m]))
+      ) * 100
+    labels:
+      metric_group: sla
+
+  - record: sla:response_time_sli_95
+    expr: |
+      (
+        histogram_quantile(0.95, rate(http_request_duration_seconds_bucket{job="trading_app"}[5m])) <= 0.5
+      ) * 100
+    labels:
+      metric_group: sla
+
+  - record: sla:response_time_sli_99
+    expr: |
+      (
+        histogram_quantile(0.99, rate(http_request_duration_seconds_bucket{job="trading_app"}[5m])) <= 1.0
+      ) * 100
+    labels:
+      metric_group: sla
+
+- name: capacity_planning_recording
+  interval: 300s  # 5 daqiqa
+  rules:
+
+  # Capacity Planning Metrics
+  - record: capacity:cpu_utilization_avg_1h
+    expr: avg(node:cpu_usage_percent:rate5m) by (instance)
+    labels:
+      metric_group: capacity
+
+  - record: capacity:memory_utilization_avg_1h
+    expr: avg(node:memory_usage_percent) by (instance)
+    labels:
+      metric_group: capacity
+
+  - record: capacity:disk_utilization_avg_1h
+    expr: avg(node_filesystem_utilization_percent) by (instance)
+    labels:
+      metric_group: capacity
+
+  - record: capacity:request_trend_24h
+    expr: linear_regression(
+      rate(http_requests_total{job="trading_app"}[1h]),
+      "timestamp",
+      24
+    )[1d:]
+    labels:
+      metric_group: capacity
+
+  - record: capacity:resource_demand_forecast
+    expr: |
+      increase(rate(http_requests_total{job="trading_app"}[1h])[6h:1h] offset 6h) * 4
+    labels:
+      metric_group: capacity
+
+- name: cost_optimization_recording
+  interval: 300s  # 5 daqiqa
+  rules:
+
+  # Cost Optimization Metrics
+  - record: cost:request_unit_cost
+    expr: application_cost_per_request / rate(http_requests_total{job="trading_app"}[1h])
+    labels:
+      metric_group: cost
+
+  - record: cost:cpu_efficiency
+    expr: rate(http_requests_total{job="trading_app"}[1h]) / avg(node:cpu_usage_percent:rate5m) by (instance)
+    labels:
+      metric_group: cost
+
+  - record: cost:memory_efficiency
+    expr: rate(http_requests_total{job="trading_app"}[1h]) / avg(node:memory_usage_percent) by (instance)
+    labels:
+      metric_group: cost
+
+  - record: cost:storage_efficiency
+    expr: rate(business_data_processed_bytes[1h]) / avg(node:disk_write_bytes_rate:5m) by (instance)
+    labels:
+      metric_group: cost
+
+- name: security_monitoring_recording
+  interval: 60s
+  rules:
+
+  # Security Metrics
+  - record: security:failed_auth_rate_5m
+    expr: rate(http_requests_total{job="trading_app",status=401}[5m])
+    labels:
+      metric_group: security
+
+  - record: security:suspicious_activity_rate_5m
+    expr: rate(business_security_events_total{type="suspicious"}[5m])
+    labels:
+      metric_group: security
+
+  - record: security:rate_limit_violations_rate_5m
+    expr: rate(http_requests_total{job="trading_app",status=429}[5m])
+    labels:
+      metric_group: security
+
+  - record: security:sql_injection_attempts_rate_5m
+    expr: rate(business_security_events_total{type="sql_injection"}[5m])
+    labels:
+      metric_group: security
+
+- name: latency_analysis_recording
+  interval: 30s
+  rules:
+
+  # Latency Breakdown Analysis
+  - record: latency:db_contribution_p95
+    expr: |
+      histogram_quantile(0.95, 
+        rate(http_request_duration_seconds_bucket{job="trading_app",component="database"}[5m])
+      )
+    labels:
+      component: database
+      metric_group: latency
+
+  - record: latency:api_contribution_p95
+    expr: |
+      histogram_quantile(0.95, 
+        rate(http_request_duration_seconds_bucket{job="trading_app",component="api"}[5m])
+      )
+    labels:
+      component: api
+      metric_group: latency
+
+  - record: latency:cache_contribution_p95
+    expr: |
+      histogram_quantile(0.95, 
+        rate(http_request_duration_seconds_bucket{job="trading_app",component="cache"}[5m])
+      )
+    labels:
+      component: cache
+      metric_group: latency
+
+  # Latency Correlation Analysis
+  - record: latency:correlation_cpu_response_time
+    expr: |
+      (
+        corr(node:cpu_usage_percent:rate5m, 
+             histogram_quantile(0.95, rate(http_request_duration_seconds_bucket{job="trading_app"}[5m]))
+        )[5m:]
+      )
+    labels:
+      metric_group: correlation
+
+  - record: latency:correlation_memory_response_time
+    expr: |
+      (
+        corr(node:memory_usage_percent, 
+             histogram_quantile(0.95, rate(http_request_duration_seconds_bucket{job="trading_app"}[5m]))
+        )[5m:]
+      )
+    labels:
+      metric_group: correlation

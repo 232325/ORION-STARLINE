@@ -1,0 +1,56 @@
+{
+  "name": "dex-integration-metal-tokenization",
+  "version": "1.0.0",
+  "description": "Comprehensive DEX Integration and Metal-backed Tokenization System",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "deploy:mainnet": "hardhat run scripts/deploy-mainnet.js --network mainnet",
+    "deploy:testnet": "hardhat run scripts/deploy-testnet.js --network testnet",
+    "deploy:local": "hardhat run scripts/deploy-local.js --network localhost",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "dex",
+    "uniswap",
+    "sushiswap",
+    "pancakeswap",
+    "curve",
+    "tokenization",
+    "gold",
+    "silver",
+    "platinum",
+    "palladium",
+    "defi",
+    "amm",
+    "compliance",
+    "kyc",
+    "aml"
+  ],
+  "author": "DEX Integration Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "chai": "^4.3.10",
+    "eslint": "^8.57.0",
+    "ethereum-waffle": "^4.0.10",
+    "ethers": "^5.7.2",
+    "hardhat": "^2.22.0",
+    "prettier": "^3.2.5"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.6",
+    "@uniswap/v3-periphery": "^1.4.4",
+    "@uniswap/v3-core": "^1.0.1",
+    "@sushiswap/core": "^2.1.0",
+    "@pancakeswap/v3-core": "^1.0.0",
+    "@pancakeswap/v3-periphery": "^1.0.0",
+    "curve-apis": "^1.0.2",
+    "openzeppelin-solidity": "^4.9.6",
+    "solidity-bytes-utils": "^0.8.0"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "twilio": {
+    "account_sid": "",
+    "auth_token": "",
+    "from_number": "",
+    "to_number": ""
+  },
+  "sendgrid": {
+    "api_key": "",
+    "from_email": "",
+    "to_email": ""
+  },
+  "telegram": {
+    "bot_token": "",
+    "chat_id": ""
+  },
+  "firebase": {
+    "service_account_path": "",
+    "fcm_token": ""
+  },
+  "news": {
+    "news_api_key": ""
+  },
+  "monitoring": {
+    "interval": 30,
+    "max_alerts_per_hour": 50
+  }
+}

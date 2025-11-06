@@ -1,0 +1,145 @@
+{
+  "test_suite": "Advanced GPT Assistant Mock Test",
+  "version": "2.0.0",
+  "start_time": "2025-11-05T00:18:06.609805",
+  "end_time": "2025-11-05T00:18:06.617435",
+  "results": [
+    {
+      "test": "Import Test",
+      "status": "pass",
+      "timestamp": "2025-11-05T00:18:06.609874",
+      "details": {
+        "message": "All imports successful with mocks"
+      }
+    },
+    {
+      "test": "Mock Assistant Creation",
+      "status": "pass",
+      "timestamp": "2025-11-05T00:18:06.614673",
+      "details": {
+        "assistant_created": true,
+        "has_trading_optimizer": true
+      }
+    },
+    {
+      "test": "Model Configs",
+      "status": "pass",
+      "timestamp": "2025-11-05T00:18:06.614694",
+      "details": {
+        "total_models": 5,
+        "configured_models": [
+          "gpt-4",
+          "gpt-4-turbo",
+          "gpt-4o",
+          "gemini-pro",
+          "gemini-pro-vision"
+        ]
+      }
+    },
+    {
+      "test": "Task Detection",
+      "status": "fail",
+      "timestamp": "2025-11-05T00:18:06.614727",
+      "details": {
+        "accuracy": 0.6,
+        "correct": 3,
+        "total": 5
+      }
+    },
+    {
+      "test": "Model Selection Strategies",
+      "status": "pass",
+      "timestamp": "2025-11-05T00:18:06.614780",
+      "details": {
+        "strategies_tested": 4,
+        "all_successful": true
+      }
+    },
+    {
+      "test": "Cache Functionality",
+      "status": "pass",
+      "timestamp": "2025-11-05T00:18:06.614835",
+      "details": {
+        "cache_get": true,
+        "cache_set": true,
+        "content_match": true
+      }
+    },
+    {
+      "test": "Rate Limiter",
+      "status": "pass",
+      "timestamp": "2025-11-05T00:18:06.614851",
+      "details": {
+        "initial_allowed": true,
+        "after_one_request": true,
+        "after_max_requests": true
+      }
+    },
+    {
+      "test": "Model Evaluator",
+      "status": "pass",
+      "timestamp": "2025-11-05T00:18:06.614876",
+      "details": {
+        "quality_score": 5,
+        "total_requests": 1
+      }
+    },
+    {
+      "test": "Performance Metrics",
+      "status": "pass",
+      "timestamp": "2025-11-05T00:18:06.614901",
+      "details": {
+        "required_keys": [
+          "models",
+          "cache",
+          "total_requests",
+          "active_conversations",
+          "timestamp"
+        ],
+        "total_requests": 0,
+        "active_conversations": 0
+      }
+    },
+    {
+      "test": "API Status",
+      "status": "error",
+      "timestamp": "2025-11-05T00:18:06.614916",
+      "details": {
+        "error": "'google'"
+      }
+    },
+    {
+      "test": "Cost Optimization",
+      "status": "pass",
+      "timestamp": "2025-11-05T00:18:06.614932",
+      "details": {
+        "required_keys": [
+          "budget_limit",
+          "recommendations",
+          "optimal_models"
+        ],
+        "budget_limit": 0.1,
+        "num_recommendations": 0
+      }
+    },
+    {
+      "test": "Conversation Management",
+      "status": "pass",
+      "timestamp": "2025-11-05T00:18:06.617329",
+      "details": {
+        "conversation_creation": true,
+        "message_added": true,
+        "reset_successful": true
+      }
+    },
+    {
+      "test": "Error Handling",
+      "status": "pass",
+      "timestamp": "2025-11-05T00:18:06.617376",
+      "details": {
+        "strategy_fallback": true,
+        "cache_error_handling": false
+      }
+    }
+  ]
+}

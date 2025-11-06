@@ -1,0 +1,60 @@
+{
+  "name": "market_overview",
+  "refresh_interval": 1,
+  "chart_configs": [
+    {
+      "id": "price_chart",
+      "type": "line",
+      "title": "Price Movement",
+      "data_source": "market_data",
+      "x_axis": "timestamp",
+      "y_axis": "price",
+      "config": {
+        "colors": [
+          "#3b82f6"
+        ]
+      }
+    },
+    {
+      "id": "volume_chart",
+      "type": "bar",
+      "title": "Volume",
+      "data_source": "market_data",
+      "x_axis": "timestamp",
+      "y_axis": "volume",
+      "config": {
+        "colors": [
+          "#10b981"
+        ]
+      }
+    },
+    {
+      "id": "volatility_chart",
+      "type": "line",
+      "title": "Volatility",
+      "data_source": "market_data",
+      "x_axis": "timestamp",
+      "y_axis": "volatility",
+      "config": {
+        "colors": [
+          "#f59e0b"
+        ]
+      }
+    }
+  ],
+  "alert_configs": [
+    {
+      "metric": "market.volatility",
+      "threshold": 0.05,
+      "severity": "MEDIUM",
+      "action": "show_alert"
+    }
+  ],
+  "layout_config": {
+    "columns": 3,
+    "rows": 2,
+    "responsive": true
+  },
+  "theme": "default",
+  "auto_refresh": true
+}

@@ -1,0 +1,165 @@
+{
+  "timestamp": "2025-11-03T04:01:55.182838",
+  "summary": {
+    "total_events": 2,
+    "high_impact_events": 2,
+    "black_swan_events": 0,
+    "news_items_analyzed": 3
+  },
+  "upcoming_events": [
+    {
+      "title": "FOMC Meeting - Federal Open Market Committee",
+      "date": "2025-11-06T14:00:55.081942",
+      "impact_level": "high",
+      "expected_impact": {
+        "stocks": 0.8,
+        "forex": 0.9,
+        "metals": 0.6,
+        "crypto": 0.7,
+        "bonds": 0.9
+      }
+    },
+    {
+      "title": "FOMC Meeting - Federal Open Market Committee",
+      "date": "2025-12-18T14:00:55.081942",
+      "impact_level": "high",
+      "expected_impact": {
+        "stocks": 0.8,
+        "forex": 0.9,
+        "metals": 0.6,
+        "crypto": 0.7,
+        "bonds": 0.9
+      }
+    }
+  ],
+  "news_analysis": [
+    {
+      "headline": "Federal Reserve signals potential rate cuts in next meeting",
+      "classification": "high",
+      "impact_magnitude": 0.8,
+      "affected_assets": {
+        "stocks": 0.7200000000000001,
+        "forex": 0.6400000000000001,
+        "metals": 0.32000000000000006,
+        "crypto": 0.48,
+        "bonds": 0.6400000000000001
+      }
+    },
+    {
+      "headline": "Gold prices surge on inflation concerns",
+      "classification": "high",
+      "impact_magnitude": 0.8,
+      "affected_assets": {
+        "stocks": 0.7200000000000001,
+        "forex": 0.4,
+        "metals": 0.5599999999999999,
+        "crypto": 0.48,
+        "bonds": 0.6400000000000001
+      }
+    },
+    {
+      "headline": "Tech earnings beat expectations, NASDAQ rallies",
+      "classification": "high",
+      "impact_magnitude": 0.7,
+      "affected_assets": {
+        "stocks": 0.63,
+        "forex": 0.35,
+        "metals": 0.27999999999999997,
+        "crypto": 0.42,
+        "bonds": 0.35
+      }
+    }
+  ],
+  "risk_assessment": {
+    "risk_level": "MEDIUM",
+    "high_impact_count": 2,
+    "total_impact_score": 0,
+    "recommendation": "Monitor positions closely, consider hedging strategies"
+  },
+  "asset_allocation_recommendations": {
+    "stocks": 0.29126213592233013,
+    "bonds": 0.3883495145631068,
+    "metals": 0.1941747572815534,
+    "forex": 0.0970873786407767,
+    "crypto": 0.02912621359223301
+  },
+  "market_reactions": [
+    {
+      "asset_class": "stocks",
+      "expected_move": 0.020000000000000004,
+      "volatility_spike": 80.0,
+      "direction": "bullish",
+      "confidence": 0.92
+    },
+    {
+      "asset_class": "forex",
+      "expected_move": 0.018000000000000002,
+      "volatility_spike": 90.0,
+      "direction": "bullish",
+      "confidence": 0.95
+    },
+    {
+      "asset_class": "metals",
+      "expected_move": 0.009,
+      "volatility_spike": 60.0,
+      "direction": "bullish",
+      "confidence": 0.84
+    },
+    {
+      "asset_class": "crypto",
+      "expected_move": 0.012249999999999999,
+      "volatility_spike": 70.0,
+      "direction": "bullish",
+      "confidence": 0.8799999999999999
+    },
+    {
+      "asset_class": "bonds",
+      "expected_move": 0.020250000000000004,
+      "volatility_spike": 90.0,
+      "direction": "bullish",
+      "confidence": 0.95
+    },
+    {
+      "asset_class": "stocks",
+      "expected_move": 0.020000000000000004,
+      "volatility_spike": 80.0,
+      "direction": "bullish",
+      "confidence": 0.92
+    },
+    {
+      "asset_class": "forex",
+      "expected_move": 0.018000000000000002,
+      "volatility_spike": 90.0,
+      "direction": "bullish",
+      "confidence": 0.95
+    },
+    {
+      "asset_class": "metals",
+      "expected_move": 0.009,
+      "volatility_spike": 60.0,
+      "direction": "bullish",
+      "confidence": 0.84
+    },
+    {
+      "asset_class": "crypto",
+      "expected_move": 0.012249999999999999,
+      "volatility_spike": 70.0,
+      "direction": "bullish",
+      "confidence": 0.8799999999999999
+    },
+    {
+      "asset_class": "bonds",
+      "expected_move": 0.020250000000000004,
+      "volatility_spike": 90.0,
+      "direction": "bullish",
+      "confidence": 0.95
+    }
+  ],
+  "event_patterns": {
+    "total_clusters": 1,
+    "largest_cluster": 2,
+    "cluster_details": {
+      "high_fomc meeting - feder": 2
+    }
+  }
+}

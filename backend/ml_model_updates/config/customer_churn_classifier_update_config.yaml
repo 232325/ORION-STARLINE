@@ -1,0 +1,18 @@
+batch_size: 32
+early_stopping: true
+early_stopping_patience: 10
+ensemble_updates: true
+epochs: 100
+federated_learning: false
+full_retrain: true
+incremental_learning: true
+learning_rate: 0.001
+max_training_time_hours: 24
+min_performance_threshold: 0.95
+resource_limits:
+  cpu_cores: 8
+  disk_gb: 100
+  gpu_count: 1
+  memory_gb: 16
+transfer_learning: true
+validation_split: 0.2

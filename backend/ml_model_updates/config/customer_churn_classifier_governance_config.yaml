@@ -1,0 +1,22 @@
+approval_workflow: true
+audit_trails: true
+bias_detection: true
+documentation_required: true
+explainable_ai: true
+fairness_metrics:
+- demographic_parity
+- equalized_odds
+- calibration
+- individual_fairness
+protected_attributes:
+- age
+- gender
+- race
+- ethnicity
+regulations:
+- GDPR
+- CCPA
+- HIPAA
+- SOX
+regulatory_compliance: true
+risk_assessment: true

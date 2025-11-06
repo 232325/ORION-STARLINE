@@ -1,0 +1,61 @@
+FOREX CARRY TRADE VA METAL PRICE CORRELATION ANALYSIS
+============================================================
+
+TAHLIL NATIJALARI:
+------------------------------
+
+1. FOREX CARRY TRADE TAHLILI:
+FOREX CARRY TRADE ANALYSIS REPORT
+==================================================
+Tahlil sanasi: 2025-11-03 04:06:28
+Topilgan imkoniyatlar soni: 2
+
+TOP CARRY TRADE OPPORTUNITIES:
+------------------------------
+1. USD/JPY
+   Foiz stavka farqi: 5.35%
+   Yillik return: 5.35%
+   Sharpe ratio: 0.296
+   Risk darajasi: High
+
+2. USD/CHF
+   Foiz stavka farqi: 3.50%
+   Yillik return: 3.50%
+   Sharpe ratio: 0.194
+   Risk darajasi: High
+
+
+2. METAL PRICE CORRELATION TAHLILI:
+AQSh Dollar Kuchi Korrelatsiyasi:
+  GOLD: 0.036
+  SILVER: 0.028
+  PLATINUM: -0.054
+  PALLADIUM: -0.020
+  COPPER: 0.019
+  ALUMINUM: -0.011
+
+Inflatsiya Korrelatsiyasi:
+  GOLD: -0.027 (Weak Negative)
+  SILVER: -0.010 (Weak Negative)
+  PLATINUM: 0.010 (Weak Positive)
+  PALLADIUM: -0.032 (Weak Negative)
+  COPPER: 0.026 (Weak Positive)
+  ALUMINUM: 0.060 (Weak Positive)
+
+3. TREYDING SIGNALLARI:
+------------------------------
+Carry Trade Imkoniyatlari:
+  USD/JPY: Sharpe Ratio = 0.296
+  USD/CHF: Sharpe Ratio = 0.194
+
+O'rtacha Qayta Tiklanish Signallari:
+  GOLD_COPPER: Short (Z-score: 2.46)
+  SILVER_PLATINUM: Short (Z-score: 2.02)
+  PLATINUM_ALUMINUM: Short (Z-score: 3.13)
+  PALLADIUM_COPPER: Short (Z-score: 2.96)
+
+4. PERFORMANCE XULOSASI:
+------------------------------
+Carry Trade Imkoniyatlari: 2
+Eng Yaxshi Sharpe Ratio: 0.296
+O'rtacha Return: 4.42%

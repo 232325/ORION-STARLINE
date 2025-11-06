@@ -1,0 +1,284 @@
+"""
+Real-time Ma'lumotlar Integratsiya Tizimi Test va Demo
+Real-time Data Integration System Test and Demo
+"""
+
+import asyncio
+import json
+import sys
+import os
+from datetime import datetime
+
+# Add the ai_modules path
+sys.path.append('/workspace/orion-starline/backend/ai_modules')
+
+# Import our modules
+from data_integration import DataIntegrationManager
+from market_data import MarketDataManager
+from news_feed import NewsFeedManager
+
+
+async def run_comprehensive_demo():
+    """Keng qamrovli demo - barcha modullar"""
+    print("=" * 80)
+    print("🚀 REAL-TIME MA'LUMOTLAR INTEGRATSIYA TIZIMI DEMO")
+    print("=" * 80)
+    print(f"🕒 Boshlanish vaqti: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print()
+    
+    # Initialize all managers
+    print("📡 Ma'lumot manager'larini ishga tushirish...")
+    data_manager = DataIntegrationManager()
+    market_manager = MarketDataManager()
+    news_manager = NewsFeedManager()
+    
+    # Test symbols
+    symbols = ["AAPL", "GOOGL", "MSFT", "TSLA", "BTCUSDT", "ETHUSDT"]
+    print(f"🔍 Test qilinadigan symbollar: {symbols}")
+    print()
+    
+    # 1. Data Integration Demo
+    print("=" * 50)
+    print("📊 1. DATA INTEGRATION MODULI")
+    print("=" * 50)
+    
+    try:
+        print("   🔄 Keng qamrovli bozor ma'lumotlarini olish...")
+        comprehensive_data = await data_manager.get_comprehensive_market_data("AAPL")
+        
+        if comprehensive_data:
+            print("   ✅ Ma'lumotlar muvaffaqiyatli olindi!")
+            print(f"   📈 Symbol: {comprehensive_data.get('symbol', 'N/A')}")
+            print(f"   🕒 Vaqt: {comprehensive_data.get('timestamp', 'N/A')}")
+            print(f"   📊 Multi-timeframe soni: {len(comprehensive_data.get('multi_timeframe', {}))}")
+            print(f"   💬 Sentiment mavjud: {'Ha' if 'sentiment' in comprehensive_data else 'Yoq'}")
+            print(f"   📅 Iqtisodiy voqealar: {len(comprehensive_data.get('economic_calendar', []))}")
+            
+            # Show quality score
+            quality = comprehensive_data.get('data_quality', {})
+            if quality:
+                print(f"   ⭐ Ma'lumotlar sifati: {quality.get('quality_score', 0):.2f}")
+        else:
+            print("   ❌ Ma'lumotlarni olishda xatolik")
+            
+    except Exception as e:
+        print(f"   ❌ Xatolik: {str(e)}")
+    
+    print()
+    
+    # 2. Market Data Demo
+    print("=" * 50)
+    print("💹 2. MARKET DATA MODULI")
+    print("=" * 50)
+    
+    try:
+        print("   🔄 Real-time streaming ishga tushirish...")
+        await market_manager.start_streaming(["BTCUSDT", "ETHUSDT"])
+        print("   ✅ Streaming boshlandi!")
+        
+        # Wait for some data
+        await asyncio.sleep(2)
+        
+        print("   📊 Bozor umumiy holatini olish...")
+        overview = market_manager.get_market_overview()
+        
+        if overview and 'symbols' in overview:
+            print(f"   📈 Faol symbollar soni: {overview.get('active_symbols', 0)}")
+            print(f"   💹 Ma'lumot mavjud bo'lganlar:")
+            
+            for symbol_data in overview['symbols'][:3]:  # Show first 3
+                print(f"      • {symbol_data['symbol']}: ${symbol_data['current_price']:.2f} "
+                      f"({symbol_data['change']:+.2f}%)")
+                print(f"        Trendi: {symbol_data['trend']} | "
+                      f"Volatillik: {symbol_data['volatility']:.3f}")
+        else:
+            print("   ℹ️  Hali ma'lumot olinmadi (streaming vaqt kerak)")
+        
+        # Get specific symbol data
+        print("   🔍 AAPL uchun batafsil ma'lumotlar...")
+        apple_data = market_manager.get_real_time_data("AAPL")
+        if apple_data and 'error' not in apple_data:
+            print("   ✅ AAPL ma'lumotlari topildi!")
+        else:
+            print("   ℹ️  AAPL uchun real-time ma'lumotlar hali olinmagan")
+        
+        # Stop streaming
+        await market_manager.stop_streaming()
+        print("   ⏹️  Streaming to'xtatildi")
+        
+    except Exception as e:
+        print(f"   ❌ Xatolik: {str(e)}")
+    
+    print()
+    
+    # 3. News Feed Demo
+    print("=" * 50)
+    print("📰 3. NEWS FEED MODULI")
+    print("=" * 50)
+    
+    try:
+        print("   🔄 Keng qamrovli sentiment analizi...")
+        sentiment_data = await news_manager.get_comprehensive_sentiment(["AAPL", "TSLA"])
+        
+        if sentiment_data:
+            print("   ✅ Sentiment ma'lumotlari muvaffaqiyatli olindi!")
+            
+            for symbol, metrics in sentiment_data.items():
+                print(f"   📊 {symbol}:")
+                print(f"      💭 Umumiy sentiment: {metrics.overall_score:+.3f} "
+                      f"({metrics.sentiment_trend})")
+                print(f"      📰 Yangilik sentiment: {metrics.news_sentiment:+.3f}")
+                print(f"      📱 Ijtimoiy tarmoq sentiment: {metrics.social_sentiment:+.3f}")
+                print(f"      📈 Isonish darajasi: {metrics.confidence:.2f}")
+                print(f"      📊 Ma'lumotlar hajmi: {metrics.volume}")
+        else:
+            print("   ℹ️  Hali sentiment ma'lumotlari olinmagan")
+        
+        print("   📋 Yangiliklar xulosasini olish...")
+        news_summary = await news_manager.get_news_summary(["AAPL", "MSFT"])
+        
+        if news_summary and 'total_articles' in news_summary:
+            breakdown = news_summary['sentiment_breakdown']
+            print(f"   📰 Jami maqolalar: {news_summary['total_articles']}")
+            print(f"   😊 Ijobiy: {breakdown['positive']} | "
+                  f"😔 Salbiy: {breakdown['negative']} | "
+                  f"😐 Neytral: {breakdown['neutral']}")
+            print(f"   📊 O'rtacha sentiment: {news_summary.get('average_sentiment', 0):+.3f}")
+        
+        print("   📅 Iqtisodiy kalendar ma'lumotlari...")
+        economic_events = await news_manager.fetch_economic_calendar()
+        
+        if economic_events:
+            print(f"   📈 Topilgan voqealar: {len(economic_events)}")
+            for event in economic_events[:3]:  # Show first 3
+                print(f"      • {event.title} - {event.date.strftime('%m-%d %H:%M')} "
+                      f"({event.impact_level})")
+        else:
+            print("   ℹ️  Iqtisodiy kalendar ma'lumotlari mavjud emas")
+        
+    except Exception as e:
+        print(f"   ❌ Xatolik: {str(e)}")
+    
+    print()
+    
+    # 4. Performance and Cache Status
+    print("=" * 50)
+    print("⚡ 4. PERFORMANCE VA CACHE STATUS")
+    print("=" * 50)
+    
+    try:
+        # Data integration cache status
+        print("   📡 Data Integration Cache:")
+        data_cache = data_manager.engine.get_cache_status()
+        print(f"      💾 Cache hajmi: {data_cache['cache_size']} element")
+        print(f"      🔧 Performance metrikalar: {len(data_cache['performance_metrics'])}")
+        
+        # Market data cache status
+        print("   💹 Market Data Cache:")
+        market_cache = market_manager.processor.get_market_overview()
+        print(f"      📊 Faol symbollar: {market_cache.get('active_symbols', 0)}")
+        print(f"      💾 Tarixiy ma'lumotlar: {len(market_manager.processor.data_history)}")
+        
+        # News feed cache status
+        print("   📰 News Feed Cache:")
+        news_cache = news_manager.get_cache_status()
+        print(f"      📄 Yangiliklar cache: {news_cache['news_cache_size']} ta")
+        print(f"      📱 Ijtimoiy tarmoq cache: {news_cache['social_cache_size']} ta")
+        print(f"      💭 Sentiment cache: {news_cache['sentiment_cache_size']} ta")
+        
+    except Exception as e:
+        print(f"   ❌ Xatolik: {str(e)}")
+    
+    print()
+    
+    # 5. Integration Summary
+    print("=" * 50)
+    print("🎯 5. INTEGRATSIYA XULOSASI")
+    print("=" * 50)
+    
+    print("   ✅ Muvaffaqiyatli implementatsiya qilingan xususiyatlar:")
+    print("      📊 Real-time bozor ma'lumotlari integratsiyasi")
+    print("      💹 Multi-timeframe ma'lumotlar (1m, 5m, 15m, 1h, 4h, 1d)")
+    print("      📰 Iqtisodiy yangiliklar va sentiment analizi")
+    print("      📱 Ijtimoiy tarmoq sentimenti (Twitter, Reddit)")
+    print("      🔍 Texnik indikatorlar (RSI, MACD, Bollinger Bands)")
+    print("      📈 Iqtisodiy kalendar integratsiyasi")
+    print("      💾 Ma'lumotlar cache va optimizatsiya")
+    print("      ⚡ Real-time WebSocket streaming")
+    print("      🔄 Multi-source data fusion")
+    print("      📊 Ma'lumotlar sifati validatsiyasi")
+    
+    print()
+    print("   🔗 Integratsiya qilingan API'lar:")
+    print("      • Yahoo Finance API")
+    print("      • Alpha Vantage")
+    print("      • IEX Cloud") 
+    print("      • Polygon.io (Binance, Coinbase)")
+    print("      • Finnhub News")
+    print("      • NewsAPI.org")
+    print("      • Twitter API")
+    print("      • Reddit API")
+    
+    print()
+    print("   🛡️  Xavfsizlik va Performance:")
+    print("      • API rate limiting")
+    print("      • Error handling va retry logic")
+    print("      • Data validation")
+    print("      • Memory-efficient caching")
+    print("      • Concurrent request processing")
+    
+    print()
+    print("=" * 80)
+    print(f"🎉 DEMO MUVAFFAQIYATLI YAKUNLANDI!")
+    print(f"🕒 Tugash vaqti: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print("=" * 80)
+
+
+async def test_individual_modules():
+    """Har bir modulni alohida test qilish"""
+    print("🔧 Har bir modulni alohida test qilish...")
+    print()
+    
+    # Test data integration
+    print("1️⃣ Data Integration Moduli Test")
+    try:
+        data_manager = DataIntegrationManager()
+        result = await data_manager.get_comprehensive_market_data("AAPL")
+        print(f"   Result: {len(str(result))} characters")
+        print("   ✅ Data Integration test passed")
+    except Exception as e:
+        print(f"   ❌ Data Integration test failed: {str(e)}")
+    
+    # Test market data
+    print("\n2️⃣ Market Data Moduli Test")
+    try:
+        market_manager = MarketDataManager()
+        overview = market_manager.get_market_overview()
+        print(f"   Active symbols: {overview.get('active_symbols', 0)}")
+        print("   ✅ Market Data test passed")
+    except Exception as e:
+        print(f"   ❌ Market Data test failed: {str(e)}")
+    
+    # Test news feed
+    print("\n3️⃣ News Feed Moduli Test")
+    try:
+        news_manager = NewsFeedManager()
+        cache_status = news_manager.get_cache_status()
+        print(f"   Cache entries: {len(cache_status)}")
+        print("   ✅ News Feed test passed")
+    except Exception as e:
+        print(f"   ❌ News Feed test failed: {str(e)}")
+
+
+if __name__ == "__main__":
+    print("Real-time Ma'lumotlar Integratsiya Tizimi")
+    print("Real-time Data Integration System")
+    print("=" * 60)
+    
+    # Run individual tests first
+    asyncio.run(test_individual_modules())
+    
+    print("\n" + "=" * 60)
+    
+    # Run comprehensive demo
+    asyncio.run(run_comprehensive_demo())

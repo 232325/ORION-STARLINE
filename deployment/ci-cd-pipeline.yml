@@ -1,0 +1,482 @@
+name: Orion Starline Production CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, production]
+    tags: ['v*']
+  pull_request:
+    branches: [main]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_TAG: ${{ github.sha }}
+  KUBECONFIG_SECRET_NAME: kubeconfig-orion
+
+jobs:
+  # Security scanning and dependency check
+  security-scan:
+    name: Security Analysis
+    runs-on: ubuntu-latest
+    outputs:
+      security-status: ${{ steps.security.outputs.status }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run Trivy vulnerability scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+
+      - name: Upload Trivy scan results to GitHub Security tab
+        uses: github/codeql-action/upload-sarif@v3
+        if: always()
+        with:
+          sarif_file: 'trivy-results.sarif'
+
+      - name: Run Bandit security scan
+        run: |
+          pip install bandit[toml]
+          bandit -r . -f json -o bandit-results.json || true
+
+      - name: Upload Bandit results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: bandit-results
+          path: bandit-results.json
+
+      - name: Set security status
+        id: security
+        run: |
+          if [ -f trivy-results.sarif ]; then
+            echo "status=success" >> $GITHUB_OUTPUT
+          else
+            echo "status=failure" >> $GITHUB_OUTPUT
+          fi
+
+  # Code quality and testing
+  quality-check:
+    name: Code Quality & Testing
+    runs-on: ubuntu-latest
+    needs: security-scan
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'pnpm'
+          cache-dependency-path: 'frontend/pnpm-lock.yaml'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install -r backend/requirements.txt
+
+      - name: Install backend dependencies
+        working-directory: backend
+        run: pip install -r requirements.txt
+
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: pnpm install --frozen-lockfile
+
+      - name: Backend linting and formatting
+        working-directory: backend
+        run: |
+          black --check .
+          isort --check-only .
+          flake8 .
+
+      - name: Frontend linting
+        working-directory: frontend
+        run: |
+          pnpm lint
+          pnpm type-check
+
+      - name: Backend tests
+        working-directory: backend
+        run: |
+          pytest --cov=. --cov-report=xml --cov-report=html
+
+      - name: Upload backend coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./backend/coverage.xml
+          flags: backend
+
+      - name: Frontend tests
+        working-directory: frontend
+        run: pnpm test --coverage
+
+      - name: Upload frontend coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./frontend/coverage.xml
+          flags: frontend
+
+  # Build and push Docker images
+  build-images:
+    name: Build Docker Images
+    runs-on: ubuntu-latest
+    needs: [security-scan, quality-check]
+    if: github.event_name == 'push' || github.event_name == 'tag'
+    outputs:
+      image-digest: ${{ steps.build.outputs.digest }}
+      image-tag: ${{ steps.meta.outputs.tags }}
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=semver,pattern={{version}}
+            type=semver,pattern={{major}}.{{minor}}
+            type=sha,prefix={{branch}}-
+
+      - name: Build and push Docker image
+        id: build
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: deployment/Dockerfile
+          target: production
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          platforms: linux/amd64,linux/arm64
+          build-args: |
+            BUILD_DATE=${{ github.event.head_commit.timestamp }}
+            VCS_REF=${{ github.sha }}
+            VERSION=${{ steps.meta.outputs.version }}
+
+  # Database migrations
+  database-migration:
+    name: Database Migration
+    runs-on: ubuntu-latest
+    needs: build-images
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/production'
+    environment: production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run database migrations
+        env:
+          DATABASE_URL: ${{ secrets.PRODUCTION_DATABASE_URL }}
+          IMAGE_TAG: ${{ needs.build-images.outputs.image-tag }}
+        run: |
+          # Wait for database to be ready
+          until pg_isready -h $DB_HOST -p $DB_PORT -U $DB_USER; do
+            echo "Database not ready, waiting..."
+            sleep 5
+          done
+          
+          # Run migrations
+          python scripts/migrate.py --database-url $DATABASE_URL
+
+  # Deploy to staging
+  deploy-staging:
+    name: Deploy to Staging
+    runs-on: ubuntu-latest
+    needs: [build-images, database-migration]
+    if: github.ref == 'refs/heads/main'
+    environment: staging
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'v1.28.0'
+
+      - name: Configure kubectl
+        run: |
+          echo "${{ secrets.STAGING_KUBECONFIG }}" | base64 -d > kubeconfig
+          export KUBECONFIG=kubeconfig
+          
+      - name: Deploy to staging cluster
+        env:
+          KUBECONFIG: kubeconfig
+          IMAGE_TAG: ${{ needs.build-images.outputs.image-tag }}
+        run: |
+          # Update image tags in deployment
+          sed -i "s|image: .*|image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${IMAGE_TAG}|g" deployment/kubernetes.yml
+          
+          # Apply Kubernetes manifests
+          kubectl apply -f deployment/kubernetes.yml -n orion-staging
+          
+          # Wait for rollout to complete
+          kubectl rollout status deployment/orion-backend -n orion-staging
+          kubectl rollout status deployment/orion-frontend -n orion-staging
+
+      - name: Run smoke tests
+        env:
+          STAGING_URL: ${{ secrets.STAGING_URL }}
+        run: |
+          python scripts/smoke_tests.py --url $STAGING_URL --environment staging
+
+      - name: Run integration tests
+        env:
+          STAGING_URL: ${{ secrets.STAGING_URL }}
+          API_KEY: ${{ secrets.STAGING_API_KEY }}
+        run: |
+          python scripts/integration_tests.py --url $STAGING_URL --api-key $API_KEY
+
+  # Performance testing
+  performance-test:
+    name: Performance Testing
+    runs-on: ubuntu-latest
+    needs: deploy-staging
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run load tests
+        env:
+          STAGING_URL: ${{ secrets.STAGING_URL }}
+          LOCUST_USERS: 100
+          LOCUST_DURATION: 300s
+        run: |
+          pip install locust
+          locust -f scripts/load_test.py \
+            --host $STAGING_URL \
+            --users $LOCUST_USERS \
+            --headless \
+            --run-time $LOCUST_DURATION \
+            --csv=load_test_results
+
+      - name: Upload performance results
+        uses: actions/upload-artifact@v4
+        with:
+          name: performance-results
+          path: load_test_results.*
+
+  # Deploy to production
+  deploy-production:
+    name: Deploy to Production
+    runs-on: ubuntu-latest
+    needs: [build-images, database-migration]
+    if: github.ref == 'refs/heads/production' || startsWith(github.ref, 'refs/tags/v')
+    environment: production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'v1.28.0'
+
+      - name: Configure kubectl
+        run: |
+          echo "${{ secrets.PRODUCTION_KUBECONFIG }}" | base64 -d > kubeconfig
+          export KUBECONFIG=kubeconfig
+
+      - name: Backup production database
+        env:
+          PRODUCTION_DATABASE_URL: ${{ secrets.PRODUCTION_DATABASE_URL }}
+          BACKUP_S3_BUCKET: ${{ secrets.BACKUP_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          # Create backup before deployment
+          python scripts/backup_database.py --url $PRODUCTION_DATABASE_URL --s3-bucket $BACKUP_S3_BUCKET
+
+      - name: Deploy to production cluster
+        env:
+          KUBECONFIG: kubeconfig
+          IMAGE_TAG: ${{ needs.build-images.outputs.image-tag }}
+        run: |
+          # Update image tags in deployment
+          sed -i "s|image: .*|image: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${IMAGE_TAG}|g" deployment/kubernetes.yml
+          
+          # Apply Kubernetes manifests
+          kubectl apply -f deployment/kubernetes.yml -n orion-production
+          
+          # Wait for rollout to complete
+          kubectl rollout status deployment/orion-backend -n orion-production --timeout=600s
+          kubectl rollout status deployment/orion-frontend -n orion-production --timeout=600s
+
+      - name: Verify deployment
+        env:
+          PRODUCTION_URL: ${{ secrets.PRODUCTION_URL }}
+        run: |
+          # Wait for service to be ready
+          sleep 30
+          
+          # Run health checks
+          python scripts/health_check.py --url $PRODUCTION_URL
+          
+          # Run smoke tests
+          python scripts/smoke_tests.py --url $PRODUCTION_URL --environment production
+
+      - name: Update deployment status
+        run: |
+          echo "Deployment completed successfully at $(date)" >> deployment.log
+          echo "Version: ${{ github.ref }} - ${{ github.sha }}" >> deployment.log
+
+  # Post-deployment monitoring
+  post-deployment:
+    name: Post-Deployment Monitoring
+    runs-on: ubuntu-latest
+    needs: deploy-production
+    if: always() && (needs.deploy-production.result == 'success' || needs.deploy-production.result == 'failure')
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Monitor application metrics
+        env:
+          PROMETHEUS_URL: ${{ secrets.PROMETHEUS_URL }}
+          GRAFANA_URL: ${{ secrets.GRAFANA_URL }}
+        run: |
+          # Check critical metrics
+          python scripts/monitor_deployment.py \
+            --prometheus-url $PROMETHEUS_URL \
+            --grafana-url $GRAFANA_URL \
+            --deployment-id ${{ github.run_id }}
+
+      - name: Send deployment notification
+        if: always()
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          DEPLOYMENT_STATUS: ${{ needs.deploy-production.result }}
+        run: |
+          python scripts/notify_deployment.py \
+            --status $DEPLOYMENT_STATUS \
+            --environment production \
+            --version ${{ github.ref }} \
+            --run-id ${{ github.run_id }}
+
+  # Cleanup old images
+  cleanup:
+    name: Cleanup Old Images
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Delete old package versions
+        uses: actions/delete-package-versions@v4
+        with:
+          package-name: ${{ env.IMAGE_NAME }}
+          package-type: 'container'
+          min-versions-to-keep: 5
+          delete-only-untagged-versions: true
+
+      - name: Delete old workflow runs
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const workflowRuns = await github.rest.actions.listWorkflowRunsForRepo({
+              owner,
+              repo,
+              per_page: 100,
+              status: 'completed'
+            });
+            
+            const runsToDelete = workflowRuns.data.workflow_runs
+              .filter(run => run.head_branch === 'main' && run.conclusion === 'success')
+              .slice(10); // Keep only the 10 most recent successful runs
+            
+            for (const run of runsToDelete) {
+              await github.rest.actions.deleteWorkflowRun({
+                owner,
+                repo,
+                run_id: run.id
+              });
+            }
+
+# Scheduled jobs
+---
+name: Scheduled Maintenance
+
+on:
+  schedule:
+    # Daily backup at 2 AM UTC
+    - cron: '0 2 * * *'
+    # Weekly security scan on Sundays at 3 AM UTC  
+    - cron: '0 3 * * 0'
+
+jobs:
+  daily-backup:
+    name: Daily Database Backup
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run scheduled backup
+        env:
+          PRODUCTION_DATABASE_URL: ${{ secrets.PRODUCTION_DATABASE_URL }}
+          BACKUP_S3_BUCKET: ${{ secrets.BACKUP_S3_BUCKET }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        run: |
+          python scripts/backup_database.py \
+            --url $PRODUCTION_DATABASE_URL \
+            --s3-bucket $BACKUP_S3_BUCKET \
+            --retention-days 30
+
+  weekly-security-scan:
+    name: Weekly Security Scan
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run comprehensive security scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'sarif'
+          output: 'weekly-security-scan.sarif'
+
+      - name: Upload security scan results
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: 'weekly-security-scan.sarif'

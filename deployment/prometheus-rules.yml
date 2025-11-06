@@ -1,0 +1,313 @@
+# Prometheus alert rules for Orion Starline
+# Critical alerts for production monitoring
+
+groups:
+  - name: orion.critical
+    rules:
+      # Application is down
+      - alert: OrionApplicationDown
+        expr: up{job="orion-backend"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: orion-backend
+        annotations:
+          summary: "Orion backend application is down"
+          description: "Orion backend application has been down for more than 1 minute"
+          runbook_url: "https://runbooks.orion-starline.com/application-down"
+
+      # High error rate
+      - alert: OrionHighErrorRate
+        expr: rate(orion_requests_total{status=~"5.."}[5m]) / rate(orion_requests_total[5m]) > 0.05
+        for: 2m
+        labels:
+          severity: critical
+          service: orion-backend
+        annotations:
+          summary: "Orion backend high error rate"
+          description: "Error rate is above 5% for more than 2 minutes"
+
+      # Database connection issues
+      - alert: OrionDatabaseConnectionFailure
+        expr: orion_database_connections == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: database
+        annotations:
+          summary: "Database connection failure"
+          description: "No database connections detected for more than 1 minute"
+
+      # High response time
+      - alert: OrionHighResponseTime
+        expr: histogram_quantile(0.95, rate(orion_request_duration_seconds_bucket[5m])) > 2
+        for: 3m
+        labels:
+          severity: critical
+          service: orion-backend
+        annotations:
+          summary: "Orion backend high response time"
+          description: "95th percentile response time is above 2 seconds for more than 3 minutes"
+
+      # Memory usage critical
+      - alert: OrionHighMemoryUsage
+        expr: orion_memory_usage_percent > 90
+        for: 2m
+        labels:
+          severity: critical
+          service: system
+        annotations:
+          summary: "Orion memory usage critical"
+          description: "Memory usage is above 90% for more than 2 minutes"
+
+      # CPU usage critical
+      - alert: OrionHighCPUUsage
+        expr: orion_cpu_usage_percent > 90
+        for: 2m
+        labels:
+          severity: critical
+          service: system
+        annotations:
+          summary: "Orion CPU usage critical"
+          description: "CPU usage is above 90% for more than 2 minutes"
+
+      # Disk space critical
+      - alert: OrionDiskSpaceCritical
+        expr: orion_disk_usage_percent > 90
+        for: 1m
+        labels:
+          severity: critical
+          service: system
+        annotations:
+          summary: "Orion disk space critical"
+          description: "Disk usage is above 90% for more than 1 minute"
+
+  - name: orion.warning
+    rules:
+      # Application slow response
+      - alert: OrionSlowResponseTime
+        expr: histogram_quantile(0.95, rate(orion_request_duration_seconds_bucket[5m])) > 1
+        for: 5m
+        labels:
+          severity: warning
+          service: orion-backend
+        annotations:
+          summary: "Orion backend slow response time"
+          description: "95th percentile response time is above 1 second for more than 5 minutes"
+
+      # Memory usage warning
+      - alert: OrionHighMemoryUsage
+        expr: orion_memory_usage_percent > 80
+        for: 5m
+        labels:
+          severity: warning
+          service: system
+        annotations:
+          summary: "Orion memory usage high"
+          description: "Memory usage is above 80% for more than 5 minutes"
+
+      # CPU usage warning
+      - alert: OrionHighCPUUsage
+        expr: orion_cpu_usage_percent > 80
+        for: 5m
+        labels:
+          severity: warning
+          service: system
+        annotations:
+          summary: "Orion CPU usage high"
+          description: "CPU usage is above 80% for more than 5 minutes"
+
+      # Disk space warning
+      - alert: OrionDiskSpaceWarning
+        expr: orion_disk_usage_percent > 80
+        for: 5m
+        labels:
+          severity: warning
+          service: system
+        annotations:
+          summary: "Orion disk space warning"
+          description: "Disk usage is above 80% for more than 5 minutes"
+
+      # Low cache hit rate
+      - alert: OrionLowCacheHitRate
+        expr: orion_cache_hit_rate < 70
+        for: 5m
+        labels:
+          severity: warning
+          service: cache
+        annotations:
+          summary: "Orion cache hit rate low"
+          description: "Cache hit rate is below 70% for more than 5 minutes"
+
+      # High database connections
+      - alert: OrionHighDatabaseConnections
+        expr: orion_database_connections > 80
+        for: 3m
+        labels:
+          severity: warning
+          service: database
+        annotations:
+          summary: "Orion high database connections"
+          description: "Database connections are above 80 for more than 3 minutes"
+
+  - name: orion.trading
+    rules:
+      # No trading signals generated
+      - alert: OrionNoTradingSignals
+        expr: rate(orion_trading_signals_total[10m]) == 0
+        for: 30m
+        labels:
+          severity: warning
+          service: trading
+        annotations:
+          summary: "No trading signals generated"
+          description: "No trading signals have been generated in the last 30 minutes"
+
+      # High number of failed trading signals
+      - alert: OrionHighFailedTradingSignals
+        expr: rate(orion_trading_signals_total{signal_type="failed"}[5m]) > 10
+        for: 2m
+        labels:
+          severity: critical
+          service: trading
+        annotations:
+          summary: "High number of failed trading signals"
+          description: "More than 10 failed trading signals per minute for 2 minutes"
+
+      # Trading latency high
+      - alert: OrionHighTradingLatency
+        expr: histogram_quantile(0.95, rate(orion_trading_latency_seconds_bucket[5m])) > 1
+        for: 3m
+        labels:
+          severity: warning
+          service: trading
+        annotations:
+          summary: "Orion trading latency high"
+          description: "95th percentile trading latency is above 1 second for more than 3 minutes"
+
+      # Strategy performance degradation
+      - alert: OrionStrategyPerformanceDegradation
+        expr: orion_strategy_pnl_rate < -0.05
+        for: 15m
+        labels:
+          severity: critical
+          service: trading
+        annotations:
+          summary: "Orion strategy performance degradation"
+          description: "Strategy PnL rate is below -5% for more than 15 minutes"
+
+  - name: orion.security
+    rules:
+      # High number of authentication failures
+      - alert: OrionHighAuthFailures
+        expr: rate(orion_auth_failures_total[5m]) > 10
+        for: 2m
+        labels:
+          severity: critical
+          service: security
+        annotations:
+          summary: "Orion high authentication failures"
+          description: "More than 10 authentication failures per minute for 2 minutes"
+
+      # Suspicious API activity
+      - alert: OrionSuspiciousAPIActivity
+        expr: rate(orion_api_requests_total{source="unknown"}[5m]) > 50
+        for: 3m
+        labels:
+          severity: critical
+          service: security
+        annotations:
+          summary: "Orion suspicious API activity"
+          description: "High rate of API requests from unknown sources for more than 3 minutes"
+
+      # Rate limit violations
+      - alert: OrionRateLimitViolations
+        expr: rate(orion_rate_limit_violations_total[5m]) > 20
+        for: 2m
+        labels:
+          severity: warning
+          service: security
+        annotations:
+          summary: "Orion rate limit violations"
+          description: "More than 20 rate limit violations per minute for 2 minutes"
+
+  - name: orion.infrastructure
+    rules:
+      # Redis connection failure
+      - alert: OrionRedisConnectionFailure
+        expr: up{job="redis"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: redis
+        annotations:
+          summary: "Redis connection failure"
+          description: "Redis instance is down for more than 1 minute"
+
+      # Elasticsearch connection failure
+      - alert: OrionElasticsearchConnectionFailure
+        expr: up{job="elasticsearch"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: elasticsearch
+        annotations:
+          summary: "Elasticsearch connection failure"
+          description: "Elasticsearch instance is down for more than 1 minute"
+
+      # Load balancer unhealthy
+      - alert: OrionLoadBalancerUnhealthy
+        expr: up{job="orion-frontend"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          service: load-balancer
+        annotations:
+          summary: "Load balancer unhealthy"
+          description: "Frontend load balancer is down for more than 1 minute"
+
+      # Certificate expiration warning
+      - alert: OrionCertificateExpiring
+        expr: orion_ssl_certificate_expiry_days < 30
+        for: 1h
+        labels:
+          severity: warning
+          service: security
+        annotations:
+          summary: "Orion SSL certificate expiring"
+          description: "SSL certificate expires in less than 30 days"
+
+  - name: orion.business
+    rules:
+      # Low trading volume
+      - alert: OrionLowTradingVolume
+        expr: rate(orion_trading_volume_total[1h]) < 1000
+        for: 30m
+        labels:
+          severity: warning
+          service: business
+        annotations:
+          summary: "Orion low trading volume"
+          description: "Trading volume is below 1000 per hour for more than 30 minutes"
+
+      # High latency in order execution
+      - alert: OrionHighOrderExecutionLatency
+        expr: histogram_quantile(0.95, rate(orion_order_execution_latency_seconds_bucket[5m])) > 5
+        for: 3m
+        labels:
+          severity: critical
+          service: business
+        annotations:
+          summary: "Orion high order execution latency"
+          description: "95th percentile order execution latency is above 5 seconds for more than 3 minutes"
+
+      # Portfolio value drop
+      - alert: OrionPortfolioValueDrop
+        expr: rate(orion_portfolio_value[1h]) < -0.1
+        for: 15m
+        labels:
+          severity: critical
+          service: business
+        annotations:
+          summary: "Orion portfolio value drop"
+          description: "Portfolio value has dropped more than 10% in the last hour"

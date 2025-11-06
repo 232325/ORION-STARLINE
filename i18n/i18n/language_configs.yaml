@@ -1,0 +1,200 @@
+ar:
+  currency: SAR
+  direction: rtl
+  locale: ar_SA
+  name: Arabic
+  native_name: العربية
+  rtl_support: true
+  timezone: Asia/Riyadh
+da:
+  currency: DKK
+  direction: ltr
+  locale: da_DK
+  name: Danish
+  native_name: Dansk
+  rtl_support: false
+  timezone: Europe/Copenhagen
+de:
+  currency: EUR
+  direction: ltr
+  locale: de_DE
+  name: German
+  native_name: Deutsch
+  rtl_support: false
+  timezone: Europe/Berlin
+en:
+  currency: USD
+  direction: ltr
+  locale: en_US
+  name: English
+  native_name: English
+  rtl_support: false
+  timezone: America/New_York
+es:
+  currency: EUR
+  direction: ltr
+  locale: es_ES
+  name: Spanish
+  native_name: Español
+  rtl_support: false
+  timezone: Europe/Madrid
+fa:
+  currency: IRR
+  direction: rtl
+  locale: fa_IR
+  name: Persian
+  native_name: فارسی
+  rtl_support: true
+  timezone: Asia/Tehran
+fi:
+  currency: EUR
+  direction: ltr
+  locale: fi_FI
+  name: Finnish
+  native_name: Suomi
+  rtl_support: false
+  timezone: Europe/Helsinki
+fr:
+  currency: EUR
+  direction: ltr
+  locale: fr_FR
+  name: French
+  native_name: Français
+  rtl_support: false
+  timezone: Europe/Paris
+he:
+  currency: ILS
+  direction: rtl
+  locale: he_IL
+  name: Hebrew
+  native_name: עברית
+  rtl_support: true
+  timezone: Asia/Jerusalem
+hi:
+  currency: INR
+  direction: ltr
+  locale: hi_IN
+  name: Hindi
+  native_name: हिन्दी
+  rtl_support: false
+  timezone: Asia/Kolkata
+id:
+  currency: IDR
+  direction: ltr
+  locale: id_ID
+  name: Indonesian
+  native_name: Bahasa Indonesia
+  rtl_support: false
+  timezone: Asia/Jakarta
+it:
+  currency: EUR
+  direction: ltr
+  locale: it_IT
+  name: Italian
+  native_name: Italiano
+  rtl_support: false
+  timezone: Europe/Rome
+ja:
+  currency: JPY
+  direction: ltr
+  locale: ja_JP
+  name: Japanese
+  native_name: 日本語
+  rtl_support: false
+  timezone: Asia/Tokyo
+ko:
+  currency: KRW
+  direction: ltr
+  locale: ko_KR
+  name: Korean
+  native_name: 한국어
+  rtl_support: false
+  timezone: Asia/Seoul
+nl:
+  currency: EUR
+  direction: ltr
+  locale: nl_NL
+  name: Dutch
+  native_name: Nederlands
+  rtl_support: false
+  timezone: Europe/Amsterdam
+'no':
+  currency: NOK
+  direction: ltr
+  locale: no_NO
+  name: Norwegian
+  native_name: Norsk
+  rtl_support: false
+  timezone: Europe/Oslo
+pl:
+  currency: PLN
+  direction: ltr
+  locale: pl_PL
+  name: Polish
+  native_name: Polski
+  rtl_support: false
+  timezone: Europe/Warsaw
+pt:
+  currency: EUR
+  direction: ltr
+  locale: pt_PT
+  name: Portuguese
+  native_name: Português
+  rtl_support: false
+  timezone: Europe/Lisbon
+ru:
+  currency: RUB
+  direction: ltr
+  locale: ru_RU
+  name: Russian
+  native_name: Русский
+  rtl_support: false
+  timezone: Europe/Moscow
+sv:
+  currency: SEK
+  direction: ltr
+  locale: sv_SE
+  name: Swedish
+  native_name: Svenska
+  rtl_support: false
+  timezone: Europe/Stockholm
+th:
+  currency: THB
+  direction: ltr
+  locale: th_TH
+  name: Thai
+  native_name: ไทย
+  rtl_support: false
+  timezone: Asia/Bangkok
+tr:
+  currency: TRY
+  direction: ltr
+  locale: tr_TR
+  name: Turkish
+  native_name: Türkçe
+  rtl_support: false
+  timezone: Europe/Istanbul
+uz:
+  currency: UZS
+  direction: ltr
+  locale: uz_UZ
+  name: Uzbek
+  native_name: O'zbek
+  rtl_support: false
+  timezone: Asia/Samarkand
+vi:
+  currency: VND
+  direction: ltr
+  locale: vi_VN
+  name: Vietnamese
+  native_name: Tiếng Việt
+  rtl_support: false
+  timezone: Asia/Ho_Chi_Minh
+zh:
+  currency: CNY
+  direction: ltr
+  locale: zh_CN
+  name: Chinese
+  native_name: 中文
+  rtl_support: false
+  timezone: Asia/Shanghai

@@ -1,0 +1,21 @@
+# =============================================================================
+# AI Trading Evolution - Grafana Dashboard Provisioning
+# =============================================================================
+# Automatic dashboard loading
+# Author: MiniMax Agent
+# Version: 1.0.0
+# =============================================================================
+
+apiVersion: 1
+
+providers:
+  - name: 'AI Trading Dashboards'
+    orgId: 1
+    folder: 'AI Trading Evolution'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /etc/grafana/provisioning/dashboards
+      foldersFromFilesStructure: true

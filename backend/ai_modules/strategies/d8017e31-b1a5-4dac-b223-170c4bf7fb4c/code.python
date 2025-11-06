@@ -1,0 +1,25 @@
+
+def ai_momentum_strategy(data, signals):
+    """AI-enhanced momentum strategy"""
+    for i in range(20, len(data)):
+        # Technical indicators
+        ma20 = data['close'].rolling(20).mean().iloc[i]
+        ma50 = data['close'].rolling(50).mean().iloc[i]
+        rsi = calculate_rsi(data['close'], 14).iloc[i]
+        
+        # AI decision logic
+        if rsi < 30 and data['close'].iloc[i] > ma20 > ma50:
+            signals.append(('BUY', data.index[i], 0.02))
+        elif rsi > 70 and data['close'].iloc[i] < ma20 < ma50:
+            signals.append(('SELL', data.index[i], 0.02))
+    
+    return signals
+
+def calculate_rsi(prices, period=14):
+    """RSI calculation"""
+    delta = prices.diff()
+    gain = (delta.where(delta > 0, 0)).rolling(window=period).mean()
+    loss = (-delta.where(delta < 0, 0)).rolling(window=period).mean()
+    rs = gain / loss
+    rsi = 100 - (100 / (1 + rs))
+    return rsi

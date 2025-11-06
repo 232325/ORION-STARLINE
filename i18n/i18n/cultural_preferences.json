@@ -1,0 +1,158 @@
+{
+  "uz-UZ": {
+    "region": "Uzbekistan",
+    "date_preferences": {
+      "format": "DD.MM.YYYY",
+      "first_day": "monday",
+      "weekend": [
+        "saturday",
+        "sunday"
+      ]
+    },
+    "number_preferences": {
+      "decimal_separator": ",",
+      "thousands_separator": " ",
+      "preferred_numbers": [
+        3,
+        7,
+        13
+      ]
+    },
+    "currency_preferences": {
+      "format": "{amount} {currency}",
+      "position": "after",
+      "currency_display": "symbol"
+    },
+    "color_preferences": {
+      "green": "blessing, Islam, good fortune",
+      "blue": "peace, sky, water",
+      "red": "danger, passion, power",
+      "white": "purity, peace, cleanliness"
+    },
+    "cultural_taboos": [
+      "eating with left hand",
+      "stepping on thresholds",
+      "pointing with one finger"
+    ],
+    "preferred_greetings": {
+      "formal": "Assalomu alaykum",
+      "informal": "Salom",
+      "business": "Assalomu alaykum, hurmatli"
+    },
+    "business_culture": {
+      "hierarchy": "high",
+      "decision_making": "consultative",
+      "communication": "indirect",
+      "relationship_building": "important"
+    },
+    "holiday_calendar": [
+      "new_year",
+      "womens_day",
+      "navruz",
+      "victory_day",
+      "independence_day",
+      "teacher_day",
+      "constitution_day",
+      "eid_al_fitr",
+      "eid_al_adha"
+    ],
+    "food_preferences": {
+      "staple": [
+        "rice",
+        "bread",
+        "meat"
+      ],
+      "preferred_spices": [
+        "cumin",
+        "coriander",
+        "paprika"
+      ],
+      "dietary_restrictions": [
+        "halal"
+      ]
+    },
+    "communication_style": "polite_formal",
+    "decision_making_style": "consensus",
+    "time_orientation": "past_focused",
+    "context_level": "high_context",
+    "power_distance": "high",
+    "uncertainty_avoidance": "medium"
+  },
+  "en-US": {
+    "region": "United States",
+    "date_preferences": {
+      "format": "MM/DD/YYYY",
+      "first_day": "sunday",
+      "weekend": [
+        "saturday",
+        "sunday"
+      ]
+    },
+    "number_preferences": {
+      "decimal_separator": ".",
+      "thousands_separator": ",",
+      "preferred_numbers": [
+        3,
+        7
+      ]
+    },
+    "currency_preferences": {
+      "format": "{currency}{amount}",
+      "position": "before",
+      "currency_display": "symbol"
+    },
+    "color_preferences": {
+      "red": "danger, love, passion",
+      "blue": "trust, loyalty, stability",
+      "green": "money, nature, growth",
+      "white": "purity, cleanliness"
+    },
+    "cultural_taboos": [
+      "asking about salary",
+      "pointing with middle finger"
+    ],
+    "preferred_greetings": {
+      "formal": "Good day",
+      "informal": "Hi",
+      "business": "Good morning/afternoon"
+    },
+    "business_culture": {
+      "hierarchy": "low",
+      "decision_making": "individual",
+      "communication": "direct",
+      "relationship_building": "task_focused"
+    },
+    "holiday_calendar": [
+      "new_year",
+      "mlk_day",
+      "valentines_day",
+      "presidents_day",
+      "memorial_day",
+      "independence_day",
+      "labor_day",
+      "thanksgiving",
+      "christmas"
+    ],
+    "food_preferences": {
+      "staple": [
+        "bread",
+        "meat",
+        "potatoes"
+      ],
+      "preferred_spices": [
+        "salt",
+        "pepper",
+        "garlic"
+      ],
+      "dietary_restrictions": [
+        "varies"
+      ]
+    },
+    "communication_style": "direct",
+    "decision_making_style": "individual",
+    "time_orientation": "future_focused",
+    "context_level": "low_context",
+    "power_distance": "low",
+    "uncertainty_avoidance": "low"
+  }
+}

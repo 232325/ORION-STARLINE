@@ -1,0 +1,104 @@
+# Grafana provisioning for Orion Starline
+# This directory contains configuration for auto-provisioning Grafana
+
+apiVersion: 1
+
+# Data sources
+datasources:
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+    editable: true
+    jsonData:
+      timeInterval: 15s
+      queryTimeout: 60s
+      httpMethod: POST
+    version: 1
+
+  - name: Loki
+    type: loki
+    access: proxy
+    url: http://loki:3100
+    editable: true
+    jsonData:
+      maxLines: 1000
+    version: 1
+
+  - name: Elasticsearch
+    type: elasticsearch
+    access: proxy
+    url: http://elasticsearch:9200
+    database: "[logs-]YYYY.MM.DD
+    editable: true
+    jsonData:
+      interval: Daily
+      timeField: "@timestamp"
+      esVersion: 8.0.0
+      logMessageField: message
+      logLevelField: level
+    version: 1
+
+---
+# Alerting configuration
+apiVersion: 1
+
+contactPoints:
+  - name: default
+    orgId: 1
+    receivers:
+      - uid: default
+        type: webhook
+        settings:
+          url: http://alertmanager:9093/api/v1/alerts
+        disableResolveMessage: false
+
+  - name: critical
+    orgId: 1
+    receivers:
+      - uid: slack-critical
+        type: slack
+        settings:
+          url: ${SLACK_WEBHOOK_URL}
+          channel: "#alerts-critical"
+          title: "Orion Critical Alert"
+          text: "{{ range .Alerts }}{{ .Annotations.summary }}{{ end }}"
+
+  - name: warning
+    orgId: 1
+    receivers:
+      - uid: slack-warning
+        type: slack
+        settings:
+          url: ${SLACK_WEBHOOK_URL}
+          channel: "#alerts"
+          title: "Orion Warning Alert"
+          text: "{{ range .Alerts }}{{ .Annotations.summary }}{{ end }}"
+
+---
+# Notification policies
+apiVersion: 1
+
+notificationPolicies:
+  - orgId: 1
+    name: default
+    receivers:
+      - default
+    groupBy: ['alertname', 'cluster', 'service']
+    groupWait: 10s
+    groupInterval: 10s
+    repeatInterval: 1h
+    routes:
+      - match:
+          severity: critical
+        receiver: critical
+        groupWait: 0s
+        groupInterval: 5s
+        repeatInterval: 5m
+      - match:
+          severity: warning
+        receiver: warning
+        groupWait: 30s
+        groupInterval: 10m
+        repeatInterval: 2h

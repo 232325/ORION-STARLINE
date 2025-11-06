@@ -1,0 +1,115 @@
+# Dashboard Provisioning Configuration
+# Dashboard fayllarini avtomatik yuklash
+
+apiVersion: 1
+
+providers:
+  # Application Performance Dashboard
+  - name: 'Application Performance'
+    orgId: 1
+    folder: 'Application Performance'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/application_performance
+
+  # Infrastructure Monitoring Dashboard
+  - name: 'Infrastructure Monitoring'
+    orgId: 1
+    folder: 'Infrastructure'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/infrastructure
+
+  # Business Metrics Dashboard
+  - name: 'Business Metrics'
+    orgId: 1
+    folder: 'Business'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/business_metrics
+
+  # Tracing Dashboard
+  - name: 'Distributed Tracing'
+    orgId: 1
+    folder: 'Observability'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/distributed_tracing
+
+  # Logs Dashboard
+  - name: 'Logs Analysis'
+    orgId: 1
+    folder: 'Observability'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/logs_analysis
+
+  # API Performance Dashboard
+  - name: 'API Performance'
+    orgId: 1
+    folder: 'Application Performance'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/api_performance
+
+  # Database Performance Dashboard
+  - name: 'Database Performance'
+    orgId: 1
+    folder: 'Application Performance'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/database_performance
+
+  # Security Dashboard
+  - name: 'Security Monitoring'
+    orgId: 1
+    folder: 'Security'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/security_monitoring
+
+  # Load Testing Dashboard
+  - name: 'Load Testing Results'
+    orgId: 1
+    folder: 'Testing'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/load_testing
+
+  # Chaos Engineering Dashboard
+  - name: 'Chaos Engineering'
+    orgId: 1
+    folder: 'Testing'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards/chaos_engineering

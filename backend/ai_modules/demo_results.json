@@ -1,0 +1,63 @@
+{
+  "timestamp": "2025-11-04T20:31:53.275673",
+  "config": {
+    "model_ensemble": true,
+    "agents": {
+      "dqn": {
+        "weight": 0.25,
+        "epsilon": 1.0,
+        "epsilon_decay": 0.995
+      },
+      "ppo": {
+        "weight": 0.25,
+        "gamma": 0.99
+      },
+      "a2c": {
+        "weight": 0.25,
+        "gamma": 0.99
+      },
+      "ddpg": {
+        "weight": 0.25,
+        "tau": 0.005,
+        "gamma": 0.99
+      }
+    },
+    "training_episodes": 100
+  },
+  "latest_signals": {
+    "signal": "BUY",
+    "strength": 0.5,
+    "confidence": 0.5,
+    "agent_predictions": {
+      "dqn": "HOLD",
+      "ppo": "BUY",
+      "a2c": "HOLD",
+      "ddpg": "BUY"
+    },
+    "votes": {
+      "BUY": 0.5,
+      "SELL": 0,
+      "HOLD": 0.5
+    },
+    "timestamp": "2025-11-04T20:31:53.274926",
+    "market_regime": "sideways"
+  },
+  "performance_metrics": {
+    "total_signals": 6,
+    "buy_ratio": 1.0,
+    "sell_ratio": 0.0,
+    "hold_ratio": 0.0,
+    "average_confidence": 0.5,
+    "current_regime": "sideways",
+    "active_agents": 4
+  },
+  "regime_mapping": {
+    "0": "trending_bull",
+    "1": "trending_bear",
+    "2": "sideways",
+    "3": "high_volatility",
+    "4": "low_volatility"
+  },
+  "feature_count": 5,
+  "total_signals_generated": 6
+}

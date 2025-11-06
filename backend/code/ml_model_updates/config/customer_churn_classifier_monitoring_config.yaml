@@ -1,0 +1,20 @@
+alert_channels:
+- email
+- webhook
+alert_frequencies:
+  critical: immediate
+  info: daily
+  warning: hourly
+alert_thresholds:
+  accuracy_drop: 0.05
+  data_quality_score: 0.9
+  model_drift: 0.1
+  prediction_confidence: 0.8
+data_quality_monitoring: true
+drift_check_interval: 24
+drift_detection: true
+feature_importance_tracking: true
+performance_check_interval: 12
+performance_monitoring: true
+prediction_accuracy_tracking: true
+prediction_check_interval: 100

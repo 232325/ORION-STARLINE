@@ -1,0 +1,143 @@
+# Grafana Provisioning Configuration
+# Dashboards, Data Sources, va Alerting rules
+
+apiVersion: 1
+
+# Data Sources
+datasources:
+  - name: Prometheus
+    type: prometheus
+    access: proxy
+    url: http://prometheus:9090
+    isDefault: true
+    editable: true
+    jsonData:
+      httpMethod: POST
+      manageAlerts: true
+      prometheusType: Prometheus
+      prometheusVersion: 2.40.0
+      cacheLevel: 'High'
+      timeInterval: '15s'
+      queryTimeout: '60s'
+      httpHeaderName1: 'Authorization'
+    secureJsonData:
+      httpHeaderValue1: 'Bearer prometheus-token'
+
+  - name: Elasticsearch
+    type: elasticsearch
+    access: proxy
+    url: http://elasticsearch:9200
+    database: "logs-*"
+    isDefault: false
+    editable: true
+    jsonData:
+      interval: Daily
+      timeField: "@timestamp"
+      esVersion: '8.11.0'
+      logMessageField: message
+      logLevelField: level
+      includeFrozen: false
+      xpack: false
+
+  - name: Jaeger
+    type: jaeger
+    access: proxy
+    url: http://jaeger:16686
+    isDefault: false
+    editable: true
+    jsonData:
+      tracesToLogs:
+        datasourceUid: 'elasticsearch'
+        tags: ['job', 'instance', 'pod', 'namespace']
+        mappedTags: [{ key: 'service.name', value: 'service' }]
+        mapTagNamesEnabled: false
+        spanStartTimeShift: '1h'
+        spanEndTimeShift: '1h'
+        filterByTraceID: false
+        filterBySpanID: false
+      nodeGraph:
+        enabled: true
+
+  - name: Zipkin
+    type: zipkin
+    access: proxy
+    url: http://zipkin:9411
+    isDefault: false
+    editable: true
+    jsonData:
+      tracesToLogs:
+        datasourceUid: 'elasticsearch'
+        tags: ['job', 'instance', 'pod', 'namespace']
+        mappedTags: [{ key: 'serviceName', value: 'service' }]
+        mapTagNamesEnabled: false
+        spanStartTimeShift: '1h'
+        spanEndTimeShift: '1h'
+        filterByTraceID: false
+        filterBySpanID: false
+
+  - name: Application Performance Monitoring
+    type: apm
+    access: proxy
+    url: http://elastic_apm:8200
+    isDefault: false
+    editable: true
+    jsonData:
+      server: 'http://elastic_apm:8200'
+      serviceEnvironment: 'production'
+      timeInterval: '10s'
+
+# Notifiers (Alerting)
+notifiers:
+  - name: 'Slack Alerts'
+    type: slack
+    uid: slack_alerts
+    orgId: 1
+    isDefault: true
+    sendReminder: true
+    frequency: '10m'
+    disableResolveMessage: false
+    settings:
+      url: 'https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK'
+      recipient: '#alerts'
+      username: 'Grafana'
+      iconEmoji: ':chart_with_upwards_trend:'
+      iconUrl: 'https://grafana.com/assets/img/fav32.png'
+      title: 'Alert: {{ .GroupLabels.alertname }}'
+      text: '{{ .CommonAnnotations.description }}'
+
+  - name: 'Email Alerts'
+    type: email
+    uid: email_alerts
+    orgId: 1
+    isDefault: false
+    sendReminder: true
+    frequency: '1h'
+    disableResolveMessage: false
+    settings:
+      addresses: 'admin@company.com'
+      subject: 'Grafana Alert - {{ .GroupLabels.alertname }}'
+      content: |
+        {{ range .Alerts }}
+        Alert: {{ .Annotations.summary }}
+        Description: {{ .Annotations.description }}
+        Severity: {{ .Labels.severity }}
+        Time: {{ .StartsAt.Format "2006-01-02 15:04:05" }}
+        {{ end }}
+
+  - name: 'Webhook Alerts'
+    type: webhook
+    uid: webhook_alerts
+    orgId: 1
+    isDefault: false
+    sendReminder: false
+    disableResolveMessage: false
+    settings:
+      url: 'http://alertmanager:9093/api/v1/alerts'
+      httpMethod: 'POST'
+      username: 'grafana'
+      password: 'password'
+
+# Alerting Rules
+alerting:
+  render: true
+  alertmanagerUid: 'webhook_alerts'

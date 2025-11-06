@@ -1,0 +1,112 @@
+{
+  "test_suite": "Advanced GPT Assistant Integration",
+  "version": "2.0.0",
+  "start_time": "2025-11-05T00:16:40.991523",
+  "end_time": "2025-11-05T00:16:40.991755",
+  "results": [
+    {
+      "test": "Import Test",
+      "status": "fail",
+      "timestamp": "2025-11-05T00:16:40.991571",
+      "details": {
+        "message": "Import failed"
+      }
+    },
+    {
+      "test": "Assistant Creation",
+      "status": "error",
+      "timestamp": "2025-11-05T00:16:40.991612",
+      "details": {
+        "error": "name 'create_ai_assistant' is not defined"
+      }
+    },
+    {
+      "test": "Model Configs",
+      "status": "skip",
+      "timestamp": "2025-11-05T00:16:40.991627",
+      "details": {
+        "message": "Assistant not created"
+      }
+    },
+    {
+      "test": "Task Detection",
+      "status": "skip",
+      "timestamp": "2025-11-05T00:16:40.991634",
+      "details": {
+        "message": "Assistant not created"
+      }
+    },
+    {
+      "test": "Model Selection",
+      "status": "skip",
+      "timestamp": "2025-11-05T00:16:40.991640",
+      "details": {
+        "message": "Assistant not created"
+      }
+    },
+    {
+      "test": "Cache Functionality",
+      "status": "skip",
+      "timestamp": "2025-11-05T00:16:40.991645",
+      "details": {
+        "message": "Assistant not created"
+      }
+    },
+    {
+      "test": "Rate Limiter",
+      "status": "skip",
+      "timestamp": "2025-11-05T00:16:40.991652",
+      "details": {
+        "message": "Assistant not created"
+      }
+    },
+    {
+      "test": "Model Evaluator",
+      "status": "skip",
+      "timestamp": "2025-11-05T00:16:40.991658",
+      "details": {
+        "message": "Assistant not created"
+      }
+    },
+    {
+      "test": "Performance Metrics",
+      "status": "skip",
+      "timestamp": "2025-11-05T00:16:40.991664",
+      "details": {
+        "message": "Assistant not created"
+      }
+    },
+    {
+      "test": "API Status",
+      "status": "skip",
+      "timestamp": "2025-11-05T00:16:40.991669",
+      "details": {
+        "message": "Assistant not created"
+      }
+    },
+    {
+      "test": "Cost Optimization",
+      "status": "skip",
+      "timestamp": "2025-11-05T00:16:40.991675",
+      "details": {
+        "message": "Assistant not created"
+      }
+    },
+    {
+      "test": "Conversation Management",
+      "status": "skip",
+      "timestamp": "2025-11-05T00:16:40.991681",
+      "details": {
+        "message": "Assistant not created"
+      }
+    },
+    {
+      "test": "Error Handling",
+      "status": "skip",
+      "timestamp": "2025-11-05T00:16:40.991687",
+      "details": {
+        "message": "Assistant not created"
+      }
+    }
+  ]
+}

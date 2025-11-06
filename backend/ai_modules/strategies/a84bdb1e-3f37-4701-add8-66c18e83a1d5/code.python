@@ -1,0 +1,12 @@
+
+def momentum_strategy(data):
+    """
+    Momentum strategy implementation
+    """
+    signals = []
+    for i in range(20, len(data)):
+        if data['close'].iloc[i] > data['close'].iloc[i-20]:
+            signals.append('BUY')
+        elif data['close'].iloc[i] < data['close'].iloc[i-20]:
+            signals.append('SELL')
+    return signals

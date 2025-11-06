@@ -1,0 +1,298 @@
+# Prometheus Alert Rules
+# Performance Monitoring tizimi uchun ogohlantirish qoidalari
+
+groups:
+- name: application_performance
+  interval: 30s
+  rules:
+  
+  # Response Time Alerts
+  - alert: HighResponseTime
+    expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 0.5
+    for: 2m
+    labels:
+      severity: warning
+      service: trading_app
+      metric_type: performance
+    annotations:
+      summary: "Yuqori response time aniqlanindi"
+      description: "95th percentile response time {{ $value }} sekunddan oshdi. Threshold: 0.5s"
+      runbook_url: "https://docs.company.com/runbooks/high-response-time"
+
+  - alert: CriticalResponseTime
+    expr: histogram_quantile(0.99, rate(http_request_duration_seconds_bucket[5m])) > 2.0
+    for: 1m
+    labels:
+      severity: critical
+      service: trading_app
+      metric_type: performance
+    annotations:
+      summary: "Kritik response time aniqlanindi"
+      description: "99th percentile response time {{ $value }} sekunddan oshdi. Threshold: 2.0s"
+
+  # Error Rate Alerts
+  - alert: HighErrorRate
+    expr: rate(http_requests_total{status=~"5.."}[5m]) / rate(http_requests_total[5m]) * 100 > 5
+    for: 2m
+    labels:
+      severity: warning
+      service: trading_app
+      metric_type: reliability
+    annotations:
+      summary: "Yuqori error rate aniqlanindi"
+      description: "Error rate {{ $value }}% dan oshdi. Threshold: 5%"
+
+  - alert: CriticalErrorRate
+    expr: rate(http_requests_total{status=~"5.."}[5m]) / rate(http_requests_total[5m]) * 100 > 15
+    for: 30s
+    labels:
+      severity: critical
+      service: trading_app
+      metric_type: reliability
+    annotations:
+      summary: "Kritik error rate aniqlanindi"
+      description: "Error rate {{ $value }}% dan oshdi. Threshold: 15%"
+
+  # Throughput Alerts
+  - alert: LowThroughput
+    expr: rate(http_requests_total[5m]) < 10
+    for: 5m
+    labels:
+      severity: warning
+      service: trading_app
+      metric_type: performance
+    annotations:
+      summary: "Past throughput aniqlanindi"
+      description: "Throughput {{ $value }} req/s dan past. Expected minimum: 10 req/s"
+
+- name: system_resources
+  interval: 30s
+  rules:
+
+  # CPU Usage Alerts
+  - alert: HighCPUUsage
+    expr: 100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 80
+    for: 5m
+    labels:
+      severity: warning
+      service: infrastructure
+      metric_type: system
+    annotations:
+      summary: "Yuqori CPU foydalanish aniqlanindi"
+      description: "CPU foydalanish {{ $value }}% dan oshdi. Threshold: 80%"
+
+  - alert: CriticalCPUUsage
+    expr: 100 - (avg by (instance) (rate(node_cpu_seconds_total{mode="idle"}[5m])) * 100) > 95
+    for: 1m
+    labels:
+      severity: critical
+      service: infrastructure
+      metric_type: system
+    annotations:
+      summary: "Kritik CPU foydalanish aniqlanindi"
+      description: "CPU foydalanish {{ $value }}% dan oshdi. Threshold: 95%"
+
+  # Memory Usage Alerts
+  - alert: HighMemoryUsage
+    expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100 > 85
+    for: 3m
+    labels:
+      severity: warning
+      service: infrastructure
+      metric_type: system
+    annotations:
+      summary: "Yuqori memory foydalanish aniqlanindi"
+      description: "Memory foydalanish {{ $value }}% dan oshdi. Threshold: 85%"
+
+  - alert: CriticalMemoryUsage
+    expr: (1 - (node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)) * 100 > 95
+    for: 1m
+    labels:
+      severity: critical
+      service: infrastructure
+      metric_type: system
+    annotations:
+      summary: "Kritik memory foydalanish aniqlanindi"
+      description: "Memory foydalanish {{ $value }}% dan oshdi. Threshold: 95%"
+
+  # Disk Usage Alerts
+  - alert: HighDiskUsage
+    expr: (1 - (node_filesystem_avail_bytes / node_filesystem_size_bytes)) * 100 > 80
+    for: 5m
+    labels:
+      severity: warning
+      service: infrastructure
+      metric_type: storage
+    annotations:
+      summary: "Yuqori disk foydalanish aniqlanindi"
+      description: "Disk foydalanish {{ $value }}% dan oshdi. Threshold: 80%"
+
+  - alert: CriticalDiskUsage
+    expr: (1 - (node_filesystem_avail_bytes / node_filesystem_size_bytes)) * 100 > 95
+    for: 1m
+    labels:
+      severity: critical
+      service: infrastructure
+      metric_type: storage
+    annotations:
+      summary: "Kritik disk foydalanish aniqlanindi"
+      description: "Disk foydalanish {{ $value }}% dan oshdi. Threshold: 95%"
+
+- name: database_performance
+  interval: 30s
+  rules:
+
+  # Database Response Time
+  - alert: HighDBResponseTime
+    expr: histogram_quantile(0.95, rate(postgres_query_duration_seconds_bucket[5m])) > 0.1
+    for: 3m
+    labels:
+      severity: warning
+      service: database
+      metric_type: database
+    annotations:
+      summary: "Yuqori database response time"
+      description: "95th percentile DB query time {{ $value }}s dan oshdi. Threshold: 0.1s"
+
+  # Database Connections
+  - alert: HighDBConnections
+    expr: postgres_stat_database_numbackends / postgres_settings_max_connections * 100 > 80
+    for: 3m
+    labels:
+      severity: warning
+      service: database
+      metric_type: database
+    annotations:
+      summary: "Yuqori database connections"
+      description: "DB connections {{ $value }}% dan oshdi. Threshold: 80%"
+
+  # Database Locks
+  - alert: DBLocksHigh
+    expr: rate(postgres_locks_deadlocks_total[5m]) > 0.1
+    for: 2m
+    labels:
+      severity: warning
+      service: database
+      metric_type: database
+    annotations:
+      summary: "Ko'p database locks aniqlanindi"
+      description: "Deadlock rate {{ $value }}/sec dan oshdi. Threshold: 0.1/sec"
+
+- name: business_metrics
+  interval: 60s
+  rules:
+
+  # Trading Volume
+  - alert: LowTradingVolume
+    expr: rate(business_trading_volume_total[5m]) < 1000
+    for: 10m
+    labels:
+      severity: info
+      service: trading_engine
+      metric_type: business
+    annotations:
+      summary: "Past trading volume aniqlanindi"
+      description: "Trading volume {{ $value }} per minute dan past. Expected minimum: 1000/min"
+
+  # User Activity
+  - alert: LowUserActivity
+    expr: business_user_active_sessions < 10
+    for: 15m
+    labels:
+      severity: info
+      service: application
+      metric_type: business
+    annotations:
+      summary: "Past user activity aniqlanindi"
+      description: "Active users {{ $value }} dan kam. Expected minimum: 10"
+
+  # P&L Alerts
+  - alert: SignificantPnLLoss
+    expr: business_pnl_total < -10000
+    for: 5m
+    labels:
+      severity: critical
+      service: trading_engine
+      metric_type: financial
+    annotations:
+      summary: "Muhim P&L yo'qotish aniqlanindi"
+      description: "Total P&L {{ $value }} dan past. Threshold: -10,000"
+
+- name: risk_management
+  interval: 30s
+  rules:
+
+  # Risk Score Alerts
+  - alert: HighRiskScore
+    expr: business_risk_score > 80
+    for: 2m
+    labels:
+      severity: warning
+      service: risk_manager
+      metric_type: risk
+    annotations:
+      summary: "Yuqori risk score aniqlanindi"
+      description: "Risk score {{ $value }} dan oshdi. Threshold: 80"
+
+  - alert: CriticalRiskScore
+    expr: business_risk_score > 95
+    for: 30s
+    labels:
+      severity: critical
+      service: risk_manager
+      metric_type: risk
+    annotations:
+      summary: "Kritik risk score aniqlanindi"
+      description: "Risk score {{ $value }} dan oshdi. Threshold: 95"
+
+  # Risk Alerts Count
+  - alert: HighRiskAlertsCount
+    expr: increase(business_risk_alerts_total[10m]) > 5
+    for: 5m
+    labels:
+      severity: warning
+      service: risk_manager
+      metric_type: risk
+    annotations:
+      summary: "Ko'p risk alerts aniqlanindi"
+      description: "{{ $value }} risk alerts 10 daqiqa ichida yuz berdi. Threshold: 5"
+
+- name: service_health
+  interval: 30s
+  rules:
+
+  # Service Availability
+  - alert: ServiceDown
+    expr: up == 0
+    for: 30s
+    labels:
+      severity: critical
+      service: "{{ $labels.job }}"
+      metric_type: availability
+    annotations:
+      summary: "Service {{ $labels.instance }} ishga tushmagan"
+      description: "Service {{ $job }} {{ $instance }} dan 30s davomida javob bermadi"
+
+  # Heartbeat Monitoring
+  - alert: MissingHeartbeat
+    expr: rate(monitoring_heartbeat_total[5m]) == 0
+    for: 3m
+    labels:
+      severity: warning
+      service: monitoring
+      metric_type: health
+    annotations:
+      summary: "Heartbeat signal yo'qolgan"
+      description: "Monitoring heartbeat 3 daqiqa davomida yo'qolgan"
+
+  # SSL Certificate Expiry
+  - alert: SSLCertificateExpiringSoon
+    expr: probe_ssl_earliest_cert_expiry - time() < 86400 * 7
+    for: 5m
+    labels:
+      severity: warning
+      service: infrastructure
+      metric_type: security
+    annotations:
+      summary: "SSL sertifikati tez orada muddati tugaydi"
+      description: "SSL sertifikati {{ $value }} dan keyin tugaydi"

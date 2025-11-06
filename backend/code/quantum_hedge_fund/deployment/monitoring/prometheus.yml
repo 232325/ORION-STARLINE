@@ -1,0 +1,44 @@
+# Quantum AI Hedge Fund Prometheus Configuration
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  # - "alert_rules.yml"
+
+scrape_configs:
+  # Quantum Hedge Fund Application
+  - job_name: 'quantum-hedge-fund'
+    static_configs:
+      - targets: ['quantum-hedge-fund:8000']
+    metrics_path: /metrics
+    scrape_interval: 10s
+
+  # PostgreSQL Database
+  - job_name: 'postgres'
+    static_configs:
+      - targets: ['postgres:5432']
+    scrape_interval: 30s
+
+  # Redis Cache
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis:6379']
+    scrape_interval: 30s
+
+  # System Metrics
+  - job_name: 'node-exporter'
+    static_configs:
+      - targets: ['localhost:9100']
+    scrape_interval: 15s
+
+# Alert manager configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          - alertmanager:9093
+
+# Alert rules
+rule_files:
+  - "alert_rules.yml"

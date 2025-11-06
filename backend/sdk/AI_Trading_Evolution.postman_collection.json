@@ -1,0 +1,386 @@
+{
+  "info": {
+    "name": "AI Trading Evolution API",
+    "_postman_id": "ai-trading-evolution-v1",
+    "description": "AI Trading Evolution REST API Collection\n\nOfficial Postman collection for AI Trading Evolution API with pre-configured requests and examples.\n\n**Base URL:** `http://localhost:8000`\n\n**Authentication:** Bearer Token (API Key)\n\n**Version:** 1.0.0\n\n**Author:** MiniMax Agent\n\n**Date:** 2025-11-04",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{API_KEY}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "BASE_URL",
+      "value": "http://localhost:8000",
+      "type": "string"
+    },
+    {
+      "key": "API_KEY",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Core",
+      "description": "Core API endpoints",
+      "item": [
+        {
+          "name": "Root",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/",
+              "host": ["{{BASE_URL}}"],
+              "path": [""]
+            },
+            "description": "Root endpoint - API information"
+          }
+        },
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/health",
+              "host": ["{{BASE_URL}}"],
+              "path": ["health"]
+            },
+            "description": "Health check endpoint - returns service status and module health"
+          }
+        },
+        {
+          "name": "Metrics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/metrics",
+              "host": ["{{BASE_URL}}"],
+              "path": ["metrics"]
+            },
+            "description": "Performance metrics endpoint"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Market Data",
+      "description": "Market data endpoints",
+      "item": [
+        {
+          "name": "Get Market Data - BTC/USDT",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"symbol\": \"BTC/USDT\",\n  \"market_type\": \"crypto\",\n  \"timeframe\": \"1h\",\n  \"limit\": 100\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/market/data",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "market", "data"]
+            },
+            "description": "Get market data for BTC/USDT"
+          }
+        },
+        {
+          "name": "Get Market Data - ETH/USDT",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"symbol\": \"ETH/USDT\",\n  \"market_type\": \"crypto\",\n  \"timeframe\": \"1h\",\n  \"limit\": 100\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/market/data",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "market", "data"]
+            },
+            "description": "Get market data for ETH/USDT"
+          }
+        },
+        {
+          "name": "List Symbols - Crypto",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/market/symbols?market_type=crypto",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "market", "symbols"],
+              "query": [
+                {
+                  "key": "market_type",
+                  "value": "crypto"
+                }
+              ]
+            },
+            "description": "Get list of crypto symbols"
+          }
+        },
+        {
+          "name": "List Symbols - Forex",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/market/symbols?market_type=forex",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "market", "symbols"],
+              "query": [
+                {
+                  "key": "market_type",
+                  "value": "forex"
+                }
+              ]
+            },
+            "description": "Get list of forex pairs"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Trading Strategies",
+      "description": "Trading strategy endpoints",
+      "item": [
+        {
+          "name": "List Strategies",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/strategy/list",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "strategy", "list"]
+            },
+            "description": "Get list of available strategies"
+          }
+        },
+        {
+          "name": "Execute Strategy - Grid Trading",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"strategy_name\": \"grid\",\n  \"symbol\": \"BTC/USDT\",\n  \"timeframe\": \"1h\",\n  \"parameters\": {\n    \"grid_levels\": 10,\n    \"price_range\": 0.05\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/strategy/execute",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "strategy", "execute"]
+            },
+            "description": "Execute grid trading strategy"
+          }
+        },
+        {
+          "name": "Execute Strategy - DCA",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"strategy_name\": \"dca\",\n  \"symbol\": \"BTC/USDT\",\n  \"timeframe\": \"1d\",\n  \"parameters\": {\n    \"investment_amount\": 100,\n    \"interval\": \"daily\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/strategy/execute",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "strategy", "execute"]
+            },
+            "description": "Execute DCA strategy"
+          }
+        },
+        {
+          "name": "Execute Strategy - Arbitrage",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"strategy_name\": \"arbitrage\",\n  \"symbol\": \"BTC/USDT\",\n  \"timeframe\": \"1m\",\n  \"parameters\": {\n    \"exchanges\": [\"binance\", \"coinbase\"],\n    \"min_profit\": 0.5\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/strategy/execute",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "strategy", "execute"]
+            },
+            "description": "Execute arbitrage strategy"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Analytics",
+      "description": "Analytics endpoints",
+      "item": [
+        {
+          "name": "List Analytics Types",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/analytics/types",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "analytics", "types"]
+            },
+            "description": "Get list of analytics types"
+          }
+        },
+        {
+          "name": "Sentiment Analysis",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"analysis_type\": \"sentiment\",\n  \"symbol\": \"BTC/USDT\",\n  \"parameters\": {}\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/analytics/analyze",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "analytics", "analyze"]
+            },
+            "description": "Get sentiment analysis"
+          }
+        },
+        {
+          "name": "Whale Tracking",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"analysis_type\": \"whale_tracking\",\n  \"symbol\": \"BTC/USDT\",\n  \"parameters\": {\n    \"min_amount\": 1000000\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/analytics/analyze",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "analytics", "analyze"]
+            },
+            "description": "Track large transactions"
+          }
+        },
+        {
+          "name": "Risk Scoring",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"analysis_type\": \"risk_scoring\",\n  \"symbol\": \"BTC/USDT\",\n  \"parameters\": {}\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/api/v1/analytics/analyze",
+              "host": ["{{BASE_URL}}"],
+              "path": ["api", "v1", "analytics", "analyze"]
+            },
+            "description": "Get risk assessment"
+          }
+        }
+      ]
+    },
+    {
+      "name": "WebSocket",
+      "description": "WebSocket information (not actual WS requests)",
+      "item": [
+        {
+          "name": "WebSocket Stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/ws/stats",
+              "host": ["{{BASE_URL}}"],
+              "path": ["ws", "stats"]
+            },
+            "description": "Get WebSocket connection statistics"
+          }
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Add timestamp to requests",
+          "pm.environment.set('timestamp', new Date().toISOString());"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Global test script",
+          "pm.test('Status code is 200', function () {",
+          "    pm.response.to.have.status(200);",
+          "});",
+          "",
+          "pm.test('Response time is less than 2000ms', function () {",
+          "    pm.expect(pm.response.responseTime).to.be.below(2000);",
+          "});",
+          "",
+          "pm.test('Content-Type is JSON', function () {",
+          "    pm.response.to.have.header('Content-Type', /application\\/json/);",
+          "});"
+        ]
+      }
+    }
+  ]
+}

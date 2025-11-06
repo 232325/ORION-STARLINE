@@ -1,0 +1,122 @@
+# Prometheus Configuration
+# Performance Monitoring tizimi uchun Prometheus konfiguratsiyasi
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    cluster: 'production'
+    environment: 'performance_monitoring'
+
+# Alertmanager konfiguratsiyasi
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          - alertmanager:9093
+
+# Rule fayllar
+rule_files:
+  - "alert_rules.yml"
+  - "recording_rules.yml"
+
+# Scrape konfiguratsiyasi
+scrape_configs:
+  # Prometheus o'zi
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Application metriqlari
+  - job_name: 'trading_app'
+    static_configs:
+      - targets: ['app:8000']
+    metrics_path: '/metrics'
+    scrape_interval: 15s
+    scrape_timeout: 10s
+
+  # Database metriqlari
+  - job_name: 'postgres'
+    static_configs:
+      - targets: ['postgres_exporter:9187']
+    scrape_interval: 30s
+
+  # Redis metriqlari
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis_exporter:9121']
+    scrape_interval: 30s
+
+  # Node metriqlari (sistema resurslari)
+  - job_name: 'node'
+    static_configs:
+      - targets: ['node_exporter:9100']
+    scrape_interval: 15s
+
+  # Custom business metriqlar
+  - job_name: 'business_metrics'
+    static_configs:
+      - targets: ['business_metrics_exporter:8080']
+    metrics_path: '/business-metrics'
+    scrape_interval: 30s
+    metric_relabel_configs:
+      - source_labels: [__name__]
+        regex: 'business_.*'
+        target_label: metric_type
+        replacement: 'business'
+
+  # API Gateway metriqlari
+  - job_name: 'api_gateway'
+    static_configs:
+      - targets: ['api_gateway:8080']
+    metrics_path: '/metrics'
+    scrape_interval: 15s
+
+  # Service Discovery (若使用Consul/Eureka等)
+  - job_name: 'services'
+    consul_sd_configs:
+      - server: 'consul:8500'
+        services: ['trading-engine', 'risk-calculator', 'market-data']
+    relabel_configs:
+      - source_labels: [__meta_consul_service]
+        target_label: service
+      - source_labels: [__meta_consul_node]
+        target_label: node
+
+# Remote Write konfiguratsiyasi (long-term storage uchun)
+remote_write:
+  - url: "http://remote_storage:8086/api/v1/prom/write?db=prometheus"
+    write_relabel_configs:
+      - source_labels: [__name__]
+        regex: 'business_.*'
+        action: keep
+        target_label: storage_bucket
+        replacement: 'business_metrics'
+
+# Remote Read konfiguratsiyasi
+remote_read:
+  - url: "http://remote_storage:8086/api/v1/prom/read?db=prometheus"
+    read_recent: true
+
+# Storage konfiguratsiyasi
+storage:
+  tsdb:
+    path: /prometheus/data
+    retention.time: 90d
+    retention.size: 10GB
+    min-block-duration: 2h
+    max-block-duration: 36h
+
+# Query timeout
+query:
+  timeout: 60s
+  max-samples: 50000000
+  max-concurrency: 20
+
+# Feature flags
+feature_flags:
+  - promql-at-modifier
+  - promql-negative-offset
+  - remote-write-receiver
+  - exemplar-storage
+  - expand-external-labels

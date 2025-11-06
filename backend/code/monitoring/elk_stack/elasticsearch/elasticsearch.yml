@@ -1,0 +1,84 @@
+# Elasticsearch Configuration
+
+cluster.name: monitoring-cluster
+node.name: es-node-1
+node.roles: [ master, data, ingest ]
+
+# Network configuration
+network.host: 0.0.0.0
+http.port: 9200
+transport.port: 9300
+
+# Discovery configuration
+discovery.type: single-node
+cluster.initial_master_nodes: ["es-node-1"]
+
+# Path configuration
+path.data: /usr/share/elasticsearch/data
+path.logs: /usr/share/elasticsearch/logs
+
+# Memory configuration
+bootstrap.memory_lock: false
+
+# Performance settings
+indices.memory.index_buffer_size: 30%
+indices.queries.cache.size: 10%
+indices.fielddata.cache.size: 40%
+
+# Request timeout
+http.max_content_length: 100mb
+network.requests.timeout: 60s
+
+# Thread pool settings
+thread_pool.write.queue_size: 200
+thread_pool.search.queue_size: 1000
+thread_pool.get.queue_size: 1000
+
+# Index settings
+action.auto_create_index: +logs-*,-test-*,+monitoring-*
+action.destructive_requires_name: true
+
+# Monitoring and alerting
+xpack.monitoring.collection.enabled: true
+xpack.monitoring.elasticsearch.hosts: ["http://elasticsearch:9200"]
+
+# Alerting settings
+xpack.watcher.enabled: true
+xpack.watcher.history.cleaner_service.enabled: true
+
+# Security settings (disabled for development)
+xpack.security.enabled: false
+xpack.security.transport.ssl.enabled: false
+xpack.security.http.ssl.enabled: false
+
+# Performance optimization for large indices
+index.number_of_shards: 1
+index.number_of_replicas: 0
+index.refresh_interval: 5s
+index.max_result_window: 10000
+
+# Cache settings
+indices.queries.cache.size: 256mb
+indices.requests.cache.size: 128mb
+
+# Field data cache
+indices.fielddata.cache.size: 512mb
+
+# Circuit breaker settings
+indices.breaker.fielddata.limit: 60%
+indices.breaker.request.limit: 40%
+indices.breaker.total.limit: 70%
+
+# JVM settings for large memory
+-Xms4g
+-Xmx4g
+-XX:+UseConcMarkSweepGC
+-XX:CMSInitiatingOccupancyFraction=75
+-XX:+UseCMSInitiatingOccupancyOnly
+-XX:+AlwaysPreTouch
+-XX:+DisableExplicitGC
+
+# Logging configuration
+logger.org.elasticsearch.discovery: WARN
+logger.org.elasticsearch.index.search.slowlog: INFO
+logger.org.elasticsearch.index.indexing.slowlog: INFO

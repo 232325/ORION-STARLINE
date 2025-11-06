@@ -1,0 +1,239 @@
+Translation key 'welcome_message' already exists
+Translation key 'login_button' already exists
+Translation key 'logout_button' already exists
+Translation key 'dashboard_title' already exists
+Translation key 'balance_title' already exists
+Translation key 'portfolio_title' already exists
+Translation key 'settings_title' already exists
+Translation key 'language_selector' already exists
+Translation key 'currency_selector' already exists
+Translation key 'theme_selector' already exists
+Translation key 'notifications' already exists
+Translation key 'help' already exists
+Translation key 'about' already exists
+Translation key 'contact' already exists
+Translation key 'privacy' already exists
+Translation key 'terms' already exists
+Translation key 'profile' already exists
+Translation key 'security' already exists
+Translation key 'backup' already exists
+Translation key 'restore' already exists
+Error saving quality metrics: 'str' object has no attribute 'isoformat'
+Traceback (most recent call last):
+  File "/workspace/orion-starline/i18n/demo.py", line 464, in run_complete_demo
+    self.demo_cultural_adaptations()
+  File "/workspace/orion-starline/i18n/demo.py", line 388, in demo_cultural_adaptations
+    print(f"   Communication Style: {adaptations['communication_style']}")
+                                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'communication_style'
+🌍 Orion Starline Multi-Language System Demo
+==================================================
+
+📝 Setting up demo translations...
+✅ Added 20 translations
+
+📊 Setting up demo data...
+✅ Demo data setup complete
+🚀 Running Complete Multi-Language System Demo
+
+
+🌐 Basic Translation Demo
+------------------------------
+
+📍 Language: EN
+   Welcome: Welcome to Orion Starline
+   Login Button: Login
+   RTL Support: ❌
+
+📍 Language: UZ
+   Welcome: Xush kelibsiz Orion Starline ga
+   Login Button: Kirish
+   RTL Support: ❌
+
+📍 Language: AR
+   Welcome: Welcome to Orion Starline
+   Login Button: Login
+   RTL Support: ❌
+
+📍 Language: ZH
+   Welcome: Welcome to Orion Starline
+   Login Button: Login
+   RTL Support: ❌
+
+🎭 Cultural Adaptation Demo
+------------------------------
+🇺🇸 United States:
+   Currency: $1,234.56
+   Date: 11/05/2025
+   Time: 07:42 AM
+   Number: 1,234,567.89
+
+🇺🇿 Uzbekistan:
+   Currency: 1 234 567,89 UZS
+   Date: 05.11.2025
+   Time: 07:42
+   Number: 1 234 567,89
+   Address:
+   Tashkent sh., Amir Temur ko'chasi, 1-uy
+   Tashkent, Toshkent viloyati
+   100000
+   Name: Mr. Aziz Karimov
+
+➡️ RTL Language Support Demo
+------------------------------
+
+📍 Language: AR (العربية)
+   Direction: RTL
+   RTL Support: ✅
+   Welcome: Welcome to Orion Starline
+
+📍 Language: HE (עברית)
+   Direction: RTL
+   RTL Support: ✅
+   Welcome: Welcome to Orion Starline
+
+📍 Language: FA (فارسی)
+   Direction: RTL
+   RTL Support: ✅
+
+🔢 Number Systems Demo
+------------------------------
+
+📍 Locale: en-US
+   Number System: NumberSystem.DECIMAL
+   Decimal Separator: '.'
+   Thousands Separator: ','
+   Formatted Number: 1,234,567.89
+
+📍 Locale: uz-UZ
+   Number System: NumberSystem.DECIMAL
+   Decimal Separator: ','
+   Thousands Separator: ' '
+   Formatted Number: 1 234 567,89
+
+📍 Locale: ar-SA
+   Number System: NumberSystem.ARABIC_INDIC
+   Decimal Separator: '.'
+   Thousands Separator: ','
+   Formatted Number: 1,234,567.89
+
+📍 Locale: zh-CN
+   Number System: NumberSystem.EASTERN_ARABIC
+   Decimal Separator: '.'
+   Thousands Separator: ','
+   Formatted Number: 1,234,567.89
+
+📊 Translation Quality Demo
+------------------------------
+English-Uzbek Translation Quality:
+   Completeness: 100.00%
+   Accuracy: 100.00%
+   Consistency: 80.00%
+   Cultural Appropriateness: 80.00%
+   Readability: 90.00%
+   Technical Correctness: 90.00%
+   Overall Score: 91.50%
+
+📋 Quality Report Summary:
+   Average Quality: 61.00%
+   Languages Needing Attention: 0
+
+🔄 Dynamic Language Switching Demo
+------------------------------
+Switching languages dynamically:
+
+📍 EN (English):
+   Welcome: Welcome to Orion Starline
+   Login: Login
+   Dashboard: Trading Dashboard
+   Direction: LTR
+
+📍 UZ (O'zbek):
+   Welcome: Xush kelibsiz Orion Starline ga
+   Login: Kirish
+   Dashboard: Savdo Dashboard
+   Direction: LTR
+
+📍 AR (العربية):
+   Welcome: Welcome to Orion Starline
+   Login: Login
+   Dashboard: Trading Dashboard
+   Direction: RTL
+
+📍 ZH (中文):
+   Welcome: Welcome to Orion Starline
+   Login: Login
+   Dashboard: Trading Dashboard
+   Direction: LTR
+
+📍 RU (Русский):
+   Welcome: Welcome to Orion Starline
+   Login: Login
+   Dashboard: Trading Dashboard
+   Direction: LTR
+
+🤖 Translation Suggestions Demo
+------------------------------
+Translation suggestions for 'new_feature_button' in Uzbek:
+
+📤📥 Export/Import Demo
+------------------------------
+Exporting translations...
+✅ JSON export ready (12567 characters)
+✅ CSV export ready (717 characters)
+✅ PO export ready (1728 characters)
+
+📋 Sample JSON export:
+{
+  "en": {
+    "welcome_message": {
+      "value": "Welcome to Orion Starline",
+      "status": "approved",
+      "translator": "Demo System",
+      "reviewed_by": "",
+      "approved_by": "",
+      "created_at": "2025-11-05T07:42:36.646162",
+      "updated_at": "2025-11-05T07:42:36.646169",
+      ...
+
+📈 System Statistics Demo
+------------------------------
+Multi-Language System Statistics:
+   Total Languages: 25
+   RTL Languages: 3
+   Total Translations: 40
+   Cache Size: 3
+
+Translation Manager Statistics:
+   Total Keys: 20
+   Active Keys: 20
+   Supported Languages: 3
+   Translation Memory Entries: 160
+
+Localization Manager Statistics:
+   Supported Locales: 6
+   Supported Countries: 6
+   RTL Locales: 1
+   Current Locale: zh-CN
+   Current Timezone: None
+
+🎨 Cultural Adaptations Demo
+------------------------------
+
+📍 Region: uz-UZ
+   Communication Style: polite_formal
+   Tone Adjustments: {'formality_level': 'high', 'directness': 'indirect', 'context_requirement': 'high_context'}
+   Cultural Elements: 0
+   Visual Suggestions: 2
+   Avoidance List: 3 items
+
+📍 Region: en-US
+   Communication Style: direct
+   Tone Adjustments: {'formality_level': 'low', 'directness': 'direct', 'context_requirement': 'low_context'}
+   Cultural Elements: 0
+   Visual Suggestions: 1
+   Avoidance List: 2 items
+
+📍 Region: ar-SA
+
+❌ Demo error: 'communication_style'

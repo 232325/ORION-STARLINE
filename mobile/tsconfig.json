@@ -1,0 +1,99 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "declaration": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": false,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": false,
+    
+    // Path mapping
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"],
+      "@components/*": ["./components/*"],
+      "@screens/*": ["./screens/*"],
+      "@services/*": ["./services/*"],
+      "@utils/*": ["./utils/*"],
+      "@hooks/*": ["./hooks/*"],
+      "@types/*": ["./types/*"],
+      "@assets/*": ["../assets/*"]
+    },
+    
+    // Additional options
+    "types": [
+      "react-native",
+      "react-native-paper",
+      "react-native-vector-icons",
+      "expo",
+      "expo-local-authentication",
+      "expo-notifications",
+      "expo-secure-store",
+      "expo-location",
+      "expo-camera",
+      "expo-media-library",
+      "expo-file-system",
+      "expo-sharing",
+      "expo-print",
+      "expo-intent-launcher",
+      "expo-web-browser",
+      "expo-barcode-scanner",
+      "expo-sensors"
+    ],
+    
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ]
+  },
+  "include": [
+    "src/**/*",
+    "App.tsx",
+    "mobile_app.py",
+    "mobile_ui.py", 
+    "mobile_features.py",
+    "index.js",
+    "*.config.js",
+    "*.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "android",
+    "ios",
+    "web-build",
+    "dist",
+    "build",
+    ".expo",
+    ".expo-shared",
+    "coverage",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx"
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
+}

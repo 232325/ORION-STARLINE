@@ -1,0 +1,88 @@
+{
+  "timestamp": "2025-11-02T21:53:07.726943+00:00",
+  "market_status": {
+    "current_time": "2025-11-02T21:53:07.726950+00:00",
+    "is_market_open": true,
+    "active_sessions": [
+      "american",
+      "overlap_asian_american"
+    ],
+    "active_metal_markets": [],
+    "current_volatility": 2.7,
+    "upcoming_events": [
+      {
+        "type": "central_bank",
+        "time": "2025-11-03T06:00:00+00:00",
+        "impact": "HIGH"
+      }
+    ],
+    "next_session": "asian",
+    "time_to_next_event_hours": 8.114520291666667
+  },
+  "upcoming_events": [
+    {
+      "title": "Major Bank Q4 Earnings",
+      "time": "2025-11-02T23:53:07.726943+00:00",
+      "impact": "medium",
+      "time_until": "2:00:00"
+    }
+  ],
+  "session_recommendations": {
+    "strategy_type": "balanced",
+    "current_time": "2025-11-02T21:53:07.726943+00:00",
+    "current_session": "american",
+    "recommendations": [
+      {
+        "action": "WAIT_FOR_BETTER_CONDITIONS",
+        "reason": "Current market conditions not optimal for this strategy"
+      }
+    ],
+    "market_sentiment": {
+      "sentiment": "volatility_focused",
+      "description": "American session with high impact news events"
+    }
+  },
+  "metal_opportunities": [
+    {
+      "metal": "gold",
+      "strategy_type": "scalping",
+      "current_market_status": "COMEX (Precious Metals)",
+      "recommendations": [],
+      "timing_factors": {
+        "market_phase": "closed",
+        "inventory_cycle": "normal_cycle",
+        "seasonal_outlook": 1.3
+      }
+    },
+    {
+      "metal": "silver",
+      "strategy_type": "scalping",
+      "current_market_status": "COMEX (Precious Metals)",
+      "recommendations": [],
+      "timing_factors": {
+        "market_phase": "closed",
+        "inventory_cycle": "normal_cycle",
+        "seasonal_outlook": 1.0
+      }
+    },
+    {
+      "metal": "copper",
+      "strategy_type": "scalping",
+      "current_market_status": "London Metal Exchange",
+      "recommendations": [],
+      "timing_factors": {
+        "market_phase": "closed",
+        "inventory_cycle": "normal_cycle",
+        "seasonal_outlook": 1.0
+      }
+    }
+  ],
+  "risk_metrics": {
+    "price_discovery_efficiency": 0.88,
+    "liquidity_efficiency": 0.82,
+    "information_integration": 0.75,
+    "volatility_prediction_accuracy": 0.71,
+    "session_transition_efficiency": 0.79,
+    "news_impact_anticipation": 0.65
+  }
+}

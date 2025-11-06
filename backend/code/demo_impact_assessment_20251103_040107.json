@@ -1,0 +1,15 @@
+{
+  "timestamp": "2025-11-03T04:01:07.357003",
+  "summary": {
+    "total_events": 2,
+    "high_impact_events": 2,
+    "black_swan_events": 0,
+    "news_items_analyzed": 3
+  },
+  "upcoming_events": [
+    {
+      "title": "FOMC Meeting - Federal Open Market Committee",
+      "date": "2025-11-06T14:00:07.255984",
+      "impact_level": "high",
+      "expected_impact": {
+        

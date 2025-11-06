@@ -1,0 +1,12 @@
+{
+  "hyperparameters": {},
+  "training_config": {},
+  "data_info": {},
+  "model_architecture": {},
+  "performance_history": [],
+  "audit_log": [],
+  "dependencies": [],
+  "deployment_info": {},
+  "explainability_info": {},
+  "bias_assessment": {}
+}

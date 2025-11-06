@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: ai-trading-backend
+    env: python
+    buildCommand: uv pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        value: "sqlite:///./ai_trading.db"
+      - key: ALLOWED_ORIGINS
+        value: '["https://096l9ute938z.space.minimax.io"]'
+      - key: PYTHON_VERSION
+        value: "3.11.0"
+    healthCheckPath: /health
+    autoDeploy: true

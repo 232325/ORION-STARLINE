@@ -1,0 +1,22 @@
+{
+  "welcome_message": "Xush kelibsiz Orion Starline ga",
+  "login_button": "Kirish",
+  "logout_button": "Chiqish",
+  "dashboard_title": "Savdo Dashboard",
+  "balance_title": "Hisob Balans",
+  "portfolio_title": "Portfel",
+  "settings_title": "Sozlamalar",
+  "language_selector": "Til",
+  "currency_selector": "Valyuta",
+  "theme_selector": "Mavzu",
+  "notifications": "Xabarlar",
+  "help": "Yordam",
+  "about": "Haqida",
+  "contact": "Bog'lanish",
+  "privacy": "Maxfiylik Siyosati",
+  "terms": "Xizmat Shartlari",
+  "profile": "Profil",
+  "security": "Xavfsizlik",
+  "backup": "Zahira",
+  "restore": "Tiklash"
+}

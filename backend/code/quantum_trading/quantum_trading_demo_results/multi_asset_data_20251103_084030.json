@@ -1,0 +1,1460 @@
+{
+  "stocks": {
+    "data": {
+      "AAPL": "QuantumMarketData(asset_type=<AssetType.STOCKS: 'stocks'>, symbol='AAPL', price=np.float64(1.1383204901033973e-19), volume=22576.203109432332, quantum_state=array([-0.25+3.061617e-17j, -0.25+3.061617e-17j, -0.25+3.061617e-17j,\n       -0.25+3.061617e-17j, -0.25+3.061617e-17j, -0.25+3.061617e-17j,\n       -0.25+3.061617e-17j, -0.25+3.061617e-17j, -0.25+3.061617e-17j,\n       -0.25+3.061617e-17j, -0.25+3.061617e-17j, -0.25+3.061617e-17j,\n       -0.25+3.061617e-17j, -0.25+3.061617e-17j, -0.25+3.061617e-17j,\n       -0.25+3.061617e-17j]), superposition_weights={'state_0': np.float64(0.03132667884152385), 'state_1': np.float64(0.06706393028401653), 'state_2': np.float64(0.06522465488534189), 'state_3': np.float64(0.038363828610869705), 'state_4': np.float64(0.16547691060218173), 'state_5': np.float64(0.1324444081716373), 'state_6': np.float64(0.05482039899195572), 'state_7': np.float64(0.005889370067466129), 'state_8': np.float64(0.12610909629960912), 'state_9': np.float64(0.034315042832725975), 'state_10': np.float64(0.02288455077459846), 'state_11': np.float64(0.06275568323627982), 'state_12': np.float64(0.03920562419151896), 'state_13': np.float64(0.047238943376465066), 'state_14': np.float64(0.016075617973858557), 'state_15': np.float64(0.09080526085995123)}, entanglement_matrix=array([[0.19345058, 0.3925067 , 0.00918032, 0.24234668],\n       [0.3925067 , 0.25363247, 0.1055281 , 0.16419807],\n       [0.00918032, 0.1055281 , 0.10614024, 0.24628518],\n       [0.24234668, 0.16419807, 0.24628518, 0.51353592]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 393747))",
+      "GOOGL": "QuantumMarketData(asset_type=<AssetType.STOCKS: 'stocks'>, symbol='GOOGL', price=np.float64(1.0621026245648151e-18), volume=40702.167617691666, quantum_state=array([-0.1767767-0.1767767j, -0.1767767-0.1767767j,\n       -0.1767767-0.1767767j, -0.1767767-0.1767767j,\n       -0.1767767-0.1767767j, -0.1767767-0.1767767j,\n       -0.1767767-0.1767767j, -0.1767767-0.1767767j,\n       -0.1767767-0.1767767j, -0.1767767-0.1767767j,\n       -0.1767767-0.1767767j, -0.1767767-0.1767767j,\n       -0.1767767-0.1767767j, -0.1767767-0.1767767j,\n       -0.1767767-0.1767767j, -0.1767767-0.1767767j]), superposition_weights={'state_0': np.float64(0.11078243639957056), 'state_1': np.float64(0.04884046158050399), 'state_2': np.float64(0.05135787096238398), 'state_3': np.float64(0.08988396117148452), 'state_4': np.float64(0.0265997861688184), 'state_5': np.float64(0.013557716652099568), 'state_6': np.float64(0.12238308612619792), 'state_7': np.float64(0.026965658637922007), 'state_8': np.float64(0.08720961559425035), 'state_9': np.float64(0.08794890691920959), 'state_10': np.float64(0.0285128693272738), 'state_11': np.float64(0.012603311683388798), 'state_12': np.float64(0.08883343707249655), 'state_13': np.float64(0.1079581380062865), 'state_14': np.float64(0.05504468841063634), 'state_15': np.float64(0.04151805528747711)}, entanglement_matrix=array([[0.19345058, 0.3925067 , 0.00918032, 0.24234668],\n       [0.3925067 , 0.25363247, 0.1055281 , 0.16419807],\n       [0.00918032, 0.1055281 , 0.10614024, 0.24628518],\n       [0.24234668, 0.16419807, 0.24628518, 0.51353592]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 393832))",
+      "MSFT": "QuantumMarketData(asset_type=<AssetType.STOCKS: 'stocks'>, symbol='MSFT', price=np.float64(2.3871790087262973e-19), volume=384235.6399076557, quantum_state=array([0.1767767+0.1767767j, 0.1767767+0.1767767j, 0.1767767+0.1767767j,\n       0.1767767+0.1767767j, 0.1767767+0.1767767j, 0.1767767+0.1767767j,\n       0.1767767+0.1767767j, 0.1767767+0.1767767j, 0.1767767+0.1767767j,\n       0.1767767+0.1767767j, 0.1767767+0.1767767j, 0.1767767+0.1767767j,\n       0.1767767+0.1767767j, 0.1767767+0.1767767j, 0.1767767+0.1767767j,\n       0.1767767+0.1767767j]), superposition_weights={'state_0': np.float64(0.010282053746928402), 'state_1': np.float64(0.024807396761859238), 'state_2': np.float64(0.09330812789219772), 'state_3': np.float64(0.10910162015417683), 'state_4': np.float64(0.15168365464517172), 'state_5': np.float64(0.018105381413659128), 'state_6': np.float64(0.0477118651846075), 'state_7': np.float64(0.05154590910190663), 'state_8': np.float64(0.02257824329134144), 'state_9': np.float64(0.07144050590399618), 'state_10': np.float64(0.08209199670876167), 'state_11': np.float64(0.07257770050840918), 'state_12': np.float64(0.036372510304771524), 'state_13': np.float64(0.03171531306377585), 'state_14': np.float64(0.11595393864747458), 'state_15': np.float64(0.06072378267096259)}, entanglement_matrix=array([[0.19345058, 0.3925067 , 0.00918032, 0.24234668],\n       [0.3925067 , 0.25363247, 0.1055281 , 0.16419807],\n       [0.00918032, 0.1055281 , 0.10614024, 0.24628518],\n       [0.24234668, 0.16419807, 0.24628518, 0.51353592]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 393892))",
+      "AMZN": "QuantumMarketData(asset_type=<AssetType.STOCKS: 'stocks'>, symbol='AMZN', price=np.float64(2.3163710093830612e-21), volume=35142.2986959207, quantum_state=array([0.1767767+0.1767767j, 0.1767767+0.1767767j, 0.1767767+0.1767767j,\n       0.1767767+0.1767767j, 0.1767767+0.1767767j, 0.1767767+0.1767767j,\n       0.1767767+0.1767767j, 0.1767767+0.1767767j, 0.1767767+0.1767767j,\n       0.1767767+0.1767767j, 0.1767767+0.1767767j, 0.1767767+0.1767767j,\n       0.1767767+0.1767767j, 0.1767767+0.1767767j, 0.1767767+0.1767767j,\n       0.1767767+0.1767767j]), superposition_weights={'state_0': np.float64(0.03577460963334418), 'state_1': np.float64(0.009846235011547431), 'state_2': np.float64(0.03586165471005472), 'state_3': np.float64(0.050352777276963), 'state_4': np.float64(0.013434839204645664), 'state_5': np.float64(0.14744324035940706), 'state_6': np.float64(0.019123285417707997), 'state_7': np.float64(0.09500331154018364), 'state_8': np.float64(0.005212050934746682), 'state_9': np.float64(0.14864574452126394), 'state_10': np.float64(0.05641356698486477), 'state_11': np.float64(0.04773130583724835), 'state_12': np.float64(0.0033219041213297025), 'state_13': np.float64(0.08061145979113667), 'state_14': np.float64(0.02770629994825897), 'state_15': np.float64(0.22351771470729723)}, entanglement_matrix=array([[0.19345058, 0.3925067 , 0.00918032, 0.24234668],\n       [0.3925067 , 0.25363247, 0.1055281 , 0.16419807],\n       [0.00918032, 0.1055281 , 0.10614024, 0.24628518],\n       [0.24234668, 0.16419807, 0.24628518, 0.51353592]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 393944))",
+      "TSLA": "QuantumMarketData(asset_type=<AssetType.STOCKS: 'stocks'>, symbol='TSLA', price=np.float64(4.24738132246351e-19), volume=15646.465501398892, quantum_state=array([1.5308085e-17+0.25j, 1.5308085e-17+0.25j, 1.5308085e-17+0.25j,\n       1.5308085e-17+0.25j, 1.5308085e-17+0.25j, 1.5308085e-17+0.25j,\n       1.5308085e-17+0.25j, 1.5308085e-17+0.25j, 1.5308085e-17+0.25j,\n       1.5308085e-17+0.25j, 1.5308085e-17+0.25j, 1.5308085e-17+0.25j,\n       1.5308085e-17+0.25j, 1.5308085e-17+0.25j, 1.5308085e-17+0.25j,\n       1.5308085e-17+0.25j]), superposition_weights={'state_0': np.float64(0.027347885923356883), 'state_1': np.float64(0.14083929419962096), 'state_2': np.float64(0.0257043091973071), 'state_3': np.float64(0.07909206913134438), 'state_4': np.float64(0.1665579441067493), 'state_5': np.float64(0.09062766537120129), 'state_6': np.float64(0.022932401018654347), 'state_7': np.float64(0.06689261429092021), 'state_8': np.float64(0.023794326622037853), 'state_9': np.float64(0.05812771848646001), 'state_10': np.float64(0.0522507309869303), 'state_11': np.float64(0.015124332387938946), 'state_12': np.float64(0.02344105391953727), 'state_13': np.float64(0.05951509627656419), 'state_14': np.float64(0.10560866934987617), 'state_15': np.float64(0.04214388873150081)}, entanglement_matrix=array([[0.19345058, 0.3925067 , 0.00918032, 0.24234668],\n       [0.3925067 , 0.25363247, 0.1055281 , 0.16419807],\n       [0.00918032, 0.1055281 , 0.10614024, 0.24628518],\n       [0.24234668, 0.16419807, 0.24628518, 0.51353592]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 393995))",
+      "NVDA": "QuantumMarketData(asset_type=<AssetType.STOCKS: 'stocks'>, symbol='NVDA', price=np.float64(5.405303898370889e-24), volume=30562.876961967428, quantum_state=array([-4.5924255e-17-0.25j, -4.5924255e-17-0.25j, -4.5924255e-17-0.25j,\n       -4.5924255e-17-0.25j, -4.5924255e-17-0.25j, -4.5924255e-17-0.25j,\n       -4.5924255e-17-0.25j, -4.5924255e-17-0.25j, -4.5924255e-17-0.25j,\n       -4.5924255e-17-0.25j, -4.5924255e-17-0.25j, -4.5924255e-17-0.25j,\n       -4.5924255e-17-0.25j, -4.5924255e-17-0.25j, -4.5924255e-17-0.25j,\n       -4.5924255e-17-0.25j]), superposition_weights={'state_0': np.float64(0.12197951314042613), 'state_1': np.float64(0.003260687609180276), 'state_2': np.float64(0.034493579763359934), 'state_3': np.float64(0.03446512152626005), 'state_4': np.float64(0.045186648389881116), 'state_5': np.float64(0.012976299314146867), 'state_6': np.float64(0.009744980676205018), 'state_7': np.float64(0.1681235585035311), 'state_8': np.float64(0.023605799002038713), 'state_9': np.float64(0.0528589278934609), 'state_10': np.float64(0.08993565795941955), 'state_11': np.float64(0.052574579701737026), 'state_12': np.float64(1.0794291102661274e-05), 'state_13': np.float64(0.18696296883891678), 'state_14': np.float64(0.04506518189753656), 'state_15': np.float64(0.11875570149279736)}, entanglement_matrix=array([[0.19345058, 0.3925067 , 0.00918032, 0.24234668],\n       [0.3925067 , 0.25363247, 0.1055281 , 0.16419807],\n       [0.00918032, 0.1055281 , 0.10614024, 0.24628518],\n       [0.24234668, 0.16419807, 0.24628518, 0.51353592]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 394044))",
+      "META": "QuantumMarketData(asset_type=<AssetType.STOCKS: 'stocks'>, symbol='META', price=np.float64(3.709283192633096e-21), volume=24.538519062902854, quantum_state=array([0.25+0.j, 0.25+0.j, 0.25+0.j, 0.25+0.j, 0.25+0.j, 0.25+0.j,\n       0.25+0.j, 0.25+0.j, 0.25+0.j, 0.25+0.j, 0.25+0.j, 0.25+0.j,\n       0.25+0.j, 0.25+0.j, 0.25+0.j, 0.25+0.j]), superposition_weights={'state_0': np.float64(0.010077723998074974), 'state_1': np.float64(0.05666082574327096), 'state_2': np.float64(0.09900469678166475), 'state_3': np.float64(0.09756991524444701), 'state_4': np.float64(0.029879656491271164), 'state_5': np.float64(0.02132425124486301), 'state_6': np.float64(0.11134684470295647), 'state_7': np.float64(0.0023902122933404774), 'state_8': np.float64(0.030353265326617165), 'state_9': np.float64(0.17131364541977612), 'state_10': np.float64(0.08346598968066801), 'state_11': np.float64(0.11021555104202677), 'state_12': np.float64(0.10808240919232441), 'state_13': np.float64(0.050518686103269116), 'state_14': np.float64(0.003931495994364114), 'state_15': np.float64(0.01386483074106555)}, entanglement_matrix=array([[0.19345058, 0.3925067 , 0.00918032, 0.24234668],\n       [0.3925067 , 0.25363247, 0.1055281 , 0.16419807],\n       [0.00918032, 0.1055281 , 0.10614024, 0.24628518],\n       [0.24234668, 0.16419807, 0.24628518, 0.51353592]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 394093))",
+      "NFLX": "QuantumMarketData(asset_type=<AssetType.STOCKS: 'stocks'>, symbol='NFLX', price=np.float64(9.914501827125066e-21), volume=216824.12517902296, quantum_state=array([0.1767767-0.1767767j, 0.1767767-0.1767767j, 0.1767767-0.1767767j,\n       0.1767767-0.1767767j, 0.1767767-0.1767767j, 0.1767767-0.1767767j,\n       0.1767767-0.1767767j, 0.1767767-0.1767767j, 0.1767767-0.1767767j,\n       0.1767767-0.1767767j, 0.1767767-0.1767767j, 0.1767767-0.1767767j,\n       0.1767767-0.1767767j, 0.1767767-0.1767767j, 0.1767767-0.1767767j,\n       0.1767767-0.1767767j]), superposition_weights={'state_0': np.float64(0.05084422364212505), 'state_1': np.float64(0.02718126521924745), 'state_2': np.float64(0.08022551182312702), 'state_3': np.float64(0.0011258301657554044), 'state_4': np.float64(0.04158560971897065), 'state_5': np.float64(0.06904253421778976), 'state_6': np.float64(0.07398694043272139), 'state_7': np.float64(0.0033239406511173953), 'state_8': np.float64(0.03630968096976279), 'state_9': np.float64(0.10743261241168688), 'state_10': np.float64(0.11111032854519672), 'state_11': np.float64(0.0737220613912937), 'state_12': np.float64(0.03332357996443869), 'state_13': np.float64(0.05139520552566263), 'state_14': np.float64(0.11833369348243361), 'state_15': np.float64(0.12105698183867084)}, entanglement_matrix=array([[0.19345058, 0.3925067 , 0.00918032, 0.24234668],\n       [0.3925067 , 0.25363247, 0.1055281 , 0.16419807],\n       [0.00918032, 0.1055281 , 0.10614024, 0.24628518],\n       [0.24234668, 0.16419807, 0.24628518, 0.51353592]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 394145))"
+    },
+    "quantum_correlations": {
+      "AAPL_GOOGL": 1.0,
+      "AAPL_MSFT": 1.0,
+      "AAPL_AMZN": 1.0,
+      "AAPL_TSLA": 1.0,
+      "AAPL_NVDA": 1.0,
+      "AAPL_META": 1.0,
+      "AAPL_NFLX": 1.0,
+      "GOOGL_MSFT": 1.0,
+      "GOOGL_AMZN": 1.0,
+      "GOOGL_TSLA": 1.0,
+      "GOOGL_NVDA": 1.0,
+      "GOOGL_META": 1.0,
+      "GOOGL_NFLX": 1.0,
+      "MSFT_AMZN": 1.0,
+      "MSFT_TSLA": 1.0,
+      "MSFT_NVDA": 1.0,
+      "MSFT_META": 1.0,
+      "MSFT_NFLX": 1.0,
+      "AMZN_TSLA": 1.0,
+      "AMZN_NVDA": 1.0,
+      "AMZN_META": 1.0,
+      "AMZN_NFLX": 1.0,
+      "TSLA_NVDA": 1.0,
+      "TSLA_META": 1.0,
+      "TSLA_NFLX": 1.0,
+      "NVDA_META": 1.0,
+      "NVDA_NFLX": 1.0,
+      "META_NFLX": 1.0
+    },
+    "entanglement_strength": 0.8,
+    "timestamp": "2025-11-03T08:40:30.394231"
+  },
+  "forex": {
+    "data": {
+      "EURUSD": "QuantumMarketData(asset_type=<AssetType.FOREX: 'forex'>, symbol='EURUSD', price=np.float64(1.2539022618464638e-08), volume=36330.48832797647, quantum_state=array([2.16489014e-17+0.35355339j, 2.16489014e-17+0.35355339j,\n       2.16489014e-17+0.35355339j, 2.16489014e-17+0.35355339j,\n       2.16489014e-17+0.35355339j, 2.16489014e-17+0.35355339j,\n       2.16489014e-17+0.35355339j, 2.16489014e-17+0.35355339j]), superposition_weights={'state_0': np.float64(0.2719296503972708), 'state_1': np.float64(0.1176071867711669), 'state_2': np.float64(0.10899658355123112), 'state_3': np.float64(0.1352863334903654), 'state_4': np.float64(0.20438444610045114), 'state_5': np.float64(0.0935153161109957), 'state_6': np.float64(0.050390951488442616), 'state_7': np.float64(0.017889532090076283)}, entanglement_matrix=array([[0.31119688, 0.26069545, 0.22711025],\n       [0.26069545, 0.14525018, 0.42807902],\n       [0.22711025, 0.42807902, 0.52580721]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 394275))",
+      "GBPUSD": "QuantumMarketData(asset_type=<AssetType.FOREX: 'forex'>, symbol='GBPUSD', price=np.float64(2.9917931545379755e-09), volume=85992.97813221223, quantum_state=array([0.35355339+0.j, 0.35355339+0.j, 0.35355339+0.j, 0.35355339+0.j,\n       0.35355339+0.j, 0.35355339+0.j, 0.35355339+0.j, 0.35355339+0.j]), superposition_weights={'state_0': np.float64(0.0727225782590762), 'state_1': np.float64(0.06270581135044136), 'state_2': np.float64(0.10348323225227177), 'state_3': np.float64(0.19410711802660352), 'state_4': np.float64(0.03663695804483101), 'state_5': np.float64(0.13178740153185417), 'state_6': np.float64(0.0179071936284495), 'state_7': np.float64(0.3806497069064724)}, entanglement_matrix=array([[0.31119688, 0.26069545, 0.22711025],\n       [0.26069545, 0.14525018, 0.42807902],\n       [0.22711025, 0.42807902, 0.52580721]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 394307))",
+      "USDJPY": "QuantumMarketData(asset_type=<AssetType.FOREX: 'forex'>, symbol='USDJPY', price=np.float64(2.3514173743246484e-08), volume=28095.93248732799, quantum_state=array([-6.49467042e-17-0.35355339j, -6.49467042e-17-0.35355339j,\n       -6.49467042e-17-0.35355339j, -6.49467042e-17-0.35355339j,\n       -6.49467042e-17-0.35355339j, -6.49467042e-17-0.35355339j,\n       -6.49467042e-17-0.35355339j, -6.49467042e-17-0.35355339j]), superposition_weights={'state_0': np.float64(0.11161943414431628), 'state_1': np.float64(0.18234389321358682), 'state_2': np.float64(0.04489026399767071), 'state_3': np.float64(0.27829303450323956), 'state_4': np.float64(0.06669623830576886), 'state_5': np.float64(0.07028523040092988), 'state_6': np.float64(0.08602031192229152), 'state_7': np.float64(0.1598515935121962)}, entanglement_matrix=array([[0.31119688, 0.26069545, 0.22711025],\n       [0.26069545, 0.14525018, 0.42807902],\n       [0.22711025, 0.42807902, 0.52580721]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 394337))",
+      "USDCHF": "QuantumMarketData(asset_type=<AssetType.FOREX: 'forex'>, symbol='USDCHF', price=np.float64(8.02943452496791e-09), volume=570437.0930184118, quantum_state=array([0.35355339+0.j, 0.35355339+0.j, 0.35355339+0.j, 0.35355339+0.j,\n       0.35355339+0.j, 0.35355339+0.j, 0.35355339+0.j, 0.35355339+0.j]), superposition_weights={'state_0': np.float64(0.03644938574654696), 'state_1': np.float64(0.06836239767784467), 'state_2': np.float64(0.06400213249958366), 'state_3': np.float64(0.10247066805074559), 'state_4': np.float64(0.2544043149853055), 'state_5': np.float64(0.2877382320177442), 'state_6': np.float64(0.14689883420479005), 'state_7': np.float64(0.039674034817439315)}, entanglement_matrix=array([[0.31119688, 0.26069545, 0.22711025],\n       [0.26069545, 0.14525018, 0.42807902],\n       [0.22711025, 0.42807902, 0.52580721]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 394381))",
+      "AUDUSD": "QuantumMarketData(asset_type=<AssetType.FOREX: 'forex'>, symbol='AUDUSD', price=np.float64(9.806585677162073e-09), volume=8479.2072387935, quantum_state=array([0.25-0.25j, 0.25-0.25j, 0.25-0.25j, 0.25-0.25j, 0.25-0.25j,\n       0.25-0.25j, 0.25-0.25j, 0.25-0.25j]), superposition_weights={'state_0': np.float64(0.13660152985918772), 'state_1': np.float64(0.06780465726645493), 'state_2': np.float64(0.02609990528828722), 'state_3': np.float64(0.1275306795705829), 'state_4': np.float64(0.23978781098713775), 'state_5': np.float64(0.15561580941893685), 'state_6': np.float64(0.046260682589266494), 'state_7': np.float64(0.2002989250201461)}, entanglement_matrix=array([[0.31119688, 0.26069545, 0.22711025],\n       [0.26069545, 0.14525018, 0.42807902],\n       [0.22711025, 0.42807902, 0.52580721]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 394415))",
+      "USDCAD": "QuantumMarketData(asset_type=<AssetType.FOREX: 'forex'>, symbol='USDCAD', price=np.float64(3.1307481114836624e-09), volume=5613.229418817302, quantum_state=array([0.25-0.25j, 0.25-0.25j, 0.25-0.25j, 0.25-0.25j, 0.25-0.25j,\n       0.25-0.25j, 0.25-0.25j, 0.25-0.25j]), superposition_weights={'state_0': np.float64(0.13048804472395084), 'state_1': np.float64(0.25486302886918666), 'state_2': np.float64(0.009359382731118615), 'state_3': np.float64(0.03316155034728462), 'state_4': np.float64(0.035568133671895916), 'state_5': np.float64(0.2118391355315356), 'state_6': np.float64(0.10281670246950654), 'state_7': np.float64(0.22190402165552114)}, entanglement_matrix=array([[0.31119688, 0.26069545, 0.22711025],\n       [0.26069545, 0.14525018, 0.42807902],\n       [0.22711025, 0.42807902, 0.52580721]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 394446))"
+    },
+    "arbitrage_opportunities": [
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "GBPUSD",
+          "USDJPY"
+        ],
+        "opportunity": 0.999999998404615,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.394541"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "GBPUSD",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999953279198,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.394579"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "GBPUSD",
+          "AUDUSD"
+        ],
+        "opportunity": 0.999999996174595,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.394610"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "GBPUSD",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999880175087,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.394641"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "USDJPY",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999014488165,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.394671"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "USDJPY",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999632795117,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.394701"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "USDJPY",
+          "AUDUSD"
+        ],
+        "opportunity": 0.999999969934005,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.394729"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "USDJPY",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999058229069,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.394758"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "USDCHF",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999663475194,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.394787"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "USDCHF",
+          "USDJPY"
+        ],
+        "opportunity": 0.9999999957182735,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.394815"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "USDCHF",
+          "AUDUSD"
+        ],
+        "opportunity": 0.9999999897333012,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.394855"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "USDCHF",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999678411493,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.394885"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "AUDUSD",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999588992309,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.394914"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "AUDUSD",
+          "USDJPY"
+        ],
+        "opportunity": 0.9999999947706009,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.394943"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "AUDUSD",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999846857212,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.394972"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "AUDUSD",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999607234452,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395001"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "USDCAD",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999868785978,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395030"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "USDCAD",
+          "USDJPY"
+        ],
+        "opportunity": 0.9999999983305167,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395059"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "USDCAD",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999951109233,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395088"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "EURUSD",
+          "USDCAD",
+          "AUDUSD"
+        ],
+        "opportunity": 0.9999999959969226,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395116"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "EURUSD",
+          "USDJPY"
+        ],
+        "opportunity": 0.999999998404615,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395145"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "EURUSD",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999953279198,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395174"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "EURUSD",
+          "AUDUSD"
+        ],
+        "opportunity": 0.999999996174595,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395202"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "EURUSD",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999880175087,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395232"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "USDJPY",
+          "EURUSD"
+        ],
+        "opportunity": 0.9999999943895512,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395262"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "USDJPY",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999912385431,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395290"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "USDJPY",
+          "AUDUSD"
+        ],
+        "opportunity": 0.9999999928262959,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395319"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "USDJPY",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999775294781,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395347"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "USDCHF",
+          "EURUSD"
+        ],
+        "opportunity": 0.9999999980841883,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395386"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "USDCHF",
+          "USDJPY"
+        ],
+        "opportunity": 0.9999999989783861,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395415"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "USDCHF",
+          "AUDUSD"
+        ],
+        "opportunity": 0.9999999975503802,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395445"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "USDCHF",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999923269435,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395473"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "AUDUSD",
+          "EURUSD"
+        ],
+        "opportunity": 0.9999999976601625,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395501"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "AUDUSD",
+          "USDJPY"
+        ],
+        "opportunity": 0.9999999987522727,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395530"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "AUDUSD",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999963460346,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395558"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "AUDUSD",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999906286693,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395588"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "USDCAD",
+          "EURUSD"
+        ],
+        "opportunity": 0.9999999992530079,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395617"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "USDCAD",
+          "USDJPY"
+        ],
+        "opportunity": 0.9999999996016636,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395645"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "USDCAD",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999988334731,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395674"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "GBPUSD",
+          "USDCAD",
+          "AUDUSD"
+        ],
+        "opportunity": 0.9999999990448714,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395702"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "EURUSD",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999014488165,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395731"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "EURUSD",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999632795117,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395760"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "EURUSD",
+          "AUDUSD"
+        ],
+        "opportunity": 0.999999969934005,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395789"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "EURUSD",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999058229069,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395823"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "GBPUSD",
+          "EURUSD"
+        ],
+        "opportunity": 0.9999999943895512,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395856"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "GBPUSD",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999912385431,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395885"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "GBPUSD",
+          "AUDUSD"
+        ],
+        "opportunity": 0.9999999928262959,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395914"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "GBPUSD",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999775294781,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395943"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "USDCHF",
+          "EURUSD"
+        ],
+        "opportunity": 0.9999999849425649,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.395972"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "USDCHF",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999368921885,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396000"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "USDCHF",
+          "AUDUSD"
+        ],
+        "opportunity": 0.9999999807470689,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396029"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "USDCHF",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999396931623,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396057"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "AUDUSD",
+          "EURUSD"
+        ],
+        "opportunity": 0.9999999816099095,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396087"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "AUDUSD",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999229245647,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396116"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "AUDUSD",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999712814447,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396144"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "AUDUSD",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999263454767,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396174"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "USDCAD",
+          "EURUSD"
+        ],
+        "opportunity": 0.9999999941289718,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396204"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "USDCAD",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999753937017,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396233"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "USDCAD",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999908316141,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396262"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDJPY",
+          "USDCAD",
+          "AUDUSD"
+        ],
+        "opportunity": 0.9999999924931106,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396290"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "EURUSD",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999663475194,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396320"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "EURUSD",
+          "USDJPY"
+        ],
+        "opportunity": 0.9999999957182735,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396349"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "EURUSD",
+          "AUDUSD"
+        ],
+        "opportunity": 0.9999999897333012,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396388"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "EURUSD",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999678411493,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396417"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "GBPUSD",
+          "EURUSD"
+        ],
+        "opportunity": 0.9999999980841883,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396446"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "GBPUSD",
+          "USDJPY"
+        ],
+        "opportunity": 0.9999999989783861,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396475"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "GBPUSD",
+          "AUDUSD"
+        ],
+        "opportunity": 0.9999999975503802,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396503"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "GBPUSD",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999923269435,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396533"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "USDJPY",
+          "EURUSD"
+        ],
+        "opportunity": 0.9999999849425649,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396566"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "USDJPY",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999368921885,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396595"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "USDJPY",
+          "AUDUSD"
+        ],
+        "opportunity": 0.9999999807470689,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396624"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "USDJPY",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999396931623,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396654"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "AUDUSD",
+          "EURUSD"
+        ],
+        "opportunity": 0.999999993720297,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396683"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "AUDUSD",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999736808886,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396712"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "AUDUSD",
+          "USDJPY"
+        ],
+        "opportunity": 0.9999999966513244,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396741"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "AUDUSD",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999748490346,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396770"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "USDCAD",
+          "EURUSD"
+        ],
+        "opportunity": 0.9999999979952077,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396799"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "USDCAD",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999915976354,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396845"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "USDCAD",
+          "USDJPY"
+        ],
+        "opportunity": 0.9999999989309368,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396879"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCHF",
+          "USDCAD",
+          "AUDUSD"
+        ],
+        "opportunity": 0.9999999974366066,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396909"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "EURUSD",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999588992309,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396938"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "EURUSD",
+          "USDJPY"
+        ],
+        "opportunity": 0.9999999947706009,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396967"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "EURUSD",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999846857212,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.396996"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "EURUSD",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999607234452,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397026"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "GBPUSD",
+          "EURUSD"
+        ],
+        "opportunity": 0.9999999976601625,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397055"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "GBPUSD",
+          "USDJPY"
+        ],
+        "opportunity": 0.9999999987522727,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397085"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "GBPUSD",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999963460346,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397114"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "GBPUSD",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999906286693,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397145"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "USDJPY",
+          "EURUSD"
+        ],
+        "opportunity": 0.9999999816099095,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397174"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "USDJPY",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999229245647,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397203"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "USDJPY",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999712814447,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397233"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "USDJPY",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999263454767,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397262"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "USDCHF",
+          "EURUSD"
+        ],
+        "opportunity": 0.999999993720297,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397291"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "USDCHF",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999736808886,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397321"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "USDCHF",
+          "USDJPY"
+        ],
+        "opportunity": 0.9999999966513244,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397352"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "USDCHF",
+          "USDCAD"
+        ],
+        "opportunity": 0.9999999748490346,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397390"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "USDCAD",
+          "EURUSD"
+        ],
+        "opportunity": 0.9999999975514878,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397420"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "USDCAD",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999897379438,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397450"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "USDCAD",
+          "USDJPY"
+        ],
+        "opportunity": 0.9999999986943215,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397479"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "AUDUSD",
+          "USDCAD",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999961763248,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397531"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "EURUSD",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999868785978,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397562"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "EURUSD",
+          "USDJPY"
+        ],
+        "opportunity": 0.9999999983305167,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397592"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "EURUSD",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999951109233,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397621"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "EURUSD",
+          "AUDUSD"
+        ],
+        "opportunity": 0.9999999959969226,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397650"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "GBPUSD",
+          "EURUSD"
+        ],
+        "opportunity": 0.9999999992530079,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397678"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "GBPUSD",
+          "USDJPY"
+        ],
+        "opportunity": 0.9999999996016636,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397707"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "GBPUSD",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999988334731,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397735"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "GBPUSD",
+          "AUDUSD"
+        ],
+        "opportunity": 0.9999999990448714,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397763"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "USDJPY",
+          "EURUSD"
+        ],
+        "opportunity": 0.9999999941289718,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397791"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "USDJPY",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999753937017,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397830"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "USDJPY",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999908316141,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397861"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "USDJPY",
+          "AUDUSD"
+        ],
+        "opportunity": 0.9999999924931106,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397890"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "USDCHF",
+          "EURUSD"
+        ],
+        "opportunity": 0.9999999979952077,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397918"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "USDCHF",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999915976354,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397946"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "USDCHF",
+          "USDJPY"
+        ],
+        "opportunity": 0.9999999989309368,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.397975"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "USDCHF",
+          "AUDUSD"
+        ],
+        "opportunity": 0.9999999974366066,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.398003"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "AUDUSD",
+          "EURUSD"
+        ],
+        "opportunity": 0.9999999975514878,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.398031"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "AUDUSD",
+          "GBPUSD"
+        ],
+        "opportunity": 0.9999999897379438,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.398059"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "AUDUSD",
+          "USDJPY"
+        ],
+        "opportunity": 0.9999999986943215,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.398088"
+      },
+      {
+        "type": "triangular",
+        "pairs": [
+          "USDCAD",
+          "AUDUSD",
+          "USDCHF"
+        ],
+        "opportunity": 0.9999999961763248,
+        "quantum_advantage": 9.0,
+        "timestamp": "2025-11-03T08:40:30.398117"
+      }
+    ],
+    "entanglement_strength": 0.9,
+    "timestamp": "2025-11-03T08:40:30.398120"
+  },
+  "metals": {
+    "data": {
+      "GOLD": "QuantumMarketData(asset_type=<AssetType.METALS: 'metals'>, symbol='GOLD', price=np.float64(3.1864617144181577e-49), volume=5248.747502803618, quantum_state=array([-4.33087449e-16-0.1767767j, -4.33087449e-16-0.1767767j,\n       -4.33087449e-16-0.1767767j, -4.33087449e-16-0.1767767j,\n       -4.33087449e-16-0.1767767j, -4.33087449e-16-0.1767767j,\n       -4.33087449e-16-0.1767767j, -4.33087449e-16-0.1767767j,\n       -4.33087449e-16-0.1767767j, -4.33087449e-16-0.1767767j,\n       -4.33087449e-16-0.1767767j, -4.33087449e-16-0.1767767j,\n       -4.33087449e-16-0.1767767j, -4.33087449e-16-0.1767767j,\n       -4.33087449e-16-0.1767767j, -4.33087449e-16-0.1767767j,\n       -4.33087449e-16-0.1767767j, -4.33087449e-16-0.1767767j,\n       -4.33087449e-16-0.1767767j, -4.33087449e-16-0.1767767j,\n       -4.33087449e-16-0.1767767j, -4.33087449e-16-0.1767767j,\n       -4.33087449e-16-0.1767767j, -4.33087449e-16-0.1767767j,\n       -4.33087449e-16-0.1767767j, -4.33087449e-16-0.1767767j,\n       -4.33087449e-16-0.1767767j, -4.33087449e-16-0.1767767j,\n       -4.33087449e-16-0.1767767j, -4.33087449e-16-0.1767767j,\n       -4.33087449e-16-0.1767767j, -4.33087449e-16-0.1767767j]), superposition_weights={'state_0': np.float64(0.007492472941013508), 'state_1': np.float64(0.03986279767553365), 'state_2': np.float64(0.019271097725504942), 'state_3': np.float64(0.012887948912357478), 'state_4': np.float64(0.05546078238267149), 'state_5': np.float64(0.018621101014829455), 'state_6': np.float64(0.014041397756993056), 'state_7': np.float64(0.0546282816026664), 'state_8': np.float64(0.01764354746974763), 'state_9': np.float64(0.04066632533773297), 'state_10': np.float64(0.02839397266298242), 'state_11': np.float64(0.0325005071148506), 'state_12': np.float64(0.018986644964406656), 'state_13': np.float64(0.028019074919197792), 'state_14': np.float64(0.05286431592734814), 'state_15': np.float64(0.020873738254559005), 'state_16': np.float64(0.07728726200598048), 'state_17': np.float64(0.01944037559669674), 'state_18': np.float64(0.02746863269838201), 'state_19': np.float64(0.03874203231030104), 'state_20': np.float64(0.02260703708020038), 'state_21': np.float64(0.035393885325228844), 'state_22': np.float64(0.02567001280034499), 'state_23': np.float64(0.004699092924087841), 'state_24': np.float64(0.022390789835883905), 'state_25': np.float64(0.006261509074856447), 'state_26': np.float64(0.006426156066142716), 'state_27': np.float64(0.05972209602243665), 'state_28': np.float64(0.012698292774406659), 'state_29': np.float64(0.10925568026425649), 'state_30': np.float64(0.006265094385691577), 'state_31': np.float64(0.06345804417270791)}, entanglement_matrix=array([[0.12021074, 0.26498665, 0.18770983, 0.0975568 , 0.27446915],\n       [0.26498665, 0.14625224, 0.24967246, 0.28062487, 0.22466391],\n       [0.18770983, 0.24967246, 0.22060166, 0.09520491, 0.11154004],\n       [0.0975568 , 0.28062487, 0.09520491, 0.06400965, 0.1878669 ],\n       [0.27446915, 0.22466391, 0.11154004, 0.1878669 , 0.18458312]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 398230))",
+      "SILVER": "QuantumMarketData(asset_type=<AssetType.METALS: 'metals'>, symbol='SILVER', price=np.float64(8.526353186341625e-52), volume=2102075.883805323, quantum_state=array([-0.125-0.125j, -0.125-0.125j, -0.125-0.125j, -0.125-0.125j,\n       -0.125-0.125j, -0.125-0.125j, -0.125-0.125j, -0.125-0.125j,\n       -0.125-0.125j, -0.125-0.125j, -0.125-0.125j, -0.125-0.125j,\n       -0.125-0.125j, -0.125-0.125j, -0.125-0.125j, -0.125-0.125j,\n       -0.125-0.125j, -0.125-0.125j, -0.125-0.125j, -0.125-0.125j,\n       -0.125-0.125j, -0.125-0.125j, -0.125-0.125j, -0.125-0.125j,\n       -0.125-0.125j, -0.125-0.125j, -0.125-0.125j, -0.125-0.125j,\n       -0.125-0.125j, -0.125-0.125j, -0.125-0.125j, -0.125-0.125j]), superposition_weights={'state_0': np.float64(0.020236684945150022), 'state_1': np.float64(0.06612830404353827), 'state_2': np.float64(0.009825262008791434), 'state_3': np.float64(0.0325179838810631), 'state_4': np.float64(0.0177406747567268), 'state_5': np.float64(0.061202822262205935), 'state_6': np.float64(0.021428729291521776), 'state_7': np.float64(0.0008684633682461327), 'state_8': np.float64(0.010772887973763209), 'state_9': np.float64(0.031914611646595835), 'state_10': np.float64(0.026779317544109973), 'state_11': np.float64(0.052262196819323606), 'state_12': np.float64(0.014760893892665357), 'state_13': np.float64(0.06130506949204373), 'state_14': np.float64(0.027569685602922972), 'state_15': np.float64(0.047919224091627605), 'state_16': np.float64(0.009226429264305214), 'state_17': np.float64(0.07871097135576964), 'state_18': np.float64(0.0533600482418065), 'state_19': np.float64(0.04654818742626135), 'state_20': np.float64(0.013690213686206825), 'state_21': np.float64(0.01573513608149939), 'state_22': np.float64(0.02217622012633163), 'state_23': np.float64(0.07359840177260565), 'state_24': np.float64(0.0031731448608574215), 'state_25': np.float64(0.00924218054044724), 'state_26': np.float64(0.013709391049947155), 'state_27': np.float64(0.006157015003464971), 'state_28': np.float64(0.07912111732389843), 'state_29': np.float64(0.008093095063135602), 'state_30': np.float64(0.023640614837371017), 'state_31': np.float64(0.04058502174579589)}, entanglement_matrix=array([[0.12021074, 0.26498665, 0.18770983, 0.0975568 , 0.27446915],\n       [0.26498665, 0.14625224, 0.24967246, 0.28062487, 0.22466391],\n       [0.18770983, 0.24967246, 0.22060166, 0.09520491, 0.11154004],\n       [0.0975568 , 0.28062487, 0.09520491, 0.06400965, 0.1878669 ],\n       [0.27446915, 0.22466391, 0.11154004, 0.1878669 , 0.18458312]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 398323))",
+      "PLATINUM": "QuantumMarketData(asset_type=<AssetType.METALS: 'metals'>, symbol='PLATINUM', price=np.float64(5.976711255405482e-55), volume=45832.323667445555, quantum_state=array([-0.125+0.125j, -0.125+0.125j, -0.125+0.125j, -0.125+0.125j,\n       -0.125+0.125j, -0.125+0.125j, -0.125+0.125j, -0.125+0.125j,\n       -0.125+0.125j, -0.125+0.125j, -0.125+0.125j, -0.125+0.125j,\n       -0.125+0.125j, -0.125+0.125j, -0.125+0.125j, -0.125+0.125j,\n       -0.125+0.125j, -0.125+0.125j, -0.125+0.125j, -0.125+0.125j,\n       -0.125+0.125j, -0.125+0.125j, -0.125+0.125j, -0.125+0.125j,\n       -0.125+0.125j, -0.125+0.125j, -0.125+0.125j, -0.125+0.125j,\n       -0.125+0.125j, -0.125+0.125j, -0.125+0.125j, -0.125+0.125j]), superposition_weights={'state_0': np.float64(0.03175117229090485), 'state_1': np.float64(0.016641503356364752), 'state_2': np.float64(0.05918261299239391), 'state_3': np.float64(0.011794384099657333), 'state_4': np.float64(0.003128377591620733), 'state_5': np.float64(0.07257972234230589), 'state_6': np.float64(0.0037980743705483457), 'state_7': np.float64(0.033279675850580066), 'state_8': np.float64(0.0701684544160013), 'state_9': np.float64(0.02017103678882114), 'state_10': np.float64(0.023836800541233143), 'state_11': np.float64(0.04737773475526994), 'state_12': np.float64(0.0011580028688862156), 'state_13': np.float64(0.008951572368170414), 'state_14': np.float64(0.04676300643387239), 'state_15': np.float64(0.04858703044327078), 'state_16': np.float64(0.022055031857487563), 'state_17': np.float64(0.016395885373190384), 'state_18': np.float64(0.07207741299528875), 'state_19': np.float64(0.001919941191092477), 'state_20': np.float64(0.048468725981940367), 'state_21': np.float64(0.025970481796117075), 'state_22': np.float64(0.022323156088252926), 'state_23': np.float64(0.0023747002847546027), 'state_24': np.float64(0.030172917129134204), 'state_25': np.float64(0.0002450554159006309), 'state_26': np.float64(0.048405305240446), 'state_27': np.float64(0.002815245813061085), 'state_28': np.float64(0.005416381506125167), 'state_29': np.float64(0.14197347216916023), 'state_30': np.float64(0.027925483136553207), 'state_31': np.float64(0.03229164251159412)}, entanglement_matrix=array([[0.12021074, 0.26498665, 0.18770983, 0.0975568 , 0.27446915],\n       [0.26498665, 0.14625224, 0.24967246, 0.28062487, 0.22466391],\n       [0.18770983, 0.24967246, 0.22060166, 0.09520491, 0.11154004],\n       [0.0975568 , 0.28062487, 0.09520491, 0.06400965, 0.1878669 ],\n       [0.27446915, 0.22466391, 0.11154004, 0.1878669 , 0.18458312]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 398423))",
+      "PALLADIUM": "QuantumMarketData(asset_type=<AssetType.METALS: 'metals'>, symbol='PALLADIUM', price=np.float64(1.3823925120744145e-50), volume=672.4380144399771, quantum_state=array([-0.125+0.125j, -0.125+0.125j, -0.125+0.125j, -0.125+0.125j,\n       -0.125+0.125j, -0.125+0.125j, -0.125+0.125j, -0.125+0.125j,\n       -0.125+0.125j, -0.125+0.125j, -0.125+0.125j, -0.125+0.125j,\n       -0.125+0.125j, -0.125+0.125j, -0.125+0.125j, -0.125+0.125j,\n       -0.125+0.125j, -0.125+0.125j, -0.125+0.125j, -0.125+0.125j,\n       -0.125+0.125j, -0.125+0.125j, -0.125+0.125j, -0.125+0.125j,\n       -0.125+0.125j, -0.125+0.125j, -0.125+0.125j, -0.125+0.125j,\n       -0.125+0.125j, -0.125+0.125j, -0.125+0.125j, -0.125+0.125j]), superposition_weights={'state_0': np.float64(0.020308018975825615), 'state_1': np.float64(0.005906918390244857), 'state_2': np.float64(0.05542542060436452), 'state_3': np.float64(0.03852188546222267), 'state_4': np.float64(0.023064715336201056), 'state_5': np.float64(0.010163637646648235), 'state_6': np.float64(0.07822780237795429), 'state_7': np.float64(0.0007295602766799895), 'state_8': np.float64(0.049287088238600764), 'state_9': np.float64(0.04286438383331321), 'state_10': np.float64(0.015199676869621752), 'state_11': np.float64(0.04089005673612383), 'state_12': np.float64(0.01381956311802353), 'state_13': np.float64(0.029154940558350217), 'state_14': np.float64(0.04794645261891564), 'state_15': np.float64(0.04663901860421638), 'state_16': np.float64(0.03834506076226006), 'state_17': np.float64(0.008168752353791374), 'state_18': np.float64(0.020989515611246398), 'state_19': np.float64(0.012341239586122148), 'state_20': np.float64(0.006850905937456488), 'state_21': np.float64(0.006390591449823417), 'state_22': np.float64(0.03291310849616085), 'state_23': np.float64(0.09403862263327306), 'state_24': np.float64(0.008624378406505174), 'state_25': np.float64(0.035319269447906365), 'state_26': np.float64(0.012982775197471366), 'state_27': np.float64(0.09614488453546309), 'state_28': np.float64(0.024517254509604826), 'state_29': np.float64(0.03622521122678942), 'state_30': np.float64(0.021410399154706654), 'state_31': np.float64(0.02658889104411271)}, entanglement_matrix=array([[0.12021074, 0.26498665, 0.18770983, 0.0975568 , 0.27446915],\n       [0.26498665, 0.14625224, 0.24967246, 0.28062487, 0.22466391],\n       [0.18770983, 0.24967246, 0.22060166, 0.09520491, 0.11154004],\n       [0.0975568 , 0.28062487, 0.09520491, 0.06400965, 0.1878669 ],\n       [0.27446915, 0.22466391, 0.11154004, 0.1878669 , 0.18458312]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 398512))",
+      "COPPER": "QuantumMarketData(asset_type=<AssetType.METALS: 'metals'>, symbol='COPPER', price=np.float64(8.623108636430474e-53), volume=24653.217735368165, quantum_state=array([0.1767767-8.65956056e-17j, 0.1767767-8.65956056e-17j,\n       0.1767767-8.65956056e-17j, 0.1767767-8.65956056e-17j,\n       0.1767767-8.65956056e-17j, 0.1767767-8.65956056e-17j,\n       0.1767767-8.65956056e-17j, 0.1767767-8.65956056e-17j,\n       0.1767767-8.65956056e-17j, 0.1767767-8.65956056e-17j,\n       0.1767767-8.65956056e-17j, 0.1767767-8.65956056e-17j,\n       0.1767767-8.65956056e-17j, 0.1767767-8.65956056e-17j,\n       0.1767767-8.65956056e-17j, 0.1767767-8.65956056e-17j,\n       0.1767767-8.65956056e-17j, 0.1767767-8.65956056e-17j,\n       0.1767767-8.65956056e-17j, 0.1767767-8.65956056e-17j,\n       0.1767767-8.65956056e-17j, 0.1767767-8.65956056e-17j,\n       0.1767767-8.65956056e-17j, 0.1767767-8.65956056e-17j,\n       0.1767767-8.65956056e-17j, 0.1767767-8.65956056e-17j,\n       0.1767767-8.65956056e-17j, 0.1767767-8.65956056e-17j,\n       0.1767767-8.65956056e-17j, 0.1767767-8.65956056e-17j,\n       0.1767767-8.65956056e-17j, 0.1767767-8.65956056e-17j]), superposition_weights={'state_0': np.float64(0.002616946254069067), 'state_1': np.float64(0.003234871206252456), 'state_2': np.float64(0.023875663657109313), 'state_3': np.float64(0.007358093438910876), 'state_4': np.float64(0.0444880735109898), 'state_5': np.float64(0.02365263106091819), 'state_6': np.float64(0.02805100175464236), 'state_7': np.float64(0.013702448381275887), 'state_8': np.float64(0.02721310663582622), 'state_9': np.float64(0.05971605676698077), 'state_10': np.float64(0.069025038360126), 'state_11': np.float64(0.010124804475768653), 'state_12': np.float64(0.05402042158011434), 'state_13': np.float64(0.07278383710166694), 'state_14': np.float64(0.010628658855031574), 'state_15': np.float64(0.036273087561423306), 'state_16': np.float64(0.020183384306143033), 'state_17': np.float64(0.000588027937648326), 'state_18': np.float64(0.005752918692107598), 'state_19': np.float64(0.045489282996844814), 'state_20': np.float64(0.017596415919532576), 'state_21': np.float64(0.040967497612475305), 'state_22': np.float64(0.008380663227028922), 'state_23': np.float64(0.07746094070880236), 'state_24': np.float64(0.021139387138688102), 'state_25': np.float64(0.0280044063599852), 'state_26': np.float64(0.026593120047179463), 'state_27': np.float64(0.05871514415093425), 'state_28': np.float64(0.08669831495380109), 'state_29': np.float64(0.03565183924306896), 'state_30': np.float64(0.03853126655178872), 'state_31': np.float64(0.0014826495528655074)}, entanglement_matrix=array([[0.12021074, 0.26498665, 0.18770983, 0.0975568 , 0.27446915],\n       [0.26498665, 0.14625224, 0.24967246, 0.28062487, 0.22466391],\n       [0.18770983, 0.24967246, 0.22060166, 0.09520491, 0.11154004],\n       [0.0975568 , 0.28062487, 0.09520491, 0.06400965, 0.1878669 ],\n       [0.27446915, 0.22466391, 0.11154004, 0.1878669 , 0.18458312]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 398601))"
+    },
+    "correlations": {
+      "GOLD_SILVER": 1.0,
+      "GOLD_PLATINUM": 0.9999999999999996,
+      "GOLD_PALLADIUM": 0.9999999999999996,
+      "GOLD_COPPER": 0.9999999999999998,
+      "SILVER_PLATINUM": 0.9999999999999998,
+      "SILVER_PALLADIUM": 0.9999999999999998,
+      "SILVER_COPPER": 0.9999999999999996,
+      "PLATINUM_PALLADIUM": 0.9999999999999996,
+      "PLATINUM_COPPER": 0.9999999999999996,
+      "PALLADIUM_COPPER": 0.9999999999999996
+    },
+    "entanglement_strength": 0.7,
+    "timestamp": "2025-11-03T08:40:30.398630"
+  },
+  "crypto": {
+    "data": {
+      "BTC": "QuantumMarketData(asset_type=<AssetType.CRYPTO: 'crypto'>, symbol='BTC', price=np.float64(3.718326222788691e-123), volume=3853.1026608854545, quantum_state=array([0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j, 0.125-1.5308085e-16j, 0.125-1.5308085e-16j,\n       0.125-1.5308085e-16j]), superposition_weights={'state_0': np.float64(0.03299170461664293), 'state_1': np.float64(0.00881584465530342), 'state_2': np.float64(0.006551448277463695), 'state_3': np.float64(0.013051163796910228), 'state_4': np.float64(0.03084625656190346), 'state_5': np.float64(0.0009143646063177937), 'state_6': np.float64(0.0072517727646416105), 'state_7': np.float64(2.999776440623613e-05), 'state_8': np.float64(0.0178630411998572), 'state_9': np.float64(0.0015596580101903269), 'state_10': np.float64(0.016114946636272807), 'state_11': np.float64(0.024995553207713513), 'state_12': np.float64(0.006413393758541152), 'state_13': np.float64(0.023843704321458714), 'state_14': np.float64(0.02717058536033708), 'state_15': np.float64(0.028988601405707453), 'state_16': np.float64(0.02451342060030599), 'state_17': np.float64(0.015070661600335504), 'state_18': np.float64(0.026687388812112474), 'state_19': np.float64(0.003915605784165721), 'state_20': np.float64(0.0064813726097329065), 'state_21': np.float64(0.034432222691731865), 'state_22': np.float64(0.033191657127970474), 'state_23': np.float64(0.019898421233680883), 'state_24': np.float64(0.005624772602674662), 'state_25': np.float64(0.024619884231798433), 'state_26': np.float64(0.002107058082351333), 'state_27': np.float64(0.002656418068085737), 'state_28': np.float64(0.03181819249215889), 'state_29': np.float64(0.01536482500137714), 'state_30': np.float64(0.018963835343005945), 'state_31': np.float64(0.020408328644102722), 'state_32': np.float64(0.002859856532901657), 'state_33': np.float64(0.011929713870402724), 'state_34': np.float64(0.016494008673047837), 'state_35': np.float64(0.00794299934720129), 'state_36': np.float64(0.023438338066131336), 'state_37': np.float64(0.032793402240901166), 'state_38': np.float64(0.024157948389172047), 'state_39': np.float64(0.013516780281536278), 'state_40': np.float64(0.004354321909393043), 'state_41': np.float64(0.006580837855197577), 'state_42': np.float64(0.006617764816793135), 'state_43': np.float64(0.008668699382614425), 'state_44': np.float64(0.00745084210351658), 'state_45': np.float64(0.0020180759454751325), 'state_46': np.float64(0.009292631718715829), 'state_47': np.float64(0.030359674126648376), 'state_48': np.float64(0.01804215250435257), 'state_49': np.float64(0.011689494896745836), 'state_50': np.float64(0.002551970029040828), 'state_51': np.float64(0.007517067898936645), 'state_52': np.float64(0.016919515910429363), 'state_53': np.float64(0.019861968148908057), 'state_54': np.float64(0.032263180580158715), 'state_55': np.float64(0.022211236591287084), 'state_56': np.float64(0.03233137347127601), 'state_57': np.float64(0.019838250961900544), 'state_58': np.float64(0.014984907009034789), 'state_59': np.float64(0.004471513078726616), 'state_60': np.float64(0.01297989703121475), 'state_61': np.float64(0.01890157383574358), 'state_62': np.float64(0.010549152078062403), 'state_63': np.float64(0.013254748845275414)}, entanglement_matrix=array([[0.10543145, 0.19665511, 0.15930828, 0.02634424, 0.10742562,\n        0.19354119],\n       [0.19665511, 0.19768385, 0.13158728, 0.22518826, 0.12804432,\n        0.22742542],\n       [0.15930828, 0.13158728, 0.10183881, 0.18393331, 0.10752605,\n        0.09016278],\n       [0.02634424, 0.22518826, 0.18393331, 0.12162775, 0.17198095,\n        0.12903654],\n       [0.10742562, 0.12804432, 0.10752605, 0.17198095, 0.20215701,\n        0.26547128],\n       [0.19354119, 0.22742542, 0.09016278, 0.12903654, 0.26547128,\n        0.20868017]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 398810))",
+      "ETH": "QuantumMarketData(asset_type=<AssetType.CRYPTO: 'crypto'>, symbol='ETH', price=np.float64(2.523026834521625e-123), volume=90200.6612399443, quantum_state=array([0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j,\n       0.08838835+0.08838835j, 0.08838835+0.08838835j]), superposition_weights={'state_0': np.float64(0.004616126923262408), 'state_1': np.float64(0.001543330963542103), 'state_2': np.float64(0.0057330453905332516), 'state_3': np.float64(0.018706834184051467), 'state_4': np.float64(0.023016386271989032), 'state_5': np.float64(0.0001870653146599176), 'state_6': np.float64(0.011052716529294014), 'state_7': np.float64(0.019729311407624604), 'state_8': np.float64(0.011239708345059813), 'state_9': np.float64(0.032992029803732885), 'state_10': np.float64(0.0008743360958014401), 'state_11': np.float64(0.019424029957607274), 'state_12': np.float64(0.012471275030254353), 'state_13': np.float64(0.022821142690969316), 'state_14': np.float64(0.014755111171411168), 'state_15': np.float64(0.001124348852632002), 'state_16': np.float64(0.015458251135938017), 'state_17': np.float64(0.009461610795794445), 'state_18': np.float64(0.011348894482773047), 'state_19': np.float64(0.004104661147488454), 'state_20': np.float64(0.0032689060961174003), 'state_21': np.float64(0.0785388778042518), 'state_22': np.float64(0.0026458570969751386), 'state_23': np.float64(0.011804103322908242), 'state_24': np.float64(0.01487082817831925), 'state_25': np.float64(0.02803487381440078), 'state_26': np.float64(0.025813580830660786), 'state_27': np.float64(0.010326192763123878), 'state_28': np.float64(0.007875567527477414), 'state_29': np.float64(0.027064287283982365), 'state_30': np.float64(0.01015253488031484), 'state_31': np.float64(0.016270894065688317), 'state_32': np.float64(0.006651358218312316), 'state_33': np.float64(0.015136910334462883), 'state_34': np.float64(0.045046541295133205), 'state_35': np.float64(0.014344188796323756), 'state_36': np.float64(0.008877879227466242), 'state_37': np.float64(0.007343190038201223), 'state_38': np.float64(0.005147563380336078), 'state_39': np.float64(0.010703270859008702), 'state_40': np.float64(0.004398239847675295), 'state_41': np.float64(0.011507410462368953), 'state_42': np.float64(0.017185799908520896), 'state_43': np.float64(0.013739489269473085), 'state_44': np.float64(0.003811061814964198), 'state_45': np.float64(0.04422871018962581), 'state_46': np.float64(0.02338549627492863), 'state_47': np.float64(0.01479922456645975), 'state_48': np.float64(0.007599325105450185), 'state_49': np.float64(0.02178169059939369), 'state_50': np.float64(0.0002291909480235343), 'state_51': np.float64(0.002189324993965166), 'state_52': np.float64(0.005530908547209458), 'state_53': np.float64(0.017056266387306947), 'state_54': np.float64(0.01831672883979627), 'state_55': np.float64(0.030048823552981344), 'state_56': np.float64(0.03831218146153665), 'state_57': np.float64(0.03711443544257154), 'state_58': np.float64(0.01039383830775191), 'state_59': np.float64(0.031056272055654453), 'state_60': np.float64(0.011915647697535812), 'state_61': np.float64(0.023448571873648513), 'state_62': np.float64(0.019395630770426036), 'state_63': np.float64(0.001978108774848807)}, entanglement_matrix=array([[0.10543145, 0.19665511, 0.15930828, 0.02634424, 0.10742562,\n        0.19354119],\n       [0.19665511, 0.19768385, 0.13158728, 0.22518826, 0.12804432,\n        0.22742542],\n       [0.15930828, 0.13158728, 0.10183881, 0.18393331, 0.10752605,\n        0.09016278],\n       [0.02634424, 0.22518826, 0.18393331, 0.12162775, 0.17198095,\n        0.12903654],\n       [0.10742562, 0.12804432, 0.10752605, 0.17198095, 0.20215701,\n        0.26547128],\n       [0.19354119, 0.22742542, 0.09016278, 0.12903654, 0.26547128,\n        0.20868017]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 398991))",
+      "BNB": "QuantumMarketData(asset_type=<AssetType.CRYPTO: 'crypto'>, symbol='BNB', price=np.float64(8.349857290531341e-118), volume=4650.565801618104, quantum_state=array([-0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j,\n       -0.08838835+0.08838835j, -0.08838835+0.08838835j]), superposition_weights={'state_0': np.float64(0.013099147515884691), 'state_1': np.float64(0.03157121714787921), 'state_2': np.float64(0.009455848784066757), 'state_3': np.float64(0.004260571571214232), 'state_4': np.float64(0.016698429733231473), 'state_5': np.float64(0.008801880974606739), 'state_6': np.float64(0.0008220230656170862), 'state_7': np.float64(0.02257733626435934), 'state_8': np.float64(0.014292547472141181), 'state_9': np.float64(0.016117070672412984), 'state_10': np.float64(0.01907048940202722), 'state_11': np.float64(0.009680105740181329), 'state_12': np.float64(0.008254033290102242), 'state_13': np.float64(0.016014574047354988), 'state_14': np.float64(0.016204773646558163), 'state_15': np.float64(0.02213853482592667), 'state_16': np.float64(0.030847121111535925), 'state_17': np.float64(0.016959831451990072), 'state_18': np.float64(0.020607999751997903), 'state_19': np.float64(0.007971358212565604), 'state_20': np.float64(0.010278087981586971), 'state_21': np.float64(0.01668214288652492), 'state_22': np.float64(0.032745386080380266), 'state_23': np.float64(0.03220458286542), 'state_24': np.float64(0.010319504078462712), 'state_25': np.float64(0.019005314444943196), 'state_26': np.float64(0.006734075583855083), 'state_27': np.float64(0.007048452511117009), 'state_28': np.float64(0.034992256828089305), 'state_29': np.float64(0.01777225359662878), 'state_30': np.float64(0.009252610600613297), 'state_31': np.float64(0.011232876921380102), 'state_32': np.float64(0.014495321822802033), 'state_33': np.float64(0.014042259962569605), 'state_34': np.float64(0.019265654088279675), 'state_35': np.float64(0.01829735579420126), 'state_36': np.float64(0.0034149422980048303), 'state_37': np.float64(0.003486889864570627), 'state_38': np.float64(0.018883059827362922), 'state_39': np.float64(0.004017513067491329), 'state_40': np.float64(0.0293269933270547), 'state_41': np.float64(0.0027784334857852843), 'state_42': np.float64(0.011929120779922638), 'state_43': np.float64(0.031150820019118584), 'state_44': np.float64(0.03944510299453879), 'state_45': np.float64(0.009701662881217534), 'state_46': np.float64(0.00657521892757942), 'state_47': np.float64(0.004395566734215806), 'state_48': np.float64(0.017481865852863956), 'state_49': np.float64(0.00633513855192657), 'state_50': np.float64(0.015019714936044898), 'state_51': np.float64(0.006499933657184415), 'state_52': np.float64(0.005101399098146652), 'state_53': np.float64(0.006202235957072789), 'state_54': np.float64(0.03671296585405567), 'state_55': np.float64(0.021981557390794496), 'state_56': np.float64(0.026909424327213813), 'state_57': np.float64(0.0047531763879956525), 'state_58': np.float64(0.01626189041323823), 'state_59': np.float64(0.032725936245702004), 'state_60': np.float64(0.021804326235813815), 'state_61': np.float64(0.011781759682092552), 'state_62': np.float64(0.018322081832985757), 'state_63': np.float64(0.007188238641498289)}, entanglement_matrix=array([[0.10543145, 0.19665511, 0.15930828, 0.02634424, 0.10742562,\n        0.19354119],\n       [0.19665511, 0.19768385, 0.13158728, 0.22518826, 0.12804432,\n        0.22742542],\n       [0.15930828, 0.13158728, 0.10183881, 0.18393331, 0.10752605,\n        0.09016278],\n       [0.02634424, 0.22518826, 0.18393331, 0.12162775, 0.17198095,\n        0.12903654],\n       [0.10742562, 0.12804432, 0.10752605, 0.17198095, 0.20215701,\n        0.26547128],\n       [0.19354119, 0.22742542, 0.09016278, 0.12903654, 0.26547128,\n        0.20868017]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 399161))",
+      "ADA": "QuantumMarketData(asset_type=<AssetType.CRYPTO: 'crypto'>, symbol='ADA', price=np.float64(5.958428626595062e-122), volume=176034.55130693322, quantum_state=array([0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j,\n       0.08838835-0.08838835j, 0.08838835-0.08838835j]), superposition_weights={'state_0': np.float64(0.01091813075435179), 'state_1': np.float64(0.015855152972433423), 'state_2': np.float64(0.018540573861587417), 'state_3': np.float64(0.015809704389874783), 'state_4': np.float64(0.008038265688326727), 'state_5': np.float64(0.01765081961150746), 'state_6': np.float64(0.015799738047127233), 'state_7': np.float64(0.048855704500873585), 'state_8': np.float64(0.00261490660315864), 'state_9': np.float64(0.017255913591139337), 'state_10': np.float64(0.009824792623609966), 'state_11': np.float64(0.016286463817304305), 'state_12': np.float64(0.012831992407806324), 'state_13': np.float64(0.0366356754336682), 'state_14': np.float64(0.021167520812720973), 'state_15': np.float64(0.028674875188187048), 'state_16': np.float64(0.01877591488405253), 'state_17': np.float64(0.021681125212552835), 'state_18': np.float64(0.014100750079802434), 'state_19': np.float64(0.022777337788035555), 'state_20': np.float64(0.002897161489508196), 'state_21': np.float64(0.00043542756579591577), 'state_22': np.float64(0.01317780428282218), 'state_23': np.float64(0.016879671932540734), 'state_24': np.float64(0.004737771466018743), 'state_25': np.float64(0.0280420255867791), 'state_26': np.float64(0.0039754128881053855), 'state_27': np.float64(0.011423381632937291), 'state_28': np.float64(0.00039869078531205865), 'state_29': np.float64(0.021059097331660056), 'state_30': np.float64(0.014135343341301525), 'state_31': np.float64(0.00913152985873169), 'state_32': np.float64(0.0037529381025005588), 'state_33': np.float64(0.0010586838886845226), 'state_34': np.float64(0.004075252756711113), 'state_35': np.float64(0.026240696907836657), 'state_36': np.float64(0.00831283682328349), 'state_37': np.float64(0.013829082580694712), 'state_38': np.float64(0.043076663778688726), 'state_39': np.float64(0.018721844724795964), 'state_40': np.float64(0.023928607654500327), 'state_41': np.float64(0.01991827028252104), 'state_42': np.float64(0.016541177525122682), 'state_43': np.float64(0.04202090779307782), 'state_44': np.float64(0.027326904934164856), 'state_45': np.float64(0.002468278940843141), 'state_46': np.float64(0.0031108115772120553), 'state_47': np.float64(0.0136539418832746), 'state_48': np.float64(0.00915554748410272), 'state_49': np.float64(0.01964779436356776), 'state_50': np.float64(0.0007421838427502636), 'state_51': np.float64(0.026576691783006947), 'state_52': np.float64(0.0026364167228836695), 'state_53': np.float64(0.006242764444619479), 'state_54': np.float64(0.014329070186356891), 'state_55': np.float64(0.020197173440324446), 'state_56': np.float64(0.0052328433582173465), 'state_57': np.float64(0.02036013994994639), 'state_58': np.float64(0.019665307714136764), 'state_59': np.float64(0.03443896072206488), 'state_60': np.float64(0.024832378900611133), 'state_61': np.float64(0.02110289653691724), 'state_62': np.float64(0.0011266199046163039), 'state_63': np.float64(0.005287634062332254)}, entanglement_matrix=array([[0.10543145, 0.19665511, 0.15930828, 0.02634424, 0.10742562,\n        0.19354119],\n       [0.19665511, 0.19768385, 0.13158728, 0.22518826, 0.12804432,\n        0.22742542],\n       [0.15930828, 0.13158728, 0.10183881, 0.18393331, 0.10752605,\n        0.09016278],\n       [0.02634424, 0.22518826, 0.18393331, 0.12162775, 0.17198095,\n        0.12903654],\n       [0.10742562, 0.12804432, 0.10752605, 0.17198095, 0.20215701,\n        0.26547128],\n       [0.19354119, 0.22742542, 0.09016278, 0.12903654, 0.26547128,\n        0.20868017]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 399328))",
+      "SOL": "QuantumMarketData(asset_type=<AssetType.CRYPTO: 'crypto'>, symbol='SOL', price=np.float64(4.82735290632843e-120), volume=6981.734402611277, quantum_state=array([-4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j,\n       -4.59319922e-16-0.125j, -4.59319922e-16-0.125j]), superposition_weights={'state_0': np.float64(0.014532142185787779), 'state_1': np.float64(0.023777269468169472), 'state_2': np.float64(0.015878965771267753), 'state_3': np.float64(0.00881568196154995), 'state_4': np.float64(0.018364793402746882), 'state_5': np.float64(0.019938331508018384), 'state_6': np.float64(0.04408187670615472), 'state_7': np.float64(0.02092333686455358), 'state_8': np.float64(0.007102461890045896), 'state_9': np.float64(0.003767972702084356), 'state_10': np.float64(0.0030416161746128286), 'state_11': np.float64(0.011408669560566955), 'state_12': np.float64(0.015753986584255707), 'state_13': np.float64(0.022530485930514838), 'state_14': np.float64(0.01729991002908419), 'state_15': np.float64(0.01851580964231483), 'state_16': np.float64(0.004983541706544505), 'state_17': np.float64(0.011059618709870257), 'state_18': np.float64(0.05595202489771894), 'state_19': np.float64(0.008042173927808706), 'state_20': np.float64(0.0031987116423908384), 'state_21': np.float64(0.03053983352240765), 'state_22': np.float64(0.004493230264569536), 'state_23': np.float64(0.007542095459528265), 'state_24': np.float64(0.01949129317897923), 'state_25': np.float64(0.02999616323035715), 'state_26': np.float64(0.015033440053744986), 'state_27': np.float64(0.0060734968819716045), 'state_28': np.float64(0.017002367122091886), 'state_29': np.float64(0.034851516921280336), 'state_30': np.float64(0.010700713871791404), 'state_31': np.float64(0.02494725798841708), 'state_32': np.float64(0.009836425604431532), 'state_33': np.float64(0.014035855266859394), 'state_34': np.float64(0.012984183956750021), 'state_35': np.float64(0.0002848380939260224), 'state_36': np.float64(0.013553882179994434), 'state_37': np.float64(0.04956222320507975), 'state_38': np.float64(0.012704310951319554), 'state_39': np.float64(0.006469504326456048), 'state_40': np.float64(0.01332795659679541), 'state_41': np.float64(0.009875479089279833), 'state_42': np.float64(0.01609800985336629), 'state_43': np.float64(0.010124098979861782), 'state_44': np.float64(0.008547487432652476), 'state_45': np.float64(0.01170658421128886), 'state_46': np.float64(0.010980649577686373), 'state_47': np.float64(0.016163489316814973), 'state_48': np.float64(0.0023525304227164333), 'state_49': np.float64(0.03163678896709426), 'state_50': np.float64(0.02533678856399312), 'state_51': np.float64(0.02656655273971206), 'state_52': np.float64(0.004026644531359155), 'state_53': np.float64(0.001850801746725982), 'state_54': np.float64(0.015458860320988971), 'state_55': np.float64(0.004344578221085703), 'state_56': np.float64(0.01534079286077218), 'state_57': np.float64(0.02028130536477609), 'state_58': np.float64(0.007762689537481322), 'state_59': np.float64(0.00957461855893195), 'state_60': np.float64(0.012380748504578806), 'state_61': np.float64(0.019851619359650678), 'state_62': np.float64(0.02094738990469458), 'state_63': np.float64(0.01639152199167547)}, entanglement_matrix=array([[0.10543145, 0.19665511, 0.15930828, 0.02634424, 0.10742562,\n        0.19354119],\n       [0.19665511, 0.19768385, 0.13158728, 0.22518826, 0.12804432,\n        0.22742542],\n       [0.15930828, 0.13158728, 0.10183881, 0.18393331, 0.10752605,\n        0.09016278],\n       [0.02634424, 0.22518826, 0.18393331, 0.12162775, 0.17198095,\n        0.12903654],\n       [0.10742562, 0.12804432, 0.10752605, 0.17198095, 0.20215701,\n        0.26547128],\n       [0.19354119, 0.22742542, 0.09016278, 0.12903654, 0.26547128,\n        0.20868017]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 399517))",
+      "XRP": "QuantumMarketData(asset_type=<AssetType.CRYPTO: 'crypto'>, symbol='XRP', price=np.float64(5.128729614583758e-124), volume=110568.24694588195, quantum_state=array([-4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j,\n       -4.28703752e-16-0.125j, -4.28703752e-16-0.125j]), superposition_weights={'state_0': np.float64(0.00417937994504446), 'state_1': np.float64(0.001528119726326684), 'state_2': np.float64(0.03659826061954095), 'state_3': np.float64(0.010906039687625713), 'state_4': np.float64(0.02387886810919027), 'state_5': np.float64(0.01895620386620425), 'state_6': np.float64(0.016721021354739827), 'state_7': np.float64(0.0059965060629547625), 'state_8': np.float64(0.020851825422848292), 'state_9': np.float64(0.03003832798314475), 'state_10': np.float64(0.005045046927915558), 'state_11': np.float64(0.019947515266585985), 'state_12': np.float64(0.0007559492191316453), 'state_13': np.float64(0.05238128032085643), 'state_14': np.float64(0.02356540342499011), 'state_15': np.float64(0.004654150060156321), 'state_16': np.float64(0.023999045863942865), 'state_17': np.float64(0.01533424794324413), 'state_18': np.float64(0.0698841367725956), 'state_19': np.float64(0.018409084332716243), 'state_20': np.float64(0.005140193538940075), 'state_21': np.float64(0.006588991228067337), 'state_22': np.float64(0.007151402971646725), 'state_23': np.float64(0.0027838210849655677), 'state_24': np.float64(0.020157948576200027), 'state_25': np.float64(0.0005539684098219146), 'state_26': np.float64(0.01209221040609035), 'state_27': np.float64(0.019335472794876046), 'state_28': np.float64(0.009973489990077728), 'state_29': np.float64(0.024177134755178208), 'state_30': np.float64(0.01844376690183431), 'state_31': np.float64(0.03552592525897638), 'state_32': np.float64(0.028493325095153486), 'state_33': np.float64(0.014703298098451641), 'state_34': np.float64(0.006628085989566746), 'state_35': np.float64(0.0007976344573457247), 'state_36': np.float64(0.008383826033119681), 'state_37': np.float64(0.036290260370645276), 'state_38': np.float64(0.0365975631352934), 'state_39': np.float64(0.008437267694749643), 'state_40': np.float64(0.017382584626863574), 'state_41': np.float64(0.000632458077582628), 'state_42': np.float64(0.01970912903853796), 'state_43': np.float64(0.019040574078250008), 'state_44': np.float64(0.013574090373319378), 'state_45': np.float64(0.013811325194962846), 'state_46': np.float64(0.005394064621478104), 'state_47': np.float64(0.02838361861740748), 'state_48': np.float64(0.014621501110927143), 'state_49': np.float64(0.021065620828684333), 'state_50': np.float64(0.0007825564605330355), 'state_51': np.float64(0.023658379394912988), 'state_52': np.float64(0.004644391254328534), 'state_53': np.float64(0.011145877219807226), 'state_54': np.float64(0.01059991126987194), 'state_55': np.float64(0.0013644536633530364), 'state_56': np.float64(0.009992006359697912), 'state_57': np.float64(0.009425605099895035), 'state_58': np.float64(0.023626938268712674), 'state_59': np.float64(0.003684985925766726), 'state_60': np.float64(0.019349918640763495), 'state_61': np.float64(0.0065281476501089074), 'state_62': np.float64(0.008102111435186453), 'state_63': np.float64(0.0075937510882930085)}, entanglement_matrix=array([[0.10543145, 0.19665511, 0.15930828, 0.02634424, 0.10742562,\n        0.19354119],\n       [0.19665511, 0.19768385, 0.13158728, 0.22518826, 0.12804432,\n        0.22742542],\n       [0.15930828, 0.13158728, 0.10183881, 0.18393331, 0.10752605,\n        0.09016278],\n       [0.02634424, 0.22518826, 0.18393331, 0.12162775, 0.17198095,\n        0.12903654],\n       [0.10742562, 0.12804432, 0.10752605, 0.17198095, 0.20215701,\n        0.26547128],\n       [0.19354119, 0.22742542, 0.09016278, 0.12903654, 0.26547128,\n        0.20868017]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 399692))",
+      "DOT": "QuantumMarketData(asset_type=<AssetType.CRYPTO: 'crypto'>, symbol='DOT', price=np.float64(6.523647932852958e-123), volume=249.93095976799881, quantum_state=array([-0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j,\n       -0.125+1.37772765e-16j, -0.125+1.37772765e-16j]), superposition_weights={'state_0': np.float64(0.04264782086563449), 'state_1': np.float64(0.006952787718113678), 'state_2': np.float64(0.021993491382764383), 'state_3': np.float64(0.00034689877240988806), 'state_4': np.float64(0.04115528828501212), 'state_5': np.float64(0.032829059118052714), 'state_6': np.float64(0.005116642250168092), 'state_7': np.float64(0.000582665099488632), 'state_8': np.float64(0.03599653826534506), 'state_9': np.float64(0.016573147185291875), 'state_10': np.float64(0.024452478780508307), 'state_11': np.float64(0.027001810859216255), 'state_12': np.float64(0.020927294629057472), 'state_13': np.float64(0.04733190625376109), 'state_14': np.float64(0.011548515835678138), 'state_15': np.float64(0.015241713946858661), 'state_16': np.float64(0.009628842302095488), 'state_17': np.float64(0.0005733381001269774), 'state_18': np.float64(0.005013560928247745), 'state_19': np.float64(0.021213512500361943), 'state_20': np.float64(0.01247713248917093), 'state_21': np.float64(0.007105249657923566), 'state_22': np.float64(0.01554540410866012), 'state_23': np.float64(0.02175846994792106), 'state_24': np.float64(0.024895524727330337), 'state_25': np.float64(0.011872887159905665), 'state_26': np.float64(0.018803697019979745), 'state_27': np.float64(0.01215223912722405), 'state_28': np.float64(0.027094628918584863), 'state_29': np.float64(0.007887785780739483), 'state_30': np.float64(0.00403356857715281), 'state_31': np.float64(0.012927077144999306), 'state_32': np.float64(0.013505817292856478), 'state_33': np.float64(0.009930291255638244), 'state_34': np.float64(0.013252944762869348), 'state_35': np.float64(0.036866499272849025), 'state_36': np.float64(0.0074892968987507625), 'state_37': np.float64(0.034742591689045414), 'state_38': np.float64(0.011419102538777665), 'state_39': np.float64(0.016448329893157494), 'state_40': np.float64(0.023653949444802258), 'state_41': np.float64(0.017884113519746614), 'state_42': np.float64(0.015462909994269233), 'state_43': np.float64(0.00408781530773771), 'state_44': np.float64(0.013964751434682674), 'state_45': np.float64(0.006282156565424752), 'state_46': np.float64(0.045227220985922946), 'state_47': np.float64(0.0014854502730007508), 'state_48': np.float64(0.0035685560219654733), 'state_49': np.float64(0.026302486872908346), 'state_50': np.float64(0.003735740530644109), 'state_51': np.float64(0.010458701871258611), 'state_52': np.float64(0.007791636302865173), 'state_53': np.float64(0.0021390637989146654), 'state_54': np.float64(0.0035617588858871123), 'state_55': np.float64(0.005048802676104242), 'state_56': np.float64(0.019481381985700146), 'state_57': np.float64(0.014856630525272837), 'state_58': np.float64(0.008072980421805478), 'state_59': np.float64(0.007398156419947627), 'state_60': np.float64(0.015387094727200342), 'state_61': np.float64(0.017868012119268417), 'state_62': np.float64(0.0010087297710062153), 'state_63': np.float64(0.017936048201934784)}, entanglement_matrix=array([[0.10543145, 0.19665511, 0.15930828, 0.02634424, 0.10742562,\n        0.19354119],\n       [0.19665511, 0.19768385, 0.13158728, 0.22518826, 0.12804432,\n        0.22742542],\n       [0.15930828, 0.13158728, 0.10183881, 0.18393331, 0.10752605,\n        0.09016278],\n       [0.02634424, 0.22518826, 0.18393331, 0.12162775, 0.17198095,\n        0.12903654],\n       [0.10742562, 0.12804432, 0.10752605, 0.17198095, 0.20215701,\n        0.26547128],\n       [0.19354119, 0.22742542, 0.09016278, 0.12903654, 0.26547128,\n        0.20868017]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 399869))",
+      "DOGE": "QuantumMarketData(asset_type=<AssetType.CRYPTO: 'crypto'>, symbol='DOGE', price=np.float64(2.0925771768681657e-129), volume=15785.370739614318, quantum_state=array([-0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j,\n       -0.125+6.12478145e-16j, -0.125+6.12478145e-16j]), superposition_weights={'state_0': np.float64(0.006035057040721772), 'state_1': np.float64(0.00202249868547525), 'state_2': np.float64(0.019387309317306332), 'state_3': np.float64(0.0011663729725849123), 'state_4': np.float64(0.012985292614233333), 'state_5': np.float64(0.024849512984160913), 'state_6': np.float64(0.004820455836031275), 'state_7': np.float64(0.00142449936620376), 'state_8': np.float64(0.0038554375514637993), 'state_9': np.float64(0.0005975848767877588), 'state_10': np.float64(0.021856949896057055), 'state_11': np.float64(4.784081738456871e-05), 'state_12': np.float64(0.02031872720600799), 'state_13': np.float64(0.0005521692155384311), 'state_14': np.float64(0.006158250648377566), 'state_15': np.float64(0.024450775789681876), 'state_16': np.float64(0.005998054566689287), 'state_17': np.float64(0.031598221655067406), 'state_18': np.float64(0.04155688664789917), 'state_19': np.float64(0.001985653957519661), 'state_20': np.float64(0.011843301096700575), 'state_21': np.float64(0.06008077836842595), 'state_22': np.float64(0.008890760169795554), 'state_23': np.float64(0.029408253579783043), 'state_24': np.float64(0.005895314016456853), 'state_25': np.float64(0.014486285697586497), 'state_26': np.float64(0.0029398327140966484), 'state_27': np.float64(0.03930422421867088), 'state_28': np.float64(0.009546843879495644), 'state_29': np.float64(0.007731372424023802), 'state_30': np.float64(0.02431059980524778), 'state_31': np.float64(0.007250064138363212), 'state_32': np.float64(0.017384098215927787), 'state_33': np.float64(0.007602665716628768), 'state_34': np.float64(0.029020658528340067), 'state_35': np.float64(0.01874119344645226), 'state_36': np.float64(0.0017567355132941881), 'state_37': np.float64(0.006373849791188125), 'state_38': np.float64(0.007236148606316009), 'state_39': np.float64(0.029352379789473464), 'state_40': np.float64(0.021781010799891726), 'state_41': np.float64(0.004939180675833026), 'state_42': np.float64(0.015981621153569256), 'state_43': np.float64(0.004086684498954301), 'state_44': np.float64(0.02271713941045018), 'state_45': np.float64(0.05120351639592444), 'state_46': np.float64(0.0024027776776703986), 'state_47': np.float64(0.035859551423201345), 'state_48': np.float64(0.02120035740909614), 'state_49': np.float64(0.013579468186391934), 'state_50': np.float64(0.014673450844209781), 'state_51': np.float64(0.006353667330839114), 'state_52': np.float64(0.0025890115338025443), 'state_53': np.float64(0.02655381840370981), 'state_54': np.float64(0.005721055220932753), 'state_55': np.float64(0.004512476788040951), 'state_56': np.float64(0.0014531346259954133), 'state_57': np.float64(0.049390453016987496), 'state_58': np.float64(0.006867807947502453), 'state_59': np.float64(9.045865839475898e-05), 'state_60': np.float64(0.01994435689217747), 'state_61': np.float64(0.058253138416853305), 'state_62': np.float64(0.013018762213261795), 'state_63': np.float64(0.02600418911485043)}, entanglement_matrix=array([[0.10543145, 0.19665511, 0.15930828, 0.02634424, 0.10742562,\n        0.19354119],\n       [0.19665511, 0.19768385, 0.13158728, 0.22518826, 0.12804432,\n        0.22742542],\n       [0.15930828, 0.13158728, 0.10183881, 0.18393331, 0.10752605,\n        0.09016278],\n       [0.02634424, 0.22518826, 0.18393331, 0.12162775, 0.17198095,\n        0.12903654],\n       [0.10742562, 0.12804432, 0.10752605, 0.17198095, 0.20215701,\n        0.26547128],\n       [0.19354119, 0.22742542, 0.09016278, 0.12903654, 0.26547128,\n        0.20868017]]), timestamp=datetime.datetime(2025, 11, 3, 8, 40, 30, 400041))"
+    },
+    "volatility_analysis": {
+      "BTC": {
+        "base_volatility": 0.0,
+        "quantum_enhanced": 0.0,
+        "entanglement_factor": 0.15623650831051114
+      },
+      "ETH": {
+        "base_volatility": 0.0,
+        "quantum_enhanced": 0.0,
+        "entanglement_factor": 0.15623650831051114
+      },
+      "BNB": {
+        "base_volatility": 0.0,
+        "quantum_enhanced": 0.0,
+        "entanglement_factor": 0.15623650831051114
+      },
+      "ADA": {
+        "base_volatility": 0.0,
+        "quantum_enhanced": 0.0,
+        "entanglement_factor": 0.15623650831051114
+      },
+      "SOL": {
+        "base_volatility": 0.0,
+        "quantum_enhanced": 0.0,
+        "entanglement_factor": 0.15623650831051114
+      },
+      "XRP": {
+        "base_volatility": 0.0,
+        "quantum_enhanced": 0.0,
+        "entanglement_factor": 0.15623650831051114
+      },
+      "DOT": {
+        "base_volatility": 0.0,
+        "quantum_enhanced": 0.0,
+        "entanglement_factor": 0.15623650831051114
+      },
+      "DOGE": {
+        "base_volatility": 0.0,
+        "quantum_enhanced": 0.0,
+        "entanglement_factor": 0.15623650831051114
+      }
+    },
+    "entanglement_strength": 0.85,
+    "timestamp": "2025-11-03T08:40:30.400172"
+  },
+  "cross_opportunities": []
+}

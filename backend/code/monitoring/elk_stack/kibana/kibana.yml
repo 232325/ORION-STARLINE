@@ -1,0 +1,102 @@
+# Kibana Configuration
+
+server.name: kibana
+server.host: "0.0.0.0"
+server.port: 5601
+
+# Elasticsearch connection
+elasticsearch.hosts: ["http://elasticsearch:9200"]
+
+# Logging configuration
+logging.appenders:
+  file:
+    type: file
+    fileName: /usr/share/kibana/logs/kibana.log
+    layout:
+      type: json
+
+logging.root:
+  level: info
+  appenders:
+    - console
+    - file
+
+# Monitoring configuration
+monitoring.ui.container.elasticsearch.enabled: true
+monitoring.ui.container.logstash.enabled: true
+
+# Data configuration
+data.search.aggs.shardDelay.enabled: true
+
+# Map configuration
+map.regionmap.layers:
+  - name: "Countries"
+    url: "https://elastic.co/maps/assets/world_countries.json"
+    format:
+      type: "geojson"
+    attribution: "© Elastic Maps Service"
+    meta:
+      feature_collection_url: "https://elastic.co/maps/assets/world_countries.json"
+
+# Default application locale
+i18n.locale: "en"
+
+# Telemetry configuration
+telemetry.enabled: false
+telemetry.optIn: false
+
+# Security configuration
+xpack.security.enabled: false
+xpack.security.encryptionKey: "something_at_least_32_characters"
+
+# Spaces configuration
+xpack.spaces.enabled: true
+
+# Graph configuration
+xpack.graph.enabled: true
+
+# Machine learning configuration
+xpack.ml.enabled: false
+
+# Canvas configuration
+xpack.canvas.enabled: true
+
+# Maps configuration
+xpack.maps.enabled: true
+
+# Rollup jobs configuration
+xpack.rollup.enabled: true
+
+# Security settings
+xpack.security.sessionTimeout: 3600000
+
+# Advanced settings
+data.search.aggs.shardDelay.enabled: true
+discover:search:sourceFilters: []
+defaultIndex: "logs-*"
+
+# Performance optimization
+elasticsearch.requestTimeout: 90000
+elasticsearch.shardTimeout: 300000
+kibana.defaultAppId: "discover"
+
+# Index patterns
+kibana.index: ".kibana"
+kibana.createAdminVers: true
+
+# Saved objects
+savedObjects.maxImportExportSize: 10000
+savedObjects.importTimeout: 60000
+
+# CSP settings
+csp.strict: false
+csp.warnLegacyBrowsers: false
+
+# Telemetry settings
+telemetry.enabled: false
+telemetry.optIn: false
+telemetry.allowChangingOptInStatus: false
+
+# Advanced UI settings
+newsfeed.enabled: false
+telemetry.enabled: false

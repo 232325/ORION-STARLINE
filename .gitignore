@@ -1,0 +1,387 @@
+# ========================================
+# ORION STARLINE .GITIGNORE
+# Comprehensive git ignore for Orion Starline AI Trading Platform
+# ========================================
+
+# ========================================
+# COMPILED FILES & BUILD OUTPUTS
+# ========================================
+# JavaScript/TypeScript
+dist/
+build/
+out/
+*.js
+*.js.map
+*.tsbuildinfo
+.next/
+.nuxt/
+.parcel-cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ========================================
+# VIRTUAL ENVIRONMENTS
+# ========================================
+# Python virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+
+# Node.js
+node_modules/
+.npm
+.cache/
+.parcel-cache/
+
+# ========================================
+# ENVIRONMENT & SECRETS
+# ========================================
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+.env.*.local
+
+# Secrets and keys
+secrets/
+*.pem
+*.key
+*.crt
+*.cert
+secrets.json
+secrets.yaml
+secrets.yml
+
+# ========================================
+# IDE & EDITOR FILES
+# ========================================
+# VS Code
+.vscode/
+*.code-workspace
+
+# IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+
+# ========================================
+# OPERATING SYSTEM FILES
+# ========================================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.directory
+.Trash-*
+
+# ========================================
+# LOGS & TEMPORARY FILES
+# ========================================
+# Log files
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+.pnpm-debug.log*
+.eslintcache
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage
+*.lcov
+.nyc_output
+
+# ========================================
+# CACHE DIRECTORIES
+# ========================================
+# Node.js specific caches
+.npm
+.eslintcache
+.parcel-cache/
+.node_repl_history
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Python cache
+.eggs/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# ========================================
+# TESTING & COVERAGE
+# ========================================
+# Test files
+test-results/
+test-reports/
+junit.xml
+
+# Performance testing
+artillery-report.html
+k6-results/
+
+# ========================================
+# DATABASES & STORAGE
+# ========================================
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# PostgreSQL
+*.sqlc
+
+# Redis
+dump.rdb
+
+# ========================================
+# FRONTEND SPECIFIC
+# ========================================
+# Build outputs
+dist/
+build/
+out/
+
+# Framework specific
+.next/
+.nuxt
+dist
+.cache/
+public
+.vuepress/dist
+
+# Bundle analyzers
+.bundle-analyzer
+
+# ========================================
+# AI/ML & DATA FILES
+# ========================================
+# Model files
+*.pkl
+*.h5
+*.pt
+*.onnx
+*.model
+*.pb
+*.saved_model
+*.tf
+
+# Training data
+data/raw/
+data/processed/
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+*.ipynb
+
+# ========================================
+# CONTAINER & DEPLOYMENT
+# ========================================
+# Docker
+.dockerignore
+Dockerfile
+docker-compose*.yml
+docker-compose.override.yml
+
+# Kubernetes
+*.kubeconfig
+
+# Deployment platforms
+.vercel
+.netlify
+.railway
+
+# ========================================
+# BACKEND SPECIFIC
+# ========================================
+# FastAPI cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# ========================================
+# SUPABASE SPECIFIC
+# ========================================
+# Supabase local development
+.branches
+.temp
+.env
+
+# ========================================
+# BLOCKCHAIN SPECIFIC
+# ========================================
+# Ethereum/Hardhat
+artifacts/
+cache/
+coverage/
+typechain/
+typechain-types/
+
+# Web3 projects
+.cache/
+
+# ========================================
+# CI/CD & AUTOMATION
+# ========================================
+# GitHub Actions
+.github/
+
+# ========================================
+# TRADING PLATFORM SPECIFIC
+# ========================================
+# Trading data (never commit sensitive data)
+trading_data/
+market_data/
+signals/
+!trading_data/.gitkeep
+!market_data/.gitkeep
+!signals/.gitkeep
+
+# User uploads
+uploads/
+user_files/
+!uploads/.gitkeep
+!user_files/.gitkeep
+
+# Generated documentation
+docs/generated/
+site/
+!docs/generated/.gitkeep
+
+# ========================================
+# BACKUP FILES
+# ========================================
+# General backups
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+*.swp
+*.tmp
+
+# ========================================
+# PACKAGE MANAGER LOCKS
+# ========================================
+# Choose one and comment others based on your package manager
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# ========================================
+# MISCELLANEOUS
+# ========================================
+# Archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Documentation generation
+sphinx/
+docs/_build/
+
+# ========================================
+# PRESERVE IMPORTANT FILES
+# ========================================
+# Never ignore these important files
+!README.md
+!LICENSE
+!CHANGELOG.md
+!CONTRIBUTING.md
+!docs/
+!public/

@@ -1,0 +1,67 @@
+{
+  "AAPL": {
+    "symbol": "AAPL",
+    "signal_type": "HOLD",
+    "confidence": 0.6,
+    "current_price": 270.3699951171875,
+    "entry_price": 270.3699951171875,
+    "stop_loss": 256.8514953613281,
+    "take_profit": 283.8884948730469,
+    "position_size": 60.0,
+    "rsi": 80.53243779951421,
+    "sma20": 258.50949935913087,
+    "timestamp": "2025-11-03T03:54:33.090210"
+  },
+  "GOOGL": {
+    "symbol": "GOOGL",
+    "signal_type": "HOLD",
+    "confidence": 0.6,
+    "current_price": 281.19000244140625,
+    "entry_price": 281.19000244140625,
+    "stop_loss": 267.1305023193359,
+    "take_profit": 295.2495025634766,
+    "position_size": 60.0,
+    "rsi": 84.68167972522731,
+    "sma20": 255.4990005493164,
+    "timestamp": "2025-11-03T03:54:33.382137"
+  },
+  "MSFT": {
+    "symbol": "MSFT",
+    "signal_type": "HOLD",
+    "confidence": 0.6,
+    "current_price": 517.8099975585938,
+    "entry_price": 517.8099975585938,
+    "stop_loss": 491.91949768066405,
+    "take_profit": 543.7004974365235,
+    "position_size": 60.0,
+    "rsi": 53.28901987165113,
+    "sma20": 521.7434951782227,
+    "timestamp": "2025-11-03T03:54:33.526245"
+  },
+  "TSLA": {
+    "symbol": "TSLA",
+    "signal_type": "HOLD",
+    "confidence": 0.56,
+    "current_price": 456.55999755859375,
+    "entry_price": 456.55999755859375,
+    "stop_loss": 433.73199768066405,
+    "take_profit": 479.38799743652345,
+    "position_size": 56.00000000000001,
+    "rsi": 57.53794599163974,
+    "sma20": 441.2625,
+    "timestamp": "2025-11-03T03:54:33.631810"
+  },
+  "NVDA": {
+    "symbol": "NVDA",
+    "signal_type": "BUY",
+    "confidence": 0.6799999999999999,
+    "current_price": 202.49000549316406,
+    "entry_price": 202.49000549316406,
+    "stop_loss": 190.2271488734654,
+    "take_profit": 220.88429042271207,
+    "position_size": 136.0,
+    "rsi": 65.35877016712563,
+    "sma20": 188.30350036621093,
+    "timestamp": "2025-11-03T03:54:33.734730"
+  }
+}

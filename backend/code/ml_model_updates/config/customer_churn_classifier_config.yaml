@@ -1,0 +1,14 @@
+architecture: default
+auto_update: true
+bias_detection: false
+explainable_ai: false
+framework: sklearn
+metadata_path: models/customer_churn_classifier/metadata/
+model_name: customer_churn_classifier
+model_path: models/customer_churn_classifier/
+model_type: classification
+monitoring_enabled: true
+rollback_enabled: true
+training_data_path: data/customer_churn_classifier_training.csv
+update_frequency: weekly
+version: 1.0.0

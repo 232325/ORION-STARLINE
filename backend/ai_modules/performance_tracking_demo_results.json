@@ -1,0 +1,344 @@
+{
+  "timestamp": "2025-11-04T21:39:35.148439",
+  "system_initialized": true,
+  "performance_analysis": {
+    "metrics_30d": {
+      "period_days": 30,
+      "total_trades": 150,
+      "total_pnl": -475.30308242484415,
+      "win_rate": 0.35333333333333333,
+      "average_trade": -3.168687216165628,
+      "best_trade": 85.71635880209516,
+      "worst_trade": -126.7318451844875,
+      "volatility": 351.2423485837281,
+      "max_drawdown": 16.4467951110693,
+      "var_95": 126.7318451844875,
+      "var_99": 126.7318451844875,
+      "sharpe_ratio": -0.14321339731256413,
+      "sortino_ratio": -0.1410886550662158,
+      "calmar_ratio": -28.899434766165943,
+      "tracking_error": 0.0,
+      "information_ratio": -0.14321339731256413,
+      "skewness": 0.0020357962059720696,
+      "kurtosis": 9.200844663627411e-05,
+      "winning_streak": 4,
+      "losing_streak": 8,
+      "profit_factor": 0.4371944454199044,
+      "consecutive_wins": 3,
+      "consecutive_losses": 0,
+      "strategy_performance": {},
+      "regime_analysis": {
+        "trend_following_performance": 0.0,
+        "mean_reversion_performance": 0.0,
+        "volatility_regime": "unknown",
+        "market_stress_indicator": 0.0
+      }
+    },
+    "metrics_7d": {},
+    "reports": {
+      "30d": {
+        "report_date": "2025-11-04T21:39:35.081477",
+        "report_period": "Last 30 days",
+        "executive_summary": "Performance Summary (Last Period):\n        \u2022 Total P&L: $-475.30\n        \u2022 Win Rate: 35.3%\n        \u2022 Sharpe Ratio: -0.14\n        \u2022 Total Trades: 150",
+        "performance_metrics": {
+          "period_days": 30,
+          "total_trades": 150,
+          "total_pnl": -475.30308242484415,
+          "win_rate": 0.35333333333333333,
+          "average_trade": -3.168687216165628,
+          "best_trade": 85.71635880209516,
+          "worst_trade": -126.7318451844875,
+          "volatility": 351.2423485837281,
+          "max_drawdown": 16.4467951110693,
+          "var_95": 126.7318451844875,
+          "var_99": 126.7318451844875,
+          "sharpe_ratio": -0.14321339731256413,
+          "sortino_ratio": -0.1410886550662158,
+          "calmar_ratio": -28.899434766165943,
+          "tracking_error": 0.0,
+          "information_ratio": -0.14321339731256413,
+          "skewness": 0.0020357962059720696,
+          "kurtosis": 9.200844663627411e-05,
+          "winning_streak": 4,
+          "losing_streak": 8,
+          "profit_factor": 0.4371944454199044,
+          "consecutive_wins": 3,
+          "consecutive_losses": 0,
+          "strategy_performance": {},
+          "regime_analysis": {
+            "trend_following_performance": 0.0,
+            "mean_reversion_performance": 0.0,
+            "volatility_regime": "unknown",
+            "market_stress_indicator": 0.0
+          }
+        },
+        "benchmark_comparison": {
+          "vs_spy": {
+            "outperformance": 0.0,
+            "tracking_error": 0.0
+          },
+          "vs_qqq": {
+            "outperformance": 0.0,
+            "tracking_error": 0.0
+          },
+          "information_ratio": 0.0
+        },
+        "risk_assessment": {
+          "overall_risk_level": "HIGH",
+          "var_risk": "HIGH",
+          "drawdown_risk": "HIGH",
+          "volatility_risk": "HIGH"
+        },
+        "recommendations": [
+          "Win rate is below acceptable threshold. Consider improving signal quality.",
+          "Sharpe ratio suggests poor risk-adjusted returns. Review risk management.",
+          "High drawdown detected. Implement stricter position sizing and stop-loss rules."
+        ],
+        "alerts": [
+          {
+            "type": "DRAWDOWN_HIGH",
+            "message": "Drawdown (1644.7%) exceeds threshold",
+            "severity": "HIGH"
+          }
+        ]
+      },
+      "7d": {
+        "report_date": "2025-11-04T21:39:35.082488",
+        "report_period": "Last 7 days",
+        "executive_summary": "Performance Summary (Last Period):\n        \u2022 Total P&L: $0.00\n        \u2022 Win Rate: 0.0%\n        \u2022 Sharpe Ratio: 0.00\n        \u2022 Total Trades: 0",
+        "performance_metrics": {},
+        "benchmark_comparison": {
+          "vs_spy": {
+            "outperformance": 0.0,
+            "tracking_error": 0.0
+          },
+          "vs_qqq": {
+            "outperformance": 0.0,
+            "tracking_error": 0.0
+          },
+          "information_ratio": 0.0
+        },
+        "risk_assessment": {
+          "overall_risk_level": "LOW",
+          "var_risk": "LOW",
+          "drawdown_risk": "LOW",
+          "volatility_risk": "LOW"
+        },
+        "recommendations": [
+          "Win rate is below acceptable threshold. Consider improving signal quality.",
+          "Sharpe ratio suggests poor risk-adjusted returns. Review risk management."
+        ],
+        "alerts": []
+      }
+    },
+    "benchmark_comparison": {
+      "vs_spy": {
+        "outperformance": 0.0,
+        "tracking_error": 0.0
+      },
+      "vs_qqq": {
+        "outperformance": 0.0,
+        "tracking_error": 0.0
+      },
+      "information_ratio": 0.0
+    },
+    "total_trades": 150,
+    "data_quality": {
+      "quality": "excellent",
+      "issues": [],
+      "total_trades": 150,
+      "complete_data_ratio": 1.0,
+      "data_distribution": {
+        "profitable_trades": 53,
+        "losing_trades": 97
+      }
+    }
+  },
+  "monitoring_analysis": {
+    "status": {
+      "monitoring_mode": "demo",
+      "active_alerts": 0,
+      "alert_history_count": 0,
+      "last_update": null,
+      "current_metrics": {
+        "real_time_pnl": -475.30308242484415,
+        "real_time_win_rate": 0.35333333333333333,
+        "real_time_sharpe": -0.14321339731256413,
+        "current_exposure": 98.03030972475148,
+        "daily_pnl": -3.700437354535709,
+        "volatility_estimate": 351.2423485837281,
+        "drawdown_current": 0.0
+      },
+      "system_health": {
+        "cpu_usage": 45.2,
+        "memory_usage": 62.1,
+        "disk_usage": 23.4,
+        "network_io": 1024000,
+        "response_time": 0.15,
+        "error_rate": 0.01
+      },
+      "predictive_alerts": 0
+    },
+    "real_time_metrics": {
+      "performance_metrics": {
+        "real_time_pnl": -475.30308242484415,
+        "real_time_win_rate": 0.35333333333333333,
+        "real_time_sharpe": -0.14321339731256413,
+        "current_exposure": 98.03030972475148,
+        "daily_pnl": -3.700437354535709,
+        "volatility_estimate": 351.2423485837281,
+        "drawdown_current": 0.0
+      },
+      "trend_analysis": {},
+      "system_health": {
+        "cpu_usage": 45.2,
+        "memory_usage": 62.1,
+        "disk_usage": 23.4,
+        "network_io": 1024000,
+        "response_time": 0.15,
+        "error_rate": 0.01
+      },
+      "timestamp": "2025-11-04T21:39:35.083685"
+    },
+    "alert_summary": {
+      "active": 0,
+      "total": 0,
+      "recent_alerts": []
+    },
+    "system_health": {
+      "cpu_usage": 45.2,
+      "memory_usage": 62.1,
+      "disk_usage": 23.4,
+      "network_io": 1024000,
+      "response_time": 0.15,
+      "error_rate": 0.01
+    },
+    "monitoring_mode": "demo",
+    "metrics_tracked": 7
+  },
+  "dashboard_analysis": {
+    "dashboards": {
+      "overview": {
+        "widgets_count": 4,
+        "summary": {
+          "total_trades": 150,
+          "total_pnl": -475.30308242484415,
+          "win_rate": 0.35333333333333333,
+          "sharpe_ratio": -0.14321339731256413,
+          "max_drawdown": 16.4467951110693,
+          "active_strategies": 0,
+          "last_trade": "2025-10-07T23:59:30.436277",
+          "system_status": "healthy"
+        },
+        "success": true
+      },
+      "detailed": {
+        "widgets_count": 3,
+        "summary": {
+          "total_trades": 150,
+          "total_pnl": -475.30308242484415,
+          "win_rate": 0.35333333333333333,
+          "sharpe_ratio": -0.14321339731256413,
+          "max_drawdown": 16.4467951110693,
+          "active_strategies": 0,
+          "last_trade": "2025-10-07T23:59:30.436277",
+          "system_status": "healthy"
+        },
+        "success": true
+      },
+      "real_time": {
+        "widgets_count": 0,
+        "summary": {
+          "total_trades": 150,
+          "total_pnl": -475.30308242484415,
+          "win_rate": 0.35333333333333333,
+          "sharpe_ratio": -0.14321339731256413,
+          "max_drawdown": 16.4467951110693,
+          "active_strategies": 0,
+          "last_trade": "2025-10-07T23:59:30.436277",
+          "system_status": "healthy"
+        },
+        "success": true
+      },
+      "risk": {
+        "widgets_count": 0,
+        "summary": {
+          "total_trades": 150,
+          "total_pnl": -475.30308242484415,
+          "win_rate": 0.35333333333333333,
+          "sharpe_ratio": -0.14321339731256413,
+          "max_drawdown": 16.4467951110693,
+          "active_strategies": 0,
+          "last_trade": "2025-10-07T23:59:30.436277",
+          "system_status": "healthy"
+        },
+        "success": true
+      }
+    },
+    "goal_tracking": {
+      "demo_goal": {
+        "goal": {
+          "id": "demo_goal",
+          "type": "win_rate",
+          "target_value": 60.0,
+          "timeframe_days": 30,
+          "created_at": "2025-11-04 21:39:35.107259",
+          "status": "active"
+        },
+        "current_value": 35.333333333333336,
+        "progress_percent": 58.88888888888889,
+        "days_remaining": 30
+      }
+    },
+    "achievements": [],
+    "widget_configurations": 6,
+    "export_capabilities": {
+      "performance_tracker": {
+        "success": true,
+        "size_bytes": 68198,
+        "format": "json"
+      },
+      "real_time_monitor": {
+        "success": true,
+        "size_bytes": 683,
+        "format": "json"
+      },
+      "dashboard_manager": {
+        "success": true,
+        "size_bytes": 17077,
+        "format": "json"
+      }
+    }
+  },
+  "integration_test": {
+    "tests": {
+      "module_imports": true,
+      "data_flow": true,
+      "real_time_updates": false,
+      "alert_system": true,
+      "dashboard_integration": true
+    },
+    "success_rate": 0.8,
+    "total_tests": 5,
+    "successful_tests": 4
+  },
+  "export_test": {
+    "performance_tracker": {
+      "tested": true,
+      "success": true,
+      "sample_data": "{\n  \"export_date\": \"2025-11-04T21:39:35.131392\",\n  \"trades\": [\n    {\n      \"timestamp\": \"2025-10-17 13:03:30.436277\",\n      \"instrument\": \"SPY\",\n      \"signal_type\": \"BUY\",\n      \"entry_price\": 298.90..."
+    },
+    "real_time_monitor": {
+      "tested": true,
+      "success": true,
+      "sample_data": "{\n  \"export_timestamp\": \"2025-11-04T21:39:35.135229\",\n  \"monitoring_status\": {\n    \"monitoring_mode\": \"active\",\n    \"active_alerts\": 0,\n    \"alert_history_count\": 0,\n    \"last_update\": null,\n    \"curr..."
+    },
+    "dashboard_manager": {
+      "tested": true,
+      "success": true,
+      "sample_data": "{\n  \"export_info\": {\n    \"dashboard\": \"overview\",\n    \"exported_at\": \"2025-11-04T21:39:35.135281\",\n    \"format\": \"json\"\n  },\n  \"dashboard_data\": {\n    \"dashboard_info\": {\n      \"name\": \"Performance Ov..."
+    }
+  },
+  "trades_processed": 150,
+  "demo_duration": "completed"
+}

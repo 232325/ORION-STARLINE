@@ -1,0 +1,105 @@
+{
+  "uz-UZ": {
+    "region": "Uzbekistan",
+    "cultural_preferences": {
+      "greeting_style": "formal",
+      "communication_style": "direct",
+      "business_protocol": "respectful",
+      "decision_making": "hierarchical"
+    },
+    "color_meanings": {
+      "green": "goodness, Islam",
+      "blue": "peace, sky",
+      "red": "danger, passion",
+      "white": "purity, peace"
+    },
+    "number_preferences": {
+      "lucky_numbers": [
+        3,
+        7,
+        13
+      ],
+      "unlucky_numbers": [
+        4,
+        666
+      ],
+      "date_preference": "DD.MM.YYYY"
+    },
+    "date_conventions": {
+      "first_day_of_week": "monday",
+      "date_format": "DD.MM.YYYY",
+      "time_format": "24h"
+    },
+    "greeting_formats": {
+      "formal": "Assalomu alaykum",
+      "informal": "Salom",
+      "business": "Assalomu alaykum, hurmatli"
+    },
+    "business_hours": {
+      "weekdays": "09:00-18:00",
+      "friday": "09:00-12:00",
+      "weekend": "closed"
+    },
+    "holiday_calendar": [
+      "new_year",
+      "womens_day",
+      "navruz",
+      "victory_day",
+      "independence_day",
+      "teacher_day",
+      "constitution_day"
+    ],
+    "measurement_system": "metric",
+    "paper_size": "A4"
+  },
+  "en-US": {
+    "region": "United States",
+    "cultural_preferences": {
+      "greeting_style": "casual",
+      "communication_style": "direct",
+      "business_protocol": "efficient",
+      "decision_making": "individual"
+    },
+    "color_meanings": {
+      "red": "danger, passion, love",
+      "blue": "trust, loyalty",
+      "green": "money, nature",
+      "white": "purity, peace"
+    },
+    "number_preferences": {
+      "lucky_numbers": [
+        3,
+        7
+      ],
+      "unlucky_numbers": [
+        666
+      ],
+      "date_preference": "MM/DD/YYYY"
+    },
+    "date_conventions": {
+      "first_day_of_week": "sunday",
+      "date_format": "MM/DD/YYYY",
+      "time_format": "12h"
+    },
+    "greeting_formats": {
+      "formal": "Good day",
+      "informal": "Hi",
+      "business": "Good morning"
+    },
+    "business_hours": {
+      "weekdays": "09:00-17:00",
+      "weekend": "closed"
+    },
+    "holiday_calendar": [
+      "new_year",
+      "mlk_day",
+      "valentines_day",
+      "presidents_day",
+      "memorial_day",
+      "independence_day",
+      "labor_day"
+    ],
+    "measurement_system": "imperial",
+    "paper_size": "Letter"
+  }
+}

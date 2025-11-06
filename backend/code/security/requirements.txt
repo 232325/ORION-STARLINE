@@ -1,0 +1,29 @@
+# Security va Rate Limiting Tizimi
+# Asosiy talablar
+cryptography>=41.0.0
+pyjwt>=2.8.0
+redis>=5.0.0
+
+# Async support
+asyncio>=3.4.3
+
+# Data validation
+pydantic>=2.0.0
+
+# Logging
+structlog>=23.0.0
+
+# Environment management
+python-dotenv>=1.0.0
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+
+# Monitoring
+prometheus-client>=0.17.0
+
+# Additional security utilities
+passlib>=1.7.4
+bcrypt>=4.0.0

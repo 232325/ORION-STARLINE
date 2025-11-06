@@ -1,0 +1,162 @@
+Traceback (most recent call last):
+  File "/workspace/code/market_analysis/demo.py", line 729, in <module>
+    generate_demo_report()
+  File "/workspace/code/market_analysis/demo.py", line 675, in generate_demo_report
+    demo_market_regimes()
+  File "/workspace/code/market_analysis/demo.py", line 343, in demo_market_regimes
+    trending_volatility = detector.detect_volatility_regime(trending_data, window=20)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/code/market_analysis/regime_detection/trending_ranging.py", line 72, in detect_volatility_regime
+    return pd.Series(regime, index=data.index)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/.venv/lib/python3.12/site-packages/pandas/core/series.py", line 578, in __init__
+    com.require_length_match(data, index)
+  File "/tmp/.venv/lib/python3.12/site-packages/pandas/core/common.py", line 573, in require_length_match
+    raise ValueError(
+ValueError: Length of values (239) does not match length of index (240)
+
+================================================================================
+MARKET IMPACT ANALYSIS & MARKET HOURS HANDLING SYSTEM
+COMPREHENSIVE DEMONSTRATION REPORT
+================================================================================
+Generated: 2025-11-03 05:39:08 UTC
+
+============================================================
+1. PRICE IMPACT ANALYSIS
+============================================================
+
+Single Trade Analysis ($1M EURUSD):
+  Permanent Impact: 0.0273 (2.73%)
+  Temporary Impact: 0.0039 (0.39%)
+  Recovery: 0.0001 (0.01%)
+  Total Impact: 0.0312 (3.12%)
+  Impact per Unit: 0.00000003
+
+Market Condition Impact Comparison:
+  Low Liquidity (Asian): 6.97%
+  Normal (European): 3.16%
+  High Liquidity (Overlap): 2.99%
+
+Optimal Trade Size Analysis:
+  Target Impact: 0.50%
+  Optimal Volume: $52,047
+  Expected Impact: 0.50%
+  Optimization Success: True
+
+============================================================
+2. LIQUIDITY ANALYSIS
+============================================================
+
+Liquidity Depth Analysis:
+  Current Liquidity Score: 0.306
+  Current Regime: poor
+  Score Interpretation: Poor - Avoid large trades
+
+Liquidity Metrics (7 days):
+  Average Volume: 4,580
+  Volume CV: 1.873
+  Liquidity Efficiency: 7,505,804.12
+  Dominant Regime: poor
+
+Liquidity Events (7 days):
+  Volume Spikes: 11
+  Volume Droughts: 0
+
+Liquidity Forecast (Next 24 hours):
+  Expected Liquidity: 0.431
+  Expected Volume: 4,442
+  Forecast Method: moving_average
+
+============================================================
+3. FOREX SESSIONS ANALYSIS
+============================================================
+
+Current Session Analysis (14:30 UTC):
+  Session Name: asian
+  Is Active: True
+  Volatility Multiplier: 0.7
+  Liquidity Multiplier: 0.8
+  Expected Spread: 1.0 pips
+
+Daily Session Schedule:
+  asian: 00:00-09:00 UTC (9.0h)
+  european: 08:00-17:00 UTC (9.0h)
+  american: 13:00-22:00 UTC (9.0h)
+
+Optimal Trading Hours Analysis:
+  EURUSD (major pair):
+    Current Session Quality: poor
+    Trading Suitability: fair
+    Expected Spread: 1.0 pips
+  GBPUSD (major pair):
+    Current Session Quality: poor
+    Trading Suitability: fair
+    Expected Spread: 1.0 pips
+  USDJPY (major pair):
+    Current Session Quality: poor
+    Trading Suitability: fair
+    Expected Spread: 1.0 pips
+  EURJPY (cross pair):
+    Current Session Quality: poor
+    Trading Suitability: fair
+    Expected Spread: 1.5 pips
+
+Session Overlap Analysis:
+  London-Tokyo overlap:
+    Duration: 60 minutes
+    Trading Score: 7/10
+    Best For: JPY crosses, AUD pairs
+  London-New York overlap:
+    Duration: 240 minutes
+    Trading Score: 10/10
+    Best For: All major pairs, news trading
+
+Key Session Transitions:
+  London Open: 08:00 UTC
+  New York Open: 13:00 UTC
+  London Close: 17:00 UTC
+  New York Close: 22:00 UTC
+
+============================================================
+4. METAL MARKETS ANALYSIS
+============================================================
+
+Gold (XAUUSD) Market Report:
+  Symbol: XAUUSD
+  Volatility: 0.09%
+  Avg Daily Return: -0.02%
+  Max Drawdown: -0.84%
+  Trading Days: 30
+
+Market Opening Patterns:
+  Avg Opening Gap: 0.00%
+  Opening Volatility: 0.00%
+
+Seasonal Patterns:
+  Best Months: [1]
+  Worst Months: [1]
+  Seasonal Bias: negative
+
+Optimal Trading Hours:
+  Peak Hours (UTC): [8, 9, 10, 13, 14, 15, 16]
+  Best Session: excellent
+  Avoid Hours: Low liquidity periods
+
+Key Market Insights:
+  • Gold typically shows strength during geopolitical uncertainty
+  • Best trading hours overlap with European and US sessions
+  • Seasonal strength often seen in late summer/early fall
+
+Trading Recommendations:
+  • Monitor economic calendar for inflation-related news
+  • Watch USD strength as primary driver for metal prices
+  • Use volatility-adjusted position sizing
+
+============================================================
+5. MARKET REGIME DETECTION
+============================================================
+
+Regime Detection Analysis:
+
+❌ Error during demonstration: Length of values (239) does not match length of index (240)
+Please check the error details above.

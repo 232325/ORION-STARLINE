@@ -1,0 +1,226 @@
+{
+  "expo": {
+    "name": "Orion Starline",
+    "slug": "orion-starline-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1e3a8a"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.orionstarline.mobile",
+      "buildNumber": "1",
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "Face ID yordamida ilovaga xavfsiz kirish uchun ruxsat",
+        "NSLocationWhenInUseUsageDescription": "Joylashuv ma'lumotlari trading aktivlari uchun ishlatiladi",
+        "NSMicrophoneUsageDescription": "Audio ma'lumotlar qayta ishlash uchun ruxsat",
+        "NSCameraUsageDescription": "QR kod skanerlash va hujjat skanerlash uchun ruxsat",
+        "NSPhotoLibraryUsageDescription": "Screenshot va hujjat yuklash uchun ruxsat",
+        "NSUserTrackingUsageDescription": "Personalizatsiya va analytics uchun ruxsat",
+        "UIBackgroundModes": [
+          "background-fetch",
+          "remote-notification",
+          "background-processing"
+        ],
+        "NSAppTransportSecurity": {
+          "NSExceptionDomains": {
+            "api.orion-starline.com": {
+              "NSTemporaryExceptionMinimumTLSVersion": "TLSv1.2"
+            }
+          }
+        }
+      },
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-xxxxxxxxxxxxxxxx~xxxxxxxxxx",
+        "googleMobileAdsAutoInit": true
+      },
+      "entitlements": {
+        "com.apple.developer.networking.multiple": true
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1e3a8a"
+      },
+      "package": "com.orionstarline.mobile",
+      "versionCode": 1,
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "CAMERA",
+        "RECORD_AUDIO",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "READ_PHONE_STATE",
+        "VIBRATE",
+        "WAKE_LOCK",
+        "RECEIVE_BOOT_COMPLETED",
+        "FOREGROUND_SERVICE",
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT",
+        "RECEIVE_WAP_PUSH_MESSAGES",
+        "GET_ACCOUNTS",
+        "MANAGE_ACCOUNTS",
+        "USE_CREDENTIALS",
+        "ACCESS_WIFI_STATE",
+        "CHANGE_WIFI_STATE",
+        "BLUETOOTH",
+        "BLUETOOTH_ADMIN",
+        "BLUETOOTH_PRIVILEGED"
+      ],
+      "config": {
+        "googleMobileAdsAppId": "ca-app-pub-xxxxxxxxxxxxxxxx~xxxxxxxxxx",
+        "googleMobileAdsAutoInit": true
+      },
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "orion-starline.com"
+            },
+            {
+              "scheme": "orionstarline"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ],
+      "packageManager": "yarn",
+      "gradleProperties": {
+        "android.enableR8": true,
+        "android.useAndroidX": true,
+        "android.enableJetifier": true
+      },
+      "manifest": {
+        "application": {
+          "theme": "@android:style/Theme.Light.NoTitleBar.Fullscreen"
+        }
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "config": {
+        "metro": {
+          "minify": true
+        }
+      }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Ijro etish uchun joylashuv ruxsati kerak.",
+          "locationAlwaysPermission": "Doimiy joylashuv ma'lumotlari uchun ruxsat",
+          "locationWhenInUsePermission": "Foydalanish vaqti joylashuv ma'lumotlari uchun ruxsat"
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#1e3a8a",
+          "mode": "production"
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Kamera ruxsati hujjat skanerlash uchun kerak.",
+          "microphonePermission": "Audio qayta ishlash uchun mikrofon ruxsati",
+          "recordAudioAndroid": true
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Rasm va video saqlash uchun ruxsat",
+          "savePhotosPermission": "Rasm va video gallereyaga saqlash uchun ruxsat"
+        }
+      ],
+      [
+        "expo-local-authentication",
+        {
+          "biometricAuthTitles": {
+            "isEnrolled": "Biometrik autentifikatsiya yoqilmagan",
+            "isAvailable": "Biometrik autentifikatsiya mavjud emas"
+          }
+        }
+      ],
+      [
+        "expo-secure-store",
+        {
+          "faceIdPermission": "Face ID ma'lumotlari xavfsiz saqlanishi uchun ruxsat"
+        }
+      ],
+      [
+        "expo-keep-awake",
+        {
+          "permissions": [
+            "WAKE_LOCK"
+          ]
+        }
+      ]
+    ],
+    "updates": {
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/your-project-id",
+      "checkAutomatically": "ON_LOAD"
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "scheme": "orionstarline",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "description": "Orion Starline AI Trading Platform - Professional forex va crypto trading ilovasi. Real-time ma'lumotlar, AI signallar, va portfolio boshqaruvi.",
+    "primaryColor": "#1e3a8a",
+    "extra": {
+      "eas": {
+        "projectId": "your-eas-project-id"
+      },
+      "apiUrl": "https://api.orion-starline.com",
+      "wsUrl": "wss://ws.orion-starline.com",
+      "environment": "production",
+      "features": {
+        "biometricAuth": true,
+        "pushNotifications": true,
+        "locationTracking": true,
+        "cameraAccess": true,
+        "offlineMode": true,
+        "realTimeData": true,
+        "aiSignals": true,
+        "portfolioTracking": true,
+        "riskManagement": true
+      },
+      "analytics": {
+        "googleAnalytics": "GA_MEASUREMENT_ID",
+        "firebase": true,
+        "mixpanel": "MIXPANEL_TOKEN"
+      },
+      "payments": {
+        "stripe": "pk_test_stripe_key",
+        "paypal": "PAYPAL_CLIENT_ID"
+      }
+    }
+  }
+}

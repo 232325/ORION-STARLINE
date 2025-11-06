@@ -1,0 +1,212 @@
+{
+  "deployment": {
+    "network": "sepolia",
+    "gasLimit": 8000000,
+    "gasPrice": "20",
+    "confirmations": 2,
+    "timeout": 300
+  },
+  "contracts": {
+    "AITrading": {
+      "gasLimit": 3000000,
+      "executionThreshold": 500,
+      "maxPositionSize": "1000000000000000000000000",
+      "minTradeAmount": "100000000000000000000",
+      "pausable": true,
+      "reentrancyGuard": true
+    },
+    "PortfolioManager": {
+      "gasLimit": 2000000,
+      "maxAssetsPerPortfolio": 10,
+      "rebalanceThreshold": 500,
+      "pausable": true,
+      "reentrancyGuard": true
+    },
+    "RiskManagement": {
+      "gasLimit": 2500000,
+      "maxPositionSize": "500000000000000000000000",
+      "maxPortfolioValue": "2000000000000000000000000",
+      "maxDailyLoss": "-100000000000000000000000",
+      "maxLeverage": 10,
+      "stopLossPercentage": 1000,
+      "takeProfitPercentage": 2000,
+      "circuitBreakerDuration": 86400,
+      "pausable": true,
+      "reentrancyGuard": true
+    },
+    "Settlement": {
+      "gasLimit": 3500000,
+      "maxOrderAmount": "10000000000000000000000000",
+      "minOrderAmount": "100000000000000000000",
+      "maxOrdersPerTrader": 100,
+      "orderExpiry": 3600,
+      "pausable": true,
+      "reentrancyGuard": true
+    },
+    "FeeManagement": {
+      "gasLimit": 1500000,
+      "minFeeDiscount": 0,
+      "maxFeeDiscount": 5000,
+      "pausable": true,
+      "reentrancyGuard": true
+    }
+  },
+  "tokens": {
+    "StockToken": {
+      "gasLimit": 1000000,
+      "decimals": 18,
+      "symbolMaxLength": 10,
+      "companyNameMaxLength": 100,
+      "supported": ["AAPL", "GOOGL", "MSFT", "TSLA", "AMZN", "NVDA", "META"]
+    },
+    "ForexToken": {
+      "gasLimit": 800000,
+      "decimals": 6,
+      "supportedCurrencies": ["USD", "EUR", "GBP", "JPY", "CHF", "CAD", "AUD", "NZD"],
+      "supportedPairs": ["EURUSD", "GBPUSD", "USDJPY", "USDCHF", "USDCAD", "AUDUSD", "NZDUSD"]
+    },
+    "MetalToken": {
+      "gasLimit": 1200000,
+      "decimals": 6,
+      "supportedMetals": ["GOLD", "SILVER", "PLATINUM", "PALLADIUM"],
+      "ounceToGrams": 31103,
+      "purity": 999
+    }
+  },
+  "oracles": {
+    "priceFeeds": {
+      "ethereum": "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419",
+      "bitcoin": "0xF4030086522a5bEEa4988F8cA5B36dbC97BeE88c",
+      "usdc": "0x8fFfFfd4AfB6115b954Bd326cbe7B4BA576818f6",
+      "eur": "0xb49f677943BC038e9857d61E7d453CaE5344c9dF"
+    },
+    "updateIntervals": {
+      "stockPrice": 300,
+      "forexRate": 60,
+      "metalPrice": 300,
+      "cryptoPrice": 60
+    },
+    "staleThresholds": {
+      "stockPrice": 3600,
+      "forexRate": 1800,
+      "metalPrice": 3600,
+      "cryptoPrice": 1800
+    }
+  },
+  "fees": {
+    "tradingFees": {
+      "baseFee": 100,
+      "makerFee": 50,
+      "takerFee": 100
+    },
+    "withdrawalFee": 25,
+    "depositFee": 0,
+    "fundingFee": 10,
+    "managementFee": 0
+  },
+  "discountTiers": {
+    "bronze": {
+      "volumeThreshold": "0",
+      "discountRate": 0
+    },
+    "silver": {
+      "volumeThreshold": "10000000000000000000000",
+      "discountRate": 1000
+    },
+    "gold": {
+      "volumeThreshold": "100000000000000000000000",
+      "discountRate": 2500
+    },
+    "platinum": {
+      "volumeThreshold": "1000000000000000000000000",
+      "discountRate": 5000
+    }
+  },
+  "security": {
+    "accessControl": {
+      "adminRole": "0x0000000000000000000000000000000000000000000000000000000000000000",
+      "pauserRole": "0x0000000000000000000000000000000000000000000000000000000000000001",
+      "minterRole": "0x0000000000000000000000000000000000000000000000000000000000000002",
+      "oracleRole": "0x0000000000000000000000000000000000000000000000000000000000000003"
+    },
+    "timelock": {
+      "enabled": true,
+      "delay": 86400,
+      "gracePeriod": 172800
+    },
+    "circuitBreaker": {
+      "enabled": true,
+      "maxDailyLoss": "-100000000000000000000000",
+      "maxPositionSize": "500000000000000000000000",
+      "maxLeverage": 10
+    }
+  },
+  "gasOptimizations": {
+    "useBatchOperations": true,
+    "useEvents": true,
+    "useMappings": true,
+    "useStructs": false,
+    "useArrays": false,
+    "optimizeMath": true
+  },
+  "monitoring": {
+    "alerts": {
+      "highFrequencyTrading": true,
+      "largePositions": true,
+      "systemErrors": true,
+      "priceDeviations": true
+    },
+    "metrics": {
+      "transactionVolume": true,
+      "activeUsers": true,
+      "systemPerformance": true,
+      "errorRates": true
+    },
+    "reporting": {
+      "dailyReports": true,
+      "weeklyReports": true,
+      "monthlyReports": true,
+      "realTimeDashboard": true
+    }
+  },
+  "testing": {
+    "unitTests": {
+      "enabled": true,
+      "coverage": 95
+    },
+    "integrationTests": {
+      "enabled": true,
+      "testnetOnly": true
+    },
+    "securityAudits": {
+      "enabled": true,
+      "providers": ["Consensys", "Trail of Bits", "Certik"]
+    }
+  },
+  "upgrades": {
+    "proxyAdmin": {
+      "address": "0x0000000000000000000000000000000000000000",
+      "timelockDelay": 86400
+    },
+    "governance": {
+      "multisigThreshold": 3,
+      "totalSigners": 5
+    }
+  },
+  "environment": {
+    "mainnet": {
+      "chainId": 1,
+      "rpcUrl": "https://mainnet.infura.io/v3/",
+      "explorerUrl": "https://etherscan.io",
+      "nativeToken": "ETH",
+      "stableCoins": ["USDC", "USDT", "DAI"]
+    },
+    "testnet": {
+      "chainId": 11155111,
+      "rpcUrl": "https://sepolia.infura.io/v3/",
+      "explorerUrl": "https://sepolia.etherscan.io",
+      "nativeToken": "ETH",
+      "stableCoins": ["USDC"]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "welcome_message": "Welcome to Orion Starline",
+  "login_button": "Login",
+  "logout_button": "Logout",
+  "dashboard_title": "Trading Dashboard",
+  "balance_title": "Account Balance",
+  "portfolio_title": "Portfolio",
+  "settings_title": "Settings",
+  "language_selector": "Language",
+  "currency_selector": "Currency",
+  "theme_selector": "Theme",
+  "notifications": "Notifications",
+  "help": "Help",
+  "about": "About",
+  "contact": "Contact",
+  "privacy": "Privacy Policy",
+  "terms": "Terms of Service",
+  "profile": "Profile",
+  "security": "Security",
+  "backup": "Backup",
+  "restore": "Restore"
+}

@@ -1,0 +1,635 @@
+# Backend Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: orion-backend-service
+  namespace: orion-starline-prod
+  labels:
+    app: orion-backend
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+    service.beta.kubernetes.io/aws-load-balancer-scheme: "internet-facing"
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 8000
+    protocol: TCP
+    name: http
+  - port: 443
+    targetPort: 8000
+    protocol: TCP
+    name: https
+  selector:
+    app: orion-backend
+
+---
+# Frontend Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: orion-frontend-service
+  namespace: orion-starline-prod
+  labels:
+    app: orion-frontend
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 3000
+    protocol: TCP
+    name: http
+  - port: 443
+    targetPort: 3000
+    protocol: TCP
+    name: https
+  selector:
+    app: orion-frontend
+
+---
+# Database Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: orion-postgres-service
+  namespace: orion-starline-prod
+  labels:
+    app: orion-postgres
+spec:
+  type: ClusterIP
+  ports:
+  - port: 5432
+    targetPort: 5432
+    protocol: TCP
+    name: postgresql
+  selector:
+    app: orion-postgres
+
+---
+# Redis Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: orion-redis-service
+  namespace: orion-starline-prod
+  labels:
+    app: orion-redis
+spec:
+  type: ClusterIP
+  ports:
+  - port: 6379
+    targetPort: 6379
+    protocol: TCP
+    name: redis
+  selector:
+    app: orion-redis
+
+---
+# Prometheus Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: orion-prometheus-service
+  namespace: orion-starline-prod
+  labels:
+    app: orion-prometheus
+spec:
+  type: ClusterIP
+  ports:
+  - port: 9090
+    targetPort: 9090
+    protocol: TCP
+    name: web
+  selector:
+    app: orion-prometheus
+
+---
+# Grafana Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: orion-grafana-service
+  namespace: orion-starline-prod
+  labels:
+    app: orion-grafana
+spec:
+  type: ClusterIP
+  ports:
+  - port: 3000
+    targetPort: 3000
+    protocol: TCP
+    name: web
+  selector:
+    app: orion-grafana
+
+---
+# AlertManager Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: orion-alertmanager-service
+  namespace: orion-starline-prod
+  labels:
+    app: orion-alertmanager
+spec:
+  type: ClusterIP
+  ports:
+  - port: 9093
+    targetPort: 9093
+    protocol: TCP
+    name: web
+  selector:
+    app: orion-alertmanager
+
+---
+# Ingress Configuration
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: orion-ingress
+  namespace: orion-starline-prod
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m"
+    nginx.ingress.kubernetes.io/rate-limit: "100"
+    nginx.ingress.kubernetes.io/rate-limit-window: "1m"
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "https://orion-starline.com"
+    nginx.ingress.kubernetes.io/cors-allow-methods: "GET, POST, PUT, DELETE, OPTIONS"
+    nginx.ingress.kubernetes.io/cors-allow-headers: "DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization"
+    nginx.ingress.kubernetes.io/cors-expose-headers: "Content-Length,Content-Range"
+    nginx.ingress.kubernetes.io/cors-allow-credentials: "true"
+    nginx.ingress.kubernetes.io/cors-max-age: "86400"
+spec:
+  tls:
+  - hosts:
+    - orion-starline.com
+    - www.orion-starline.com
+    - api.orion-starline.com
+    - app.orion-starline.com
+    - admin.orion-starline.com
+    secretName: orion-tls
+  rules:
+  - host: orion-starline.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: orion-frontend-service
+            port:
+              number: 80
+  
+  - host: www.orion-starline.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: orion-frontend-service
+            port:
+              number: 80
+  
+  - host: app.orion-starline.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: orion-frontend-service
+            port:
+              number: 80
+  
+  - host: api.orion-starline.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: orion-backend-service
+            port:
+              number: 80
+      - path: /health
+        pathType: Exact
+        backend:
+          service:
+            name: orion-backend-service
+            port:
+              number: 80
+      - path: /metrics
+        pathType: Exact
+        backend:
+          service:
+            name: orion-backend-service
+            port:
+              number: 80
+      - path: /api/v1
+        pathType: Prefix
+        backend:
+          service:
+            name: orion-backend-service
+            port:
+              number: 80
+  
+  - host: admin.orion-starline.com
+    http:
+      paths:
+      - path: /grafana
+        pathType: Prefix
+        backend:
+          service:
+            name: orion-grafana-service
+            port:
+              number: 3000
+      - path: /prometheus
+        pathType: Prefix
+        backend:
+          service:
+            name: orion-prometheus-service
+            port:
+              number: 9090
+      - path: /alertmanager
+        pathType: Prefix
+        backend:
+          service:
+            name: orion-alertmanager-service
+            port:
+              number: 9093
+
+---
+# Network Policy for Backend
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: orion-backend-network-policy
+  namespace: orion-starline-prod
+spec:
+  podSelector:
+    matchLabels:
+      app: orion-backend
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          name: ingress-nginx
+    ports:
+    - protocol: TCP
+      port: 8000
+  - from:
+    - podSelector:
+        matchLabels:
+          app: orion-worker
+    - podSelector:
+        matchLabels:
+          app: orion-scheduler
+    ports:
+    - protocol: TCP
+      port: 8000
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: orion-postgres
+    ports:
+    - protocol: TCP
+      port: 5432
+  - to:
+    - podSelector:
+        matchLabels:
+          app: orion-redis
+    ports:
+    - protocol: TCP
+      port: 6379
+
+---
+# Network Policy for Frontend
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: orion-frontend-network-policy
+  namespace: orion-starline-prod
+spec:
+  podSelector:
+    matchLabels:
+      app: orion-frontend
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          name: ingress-nginx
+    ports:
+    - protocol: TCP
+      port: 3000
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: orion-backend
+    ports:
+    - protocol: TCP
+      port: 8000
+
+---
+# ConfigMap for Nginx
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+  namespace: orion-starline-prod
+data:
+  nginx.conf: |
+    events {
+        worker_connections 1024;
+    }
+    
+    http {
+        upstream backend {
+            server orion-backend-service:80;
+        }
+        
+        upstream frontend {
+            server orion-frontend-service:80;
+        }
+        
+        upstream grafana {
+            server orion-grafana-service:3000;
+        }
+        
+        upstream prometheus {
+            server orion-prometheus-service:9090;
+        }
+        
+        upstream alertmanager {
+            server orion-alertmanager-service:9093;
+        }
+        
+        # Rate limiting
+        limit_req_zone $binary_remote_addr zone=api:10m rate=10r/s;
+        limit_req_zone $binary_remote_addr zone=general:10m rate=30r/s;
+        
+        # SSL Configuration
+        ssl_protocols TLSv1.2 TLSv1.3;
+        ssl_ciphers ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384;
+        ssl_prefer_server_ciphers off;
+        ssl_session_cache shared:SSL:10m;
+        ssl_session_timeout 10m;
+        
+        # Security Headers
+        add_header X-Frame-Options DENY always;
+        add_header X-Content-Type-Options nosniff always;
+        add_header X-XSS-Protection "1; mode=block" always;
+        add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
+        add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+        add_header Content-Security-Policy "default-src 'self' https://*.stripe.com https://*.paypal.com; script-src 'self' 'unsafe-inline' https://*.stripe.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;" always;
+        
+        # API Gateway
+        server {
+            listen 80;
+            server_name api.orion-starline.com;
+            return 301 https://$server_name$request_uri;
+        }
+        
+        server {
+            listen 443 ssl http2;
+            server_name api.orion-starline.com;
+            
+            ssl_certificate /etc/ssl/certs/orion-starline.crt;
+            ssl_certificate_key /etc/ssl/private/orion-starline.key;
+            
+            location / {
+                limit_req zone=api burst=20 nodelay;
+                proxy_pass http://backend;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                
+                # Timeouts
+                proxy_connect_timeout 5s;
+                proxy_send_timeout 60s;
+                proxy_read_timeout 60s;
+            }
+            
+            location /health {
+                proxy_pass http://backend/health;
+                access_log off;
+            }
+            
+            location /metrics {
+                proxy_pass http://backend/metrics;
+                allow 10.0.0.0/8;
+                deny all;
+            }
+        }
+        
+        # Web App
+        server {
+            listen 80;
+            server_name app.orion-starline.com;
+            return 301 https://$server_name$request_uri;
+        }
+        
+        server {
+            listen 443 ssl http2;
+            server_name app.orion-starline.com;
+            
+            ssl_certificate /etc/ssl/certs/orion-starline.crt;
+            ssl_certificate_key /etc/ssl/private/orion-starline.key;
+            
+            location / {
+                limit_req zone=general burst=50 nodelay;
+                proxy_pass http://frontend;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+            }
+        }
+        
+        # Main Website
+        server {
+            listen 80;
+            server_name orion-starline.com www.orion-starline.com;
+            return 301 https://www.orion-starline.com$request_uri;
+        }
+        
+        server {
+            listen 443 ssl http2;
+            server_name www.orion-starline.com;
+            
+            ssl_certificate /etc/ssl/certs/orion-starline.crt;
+            ssl_certificate_key /etc/ssl/private/orion-starline.key;
+            
+            location / {
+                limit_req zone=general burst=100 nodelay;
+                proxy_pass http://frontend;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+            }
+        }
+        
+        # Admin Dashboard
+        server {
+            listen 443 ssl http2;
+            server_name admin.orion-starline.com;
+            
+            ssl_certificate /etc/ssl/certs/orion-starline.crt;
+            ssl_certificate_key /etc/ssl/private/orion-starline.key;
+            
+            # Basic auth for admin
+            auth_basic "Admin Area";
+            auth_basic_user_file /etc/nginx/.htpasswd;
+            
+            location /grafana/ {
+                rewrite ^/grafina/(.*) /$1 break;
+                proxy_pass http://grafana;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+            }
+            
+            location /prometheus/ {
+                rewrite ^/prometheus/(.*) /$1 break;
+                proxy_pass http://prometheus;
+                proxy_set_header Host $host;
+            }
+            
+            location /alertmanager/ {
+                rewrite ^/alertmanager/(.*) /$1 break;
+                proxy_pass http://alertmanager;
+                proxy_set_header Host $host;
+            }
+        }
+    }
+
+---
+# Secrets (Kubernetes Secrets)
+apiVersion: v1
+kind: Secret
+metadata:
+  name: orion-secrets
+  namespace: orion-starline-prod
+type: Opaque
+data:
+  # Base64 encoded values - replace with actual values
+  database-url: cG9zdGdyZXNxbDovL3VzZXI6cGFzc3dvcmRAcG9zdGdyZXM6NTQzMi9kYjE=
+  postgres-db: b3JpX29u
+  postgres-user: b3JpX29u
+  postgres-password: cGFzc3dvcmQ=
+  redis-password: cmVkaXNwYXNzd29yZA==
+  supabase-url: aHR0cHM6Ly9zdXBhYmFzZS5jb20=
+  supabase-anon-key: YW5vbl9rZXk=
+  stripe-secret-key: c3RyaXBlX3NlY3JldF9rZXk=
+  stripe-publishable-key: c3RyaXBlX3B1Ymxpc2hhYmxlX2tleQ==
+  paypal-client-id: cGF5cGFsX2NsaWVudF9pZA==
+  paypal-client-secret: cGF5cGFsX2NsaWVudF9zZWNyZXQ=
+  jwt-secret:and3dF9zZWNyZXQ=
+  grafana-password: Z3JhZmFuYV9wYXNzd29yZA==
+
+---
+# Persistent Volume Claims
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+  namespace: orion-starline-prod
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 100Gi
+  storageClassName: gp2
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: redis-pvc
+  namespace: orion-starline-prod
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Gi
+  storageClassName: gp2
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: prometheus-pvc
+  namespace: orion-starline-prod
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50Gi
+  storageClassName: gp2
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: grafana-pvc
+  namespace: orion-starline-prod
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+  storageClassName: gp2
+
+---
+# Service Account
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: orion-service-account
+  namespace: orion-starline-prod
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::ACCOUNT:role/orion-starline-role
+
+---
+# Role and RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: orion-starline-prod
+  name: orion-role
+rules:
+- apiGroups: [""]
+  resources: ["configmaps", "secrets"]
+  verbs: ["get", "list", "watch"]
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: orion-role-binding
+  namespace: orion-starline-prod
+subjects:
+- kind: ServiceAccount
+  name: orion-service-account
+  namespace: orion-starline-prod
+roleRef:
+  kind: Role
+  name: orion-role
+  apiGroup: rbac.authorization.k8s.io

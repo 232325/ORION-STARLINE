@@ -1,0 +1,14 @@
+architecture: default
+auto_update: true
+bias_detection: false
+explainable_ai: false
+framework: sklearn
+metadata_path: models/price_prediction_regressor/metadata/
+model_name: price_prediction_regressor
+model_path: models/price_prediction_regressor/
+model_type: regression
+monitoring_enabled: true
+rollback_enabled: true
+training_data_path: data/price_prediction_regressor_training.csv
+update_frequency: weekly
+version: 1.0.0

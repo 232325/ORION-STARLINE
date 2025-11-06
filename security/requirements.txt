@@ -1,0 +1,74 @@
+# Enterprise Security System Requirements
+# Korporativ Xavfsizlik Tizimi uchun kerakli kutubxonalar
+
+# Core Security Libraries
+cryptography>=41.0.0
+bcrypt>=4.0.0
+pyjwt>=2.8.0
+pynacl>=1.5.0
+pyotp>=2.9.0
+
+# Database
+sqlite3  # Built-in with Python
+
+# Web Framework
+flask>=2.3.0
+flask-cors>=4.0.0
+
+# Additional Security Utilities
+secrets  # Built-in with Python
+hashlib  # Built-in with Python
+hmac  # Built-in with Python
+base64  # Built-in with Python
+
+# Data Processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Logging and Monitoring
+structlog>=23.1.0
+psutil>=5.9.0
+
+# HTTP Requests (for external integrations)
+requests>=2.31.0
+httpx>=0.24.0
+
+# Date and Time Utilities
+python-dateutil>=2.8.0
+pytz>=2023.3
+
+# Validation and Serialization
+jsonschema>=4.17.0
+marshmallow>=3.20.0
+
+# Environment Configuration
+python-dotenv>=1.0.0
+pyyaml>=6.0.0
+
+# Testing (optional but recommended)
+pytest>=7.4.0
+pytest-cov>=4.1.0
+factory-boy>=3.3.0
+
+# Development Tools (optional)
+black>=23.7.0
+flake8>=6.0.0
+mypy>=1.5.0
+
+# Optional: For enhanced logging and monitoring
+elasticsearch>=8.8.0
+kafka-python>=2.0.2
+
+# Optional: For certificate management
+certificates  # Built-in with cryptography
+
+# Optional: For hardware security module integration
+# pkcs11  # For HSM integration (platform specific)
+
+# Optional: For quantum-resistant algorithms (future implementation)
+# dilithium  # Post-quantum cryptography (experimental)
+# kyber  # Post-quantum key encapsulation (experimental)
+
+# Production deployment dependencies
+gunicorn>=21.0.0
+supervisor>=4.2.0
